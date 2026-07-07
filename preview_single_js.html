@@ -1,0 +1,1129 @@
+<!doctype html>
+<html lang="ru" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Топка — горячая еда на лету</title>
+  <meta name="description" content="Топка — закусочная с шашлыком из тандыра, сувлаками, шавермой, комбо-наборами, закусками, салатами и десертами." />
+  <meta property="og:title" content="Топка — горячая еда на лету" />
+  <meta property="og:description" content="Шашлык из тандыра, сувлаки, шаверма, комбо и закуски. Смотрите меню и оформляйте заказ в пару кликов." />
+  <meta property="og:image" content="assets/shashlik.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+:root{
+  --orange:#EB8F50;
+  --orange-2:#f4a763;
+  --cream:#FFF1C9;
+  --beige:#F2D38F;
+  --green:#5B7E3A;
+  --brown:#4F2318;
+  --ink:#2b1711;
+  --white:#fff;
+  --shadow:0 26px 70px rgba(79,35,24,.18);
+  --shadow-soft:0 14px 34px rgba(79,35,24,.14);
+  --radius-xl:36px;
+  --radius-lg:26px;
+  --radius-md:18px;
+  --font-head:'Oswald','Arial Narrow',Arial,sans-serif;
+  --font-body:'Arimo',Arial,sans-serif;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:105px}
+body{margin:0;min-width:320px;font-family:var(--font-body);color:var(--brown);background:var(--cream);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button,input,textarea{font:inherit}
+button{cursor:pointer}
+
+.page-bg{position:fixed;inset:0;z-index:-3;background:radial-gradient(circle at 12% 5%,rgba(235,143,80,.26),transparent 30%),radial-gradient(circle at 90% 20%,rgba(91,126,58,.15),transparent 32%),linear-gradient(180deg,var(--cream),#fff7dd 50%,var(--cream))}
+.page-bg:after{content:"";position:absolute;inset:0;background:url('assets/pattern-word.png') top center/720px auto;opacity:.045}
+
+.header{position:sticky;top:16px;z-index:50;width:min(1180px,calc(100% - 28px));min-height:74px;margin:16px auto 0;padding:12px 14px 12px 18px;display:flex;align-items:center;gap:24px;border:1px solid rgba(79,35,24,.12);border-radius:999px;background:rgba(255,241,201,.9);backdrop-filter:blur(18px);box-shadow:0 18px 50px rgba(79,35,24,.1)}
+.brand{width:184px;flex:0 0 auto}.brand img{width:100%}
+.nav{margin-left:auto;display:flex;gap:22px;align-items:center}.nav a{font-size:14px;font-weight:900;letter-spacing:.02em;opacity:.78}.nav a:hover{opacity:1;color:var(--orange)}
+.header__phone{padding:14px 20px;border-radius:999px;background:var(--brown);color:var(--cream);font-weight:900;box-shadow:0 12px 24px rgba(79,35,24,.16)}
+.burger{display:none;width:46px;height:46px;border:0;border-radius:50%;background:var(--brown);padding:13px}.burger span{display:block;height:2px;margin:5px 0;background:var(--cream);border-radius:8px;transition:.2s ease}
+
+.hero,.section{width:min(1180px,calc(100% - 28px));margin:0 auto}.section{padding:82px 0}.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}.js .reveal.is-visible{opacity:1;transform:none}
+
+.hero{min-height:calc(100vh - 110px);display:grid;grid-template-columns:minmax(0,1fr) minmax(420px,1.02fr);gap:44px;align-items:center;padding:76px 0 64px}
+.eyebrow{display:inline-flex;width:max-content;max-width:100%;padding:9px 13px;border-radius:999px;background:rgba(235,143,80,.16);color:#d97834;font-size:12px;font-weight:900;letter-spacing:.09em;text-transform:uppercase}.eyebrow--cream{background:rgba(255,241,201,.18);color:var(--cream)}
+h1,h2,h3{margin:0;font-family:var(--font-head);line-height:.94;letter-spacing:-.04em;text-transform:uppercase}h1{margin-top:22px;font-size:clamp(64px,9vw,132px);color:var(--brown)}h1 span{color:var(--orange)}h2{font-size:clamp(42px,5.8vw,84px)}h3{font-size:clamp(28px,3vw,42px)}p{line-height:1.55}.hero__content p,.section-head p,.panel p,.order p{max-width:620px;font-size:18px;color:rgba(79,35,24,.74)}
+.hero__actions,.order__actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:16px 22px;border-radius:999px;font-weight:900;transition:transform .18s ease,box-shadow .18s ease,background .18s ease}.btn:hover{transform:translateY(-2px)}.btn--dark{background:var(--brown);color:var(--cream);box-shadow:0 14px 30px rgba(79,35,24,.2)}.btn--light{background:var(--cream);color:var(--brown);border:1px solid rgba(79,35,24,.16)}.btn--green{background:var(--green);color:var(--cream)}
+.hero__stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:36px;max-width:590px}.hero__stats div{padding:18px;border-radius:22px;background:rgba(255,255,255,.48);border:1px solid rgba(79,35,24,.09);box-shadow:var(--shadow-soft)}.hero__stats b{display:block;font-family:var(--font-head);font-size:42px;line-height:1;color:var(--orange)}.hero__stats span{font-size:13px;font-weight:900;color:rgba(79,35,24,.74)}
+.hero__visual{position:relative;min-height:560px}.hero__spiral{position:absolute;inset:0;margin:auto;width:112%;opacity:.95;filter:drop-shadow(0 22px 36px rgba(235,143,80,.18))}.hero__photo{position:absolute;right:0;top:50%;width:78%;transform:translateY(-50%) rotate(2deg);border:12px solid var(--cream);border-radius:42px;overflow:hidden;box-shadow:var(--shadow)}.hero__photo img{width:100%;height:420px;object-fit:cover}.hero__photo span{position:absolute;left:18px;bottom:18px;padding:10px 14px;border-radius:999px;background:var(--brown);color:var(--cream);font-weight:900;text-transform:uppercase;letter-spacing:.06em}.hero__mascot{position:absolute;left:4%;bottom:8%;width:170px;padding:12px;border-radius:38px;background:var(--cream);box-shadow:var(--shadow);transform:rotate(-8deg)}
+
+.marquee{overflow:hidden;padding:18px 0;background:var(--orange);color:var(--cream)}.marquee__track{display:flex;gap:34px;width:max-content;animation:marquee 22s linear infinite}.marquee span{font-family:var(--font-head);font-size:34px;text-transform:uppercase;letter-spacing:.03em}@keyframes marquee{to{transform:translateX(-50%)}}
+
+.split{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}.panel{position:relative;min-height:360px;padding:34px;border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow)}.panel--brown{background:var(--brown);color:var(--cream)}.panel--brown p{color:rgba(255,241,201,.86)}.panel--pattern{background:var(--green);color:var(--cream)}.panel--pattern:before{content:"";position:absolute;inset:0;background:url('assets/pattern-mascot.png') center/520px auto;opacity:.09}.panel--pattern>*{position:relative}.panel--pattern p{color:rgba(255,241,201,.86)}.mini-benefits{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.mini-benefits span{padding:10px 13px;border-radius:999px;background:rgba(255,241,201,.15);font-weight:900;color:var(--cream);border:1px solid rgba(255,241,201,.18)}
+
+.section-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,420px);align-items:end;gap:18px;margin-bottom:28px}.section-head h2{margin-top:12px}.section-head--menu{align-items:start}.hit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.hit-card,.hit-skeleton{position:relative;min-height:280px;padding:22px;border-radius:28px;background:var(--cream);border:1px solid rgba(79,35,24,.1);box-shadow:var(--shadow-soft);overflow:hidden}.hit-card:nth-child(2n){background:var(--brown);color:var(--cream)}.hit-card:nth-child(3n){background:var(--green);color:var(--cream)}.hit-card__label{display:inline-flex;padding:8px 11px;border-radius:999px;background:rgba(235,143,80,.16);color:#d97834;font-size:11px;font-weight:900;text-transform:uppercase}.hit-card:nth-child(2n) .hit-card__label,.hit-card:nth-child(3n) .hit-card__label{background:rgba(255,241,201,.18);color:var(--cream)}.hit-card h3{margin-top:18px;font-size:32px}.hit-card p{font-size:14px;color:inherit;opacity:.78}.hit-card img{position:absolute;right:-18px;bottom:-20px;width:128px;opacity:.17}.hit-card__meta{position:absolute;left:22px;right:22px;bottom:22px;display:flex;justify-content:space-between;align-items:center;font-weight:900}.hit-card__meta strong{font-size:24px;color:var(--orange)}.hit-card:nth-child(2n) .hit-card__meta strong,.hit-card:nth-child(3n) .hit-card__meta strong{color:var(--cream)}
+
+.menu-section{padding-top:72px}.menu-tools{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;margin-bottom:16px}.search-wrap input{width:100%;height:60px;padding:0 20px;border:2px solid rgba(79,35,24,.1);border-radius:999px;background:rgba(255,255,255,.68);color:var(--brown);outline:none}.search-wrap input:focus{border-color:var(--orange);box-shadow:0 0 0 5px rgba(235,143,80,.12)}.menu-count{height:60px;padding:0 18px;display:flex;align-items:center;border-radius:999px;background:var(--brown);color:var(--cream);font-weight:900;white-space:nowrap}.category-tabs{position:sticky;top:104px;z-index:20;display:flex;gap:8px;overflow-x:auto;padding:10px 0 16px;margin-bottom:14px;scrollbar-width:none}.category-tabs::-webkit-scrollbar{display:none}.tab{flex:0 0 auto;min-height:44px;padding:0 16px;border:0;border-radius:999px;background:rgba(255,255,255,.68);color:var(--brown);font-weight:900}.tab.is-active{background:var(--orange);color:var(--cream);box-shadow:0 12px 24px rgba(235,143,80,.2)}.menu-status{display:none;margin:16px 0;padding:18px;border-radius:18px;background:rgba(255,255,255,.6);font-weight:900}.menu-status.is-visible{display:block}.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.menu-card{opacity:0;transform:translateY(14px);animation:cardIn .45s ease forwards;display:flex;flex-direction:column;min-height:300px;padding:22px;border-radius:28px;background:rgba(255,255,255,.62);border:1px solid rgba(79,35,24,.1);box-shadow:var(--shadow-soft)}.menu-card__top{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:18px}.menu-card__top span,.menu-card__top em{font-size:11px;font-style:normal;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.menu-card__top span{color:#d97834}.menu-card__top em{padding:7px 10px;border-radius:999px;background:rgba(235,143,80,.13);color:var(--orange)}.menu-card h3{font-size:33px;line-height:.98;letter-spacing:-.035em}.menu-card p{font-size:14px;color:rgba(79,35,24,.7);margin:14px 0 20px}.menu-card__meta{margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:12px}.menu-card__meta span{font-weight:900;opacity:.68}.menu-card__meta strong{font-family:var(--font-head);font-size:34px;color:var(--orange)}.menu-card__order{margin-top:16px;min-height:48px;display:flex;align-items:center;justify-content:center;border-radius:999px;background:var(--brown);color:var(--cream);font-weight:900}.menu-card.is-hot{background:var(--brown);color:var(--cream)}.menu-card.is-hot p{color:rgba(255,241,201,.8)}.menu-card.is-hot .menu-card__top span{color:var(--beige)}.menu-card.is-hot .menu-card__top em{background:rgba(255,241,201,.16);color:var(--cream)}.menu-card.is-hot .menu-card__order{background:var(--cream);color:var(--brown)}@keyframes cardIn{to{opacity:1;transform:none}}
+
+.order{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:stretch}.order__content{padding:34px;border-radius:var(--radius-xl);background:var(--orange);box-shadow:var(--shadow)}.order__content p{color:rgba(79,35,24,.82)}.order__message{width:100%;min-height:118px;margin-top:18px;padding:16px;border:2px solid rgba(79,35,24,.15);border-radius:var(--radius-md);resize:vertical;background:rgba(255,241,201,.7);color:var(--brown);font-weight:700}.order__card{padding:34px;border-radius:var(--radius-xl);background:var(--brown);color:var(--cream);box-shadow:var(--shadow);display:grid;align-content:center;justify-items:center;text-align:left}.order__card img{max-width:230px;margin-bottom:24px}.order__card ol{margin:0;padding-left:22px;font-weight:900;font-size:20px;line-height:1.9}
+.contacts{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px}.contacts__info,.map-card{padding:34px;border-radius:var(--radius-xl);background:rgba(255,255,255,.5);box-shadow:var(--shadow)}.contacts dl{margin:24px 0 0}.contacts dl div{padding:16px 0;border-bottom:1px solid rgba(79,35,24,.12)}.contacts dt{font-weight:900;color:#d97834}.contacts dd{margin:6px 0 0;font-size:18px;font-weight:800}.map-card{position:relative;min-height:400px;background:var(--green);color:var(--cream);display:grid;place-items:center;text-align:center;overflow:hidden}.map-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.09}.map-card strong{position:relative;display:block;font-family:var(--font-head);font-size:54px;line-height:.95;text-transform:uppercase}.map-card span{position:relative;display:block;max-width:420px;margin:12px auto 0;color:rgba(255,241,201,.86);font-weight:800}
+.footer{width:min(1180px,calc(100% - 28px));margin:0 auto;padding:30px 0 44px;display:flex;align-items:center;justify-content:space-between;gap:18px;color:rgba(79,35,24,.72);font-weight:800}.footer img{width:150px}.footer a{font-weight:900;color:var(--orange)}
+.floating-order{display:none;position:fixed;left:14px;right:14px;bottom:14px;z-index:60;min-height:56px;align-items:center;justify-content:center;border-radius:999px;background:var(--brown);color:var(--cream);font-weight:900;box-shadow:0 14px 30px rgba(79,35,24,.22)}.scroll-top{position:fixed;right:18px;bottom:18px;z-index:70;width:54px;height:54px;border:0;border-radius:50%;background:var(--orange);color:var(--cream);font-size:24px;font-weight:900;box-shadow:0 14px 30px rgba(79,35,24,.22);opacity:0;pointer-events:none;transform:translateY(10px);transition:.22s ease}.scroll-top.is-visible{opacity:1;pointer-events:auto;transform:none}
+
+@media (max-width:1060px){
+  .hero{grid-template-columns:1fr;gap:22px;min-height:auto;padding-top:54px}.hero__content{max-width:760px}.hero__visual{min-height:500px;width:min(680px,100%);margin:0 auto}.hit-grid{grid-template-columns:repeat(2,1fr)}.menu-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:960px){
+  html{scroll-padding-top:92px}.header{top:10px;width:min(100% - 20px,1180px);min-height:66px;padding:10px 12px 10px 14px}.brand{width:148px}.nav,.header__phone{display:none}.burger{display:block;margin-left:auto}.header.is-open{border-radius:28px;align-items:flex-start;flex-wrap:wrap}.header.is-open .nav{display:grid;order:3;width:100%;padding:8px 4px 4px;gap:8px}.header.is-open .nav a{font-size:17px;padding:12px;border-radius:16px;background:rgba(255,255,255,.45)}.header.is-open .header__phone{display:inline-flex;order:4;margin:4px 0 4px 4px}.header.is-open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}.header.is-open .burger span:nth-child(2){opacity:0}.header.is-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}.split,.order,.contacts{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:18px}.category-tabs{top:82px}.footer{padding-bottom:88px}.floating-order{display:flex}.scroll-top{right:18px;bottom:84px}
+}
+@media (max-width:620px){
+  .hero,.section{width:min(100% - 20px,1180px)}.section{padding:62px 0}.hero{padding:42px 0 38px}h1{font-size:clamp(54px,16vw,76px);line-height:.91}h2{font-size:clamp(40px,13vw,60px);line-height:.94}h3{font-size:clamp(28px,9vw,38px)}.hero__content p,.section-head p,.panel p,.order p{font-size:16px}.hero__actions,.order__actions{display:grid;grid-template-columns:1fr}.btn{width:100%;min-height:56px}.hero__stats{grid-template-columns:1fr;gap:8px;margin-top:26px}.hero__stats div{display:flex;align-items:center;gap:14px;padding:14px 16px}.hero__stats b{font-size:34px}.hero__visual{min-height:360px}.hero__spiral{width:125%;left:-10%}.hero__photo{right:2%;width:88%;border-width:8px;border-radius:28px}.hero__photo img{height:270px}.hero__photo span{left:12px;bottom:12px;font-size:12px}.hero__mascot{left:0;bottom:4%;width:112px;border-radius:28px}.marquee{padding:12px 0}.marquee span{font-size:26px}.panel,.order__content,.order__card,.contacts__info,.map-card{padding:24px;border-radius:26px;min-height:auto}.split{gap:12px}.mini-benefits span{font-size:13px}.hit-grid,.menu-grid,.menu-tools{grid-template-columns:1fr}.hit-card{min-height:246px}.menu-tools{gap:10px}.menu-count{justify-content:center}.category-tabs{margin-left:-10px;margin-right:-10px;padding-left:10px;padding-right:10px}.menu-card{min-height:auto;padding:20px;border-radius:24px}.menu-card h3{font-size:30px}.menu-card__meta strong{font-size:30px}.order__card{justify-items:start}.order__card img{max-width:180px}.map-card{min-height:300px}.map-card strong{font-size:42px}.footer{display:block}.footer img{margin-bottom:12px}.footer p{font-size:14px}.floating-order{left:10px;right:10px;bottom:10px}.scroll-top{width:48px;height:48px;bottom:78px;right:12px}
+}
+@media (max-width:390px){
+  .brand{width:132px}.header{width:min(100% - 14px,1180px)}h1{font-size:50px}.hero__photo img{height:240px}.hero__mascot{width:100px}.menu-card h3{font-size:27px}.map-card strong{font-size:36px}
+}
+
+/* === Финальная полировка: аккуратные отступы и лаконичное меню === */
+:root{
+  --container:min(1180px,calc(100% - 32px));
+}
+
+.hero,.section{width:var(--container)}
+.section{padding:76px 0}
+.section + .section{padding-top:56px}
+
+.hero__content,
+.panel,
+.order__content,
+.order__card,
+.contacts__info,
+.map-card{
+  text-wrap:pretty;
+}
+
+.hero__content p,
+.section-head p,
+.panel p,
+.order p,
+.contacts dd,
+.map-card span{
+  max-width:620px;
+  line-height:1.62;
+  letter-spacing:-.01em;
+}
+
+.panel{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:22px;
+  padding:42px;
+}
+
+.panel h2,
+.panel h3{
+  max-width:760px;
+  margin-top:18px;
+}
+
+.panel p{
+  margin:18px 0 0;
+  max-width:690px;
+  font-size:18px;
+}
+
+.panel--pattern p,
+.panel--brown p{
+  color:rgba(255,241,201,.88);
+}
+
+.mini-benefits{
+  margin-top:26px;
+}
+
+.mini-benefits--contrast span{
+  background:rgba(255,241,201,.12);
+  border-color:rgba(255,241,201,.2);
+}
+
+.section-head{
+  margin-bottom:32px;
+  gap:32px;
+}
+
+.section-head h2{
+  max-width:790px;
+}
+
+.section-head p{
+  margin:0;
+  font-size:17px;
+}
+
+.section-head--menu{
+  padding:34px;
+  border-radius:32px;
+  background:rgba(255,255,255,.42);
+  border:1px solid rgba(79,35,24,.08);
+  box-shadow:0 18px 44px rgba(79,35,24,.08);
+}
+
+.section-head--menu h2{
+  font-size:clamp(58px,8vw,112px);
+  letter-spacing:-.055em;
+}
+
+.menu-tools{
+  margin-bottom:18px;
+}
+
+.search-wrap input{
+  height:58px;
+  padding:0 22px;
+  background:rgba(255,255,255,.78);
+}
+
+.category-tabs{
+  padding:8px 0 18px;
+  gap:10px;
+}
+
+.tab{
+  min-height:42px;
+  padding:0 18px;
+  border:1px solid rgba(79,35,24,.1);
+  box-shadow:0 8px 20px rgba(79,35,24,.05);
+}
+
+.menu-grid{
+  gap:16px;
+}
+
+.menu-card{
+  min-height:260px;
+  padding:24px;
+  border-radius:30px;
+  background:rgba(255,255,255,.72);
+}
+
+.menu-card__top{
+  margin-bottom:16px;
+  min-height:28px;
+}
+
+.menu-card__top span{
+  color:rgba(79,35,24,.56);
+}
+
+.menu-card__top em{
+  background:var(--orange);
+  color:var(--cream);
+}
+
+.menu-card h3{
+  font-size:clamp(26px,2.55vw,35px);
+  line-height:1;
+  letter-spacing:-.04em;
+}
+
+.menu-card p{
+  margin:12px 0 18px;
+  color:rgba(79,35,24,.66);
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+
+.menu-card__meta{
+  padding-top:14px;
+  border-top:1px solid rgba(79,35,24,.08);
+}
+
+.menu-card__order{
+  min-height:46px;
+  margin-top:14px;
+}
+
+.hit-card{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.hit-card h3{
+  margin-top:6px;
+}
+
+.order__content,
+.order__card,
+.contacts__info,
+.map-card{
+  padding:42px;
+}
+
+.order__message{
+  line-height:1.5;
+}
+
+@media (max-width:960px){
+  :root{--container:min(100% - 24px,1180px)}
+  .section{padding:64px 0}
+  .section + .section{padding-top:44px}
+  .section-head--menu{padding:28px}
+  .panel{padding:34px;min-height:320px}
+}
+
+@media (max-width:620px){
+  :root{--container:min(100% - 20px,1180px)}
+  html{scroll-padding-top:88px}
+  .hero{padding:34px 0 36px;gap:20px}
+  .section{padding:54px 0}
+  .section + .section{padding-top:34px}
+  .hero__content p,
+  .section-head p,
+  .panel p,
+  .order p,
+  .contacts dd,
+  .map-card span{
+    font-size:15.5px;
+    line-height:1.55;
+  }
+  .hero__actions{margin-top:22px}
+  .panel,
+  .order__content,
+  .order__card,
+  .contacts__info,
+  .map-card{
+    padding:24px;
+    border-radius:26px;
+  }
+  .panel h2,
+  .panel h3{margin-top:14px}
+  .panel p{margin-top:14px}
+  .section-head{margin-bottom:22px}
+  .section-head--menu{
+    padding:22px;
+    border-radius:26px;
+  }
+  .section-head--menu h2{
+    font-size:56px;
+  }
+  .section-head--menu p{
+    margin-top:12px;
+  }
+  .menu-section{padding-top:48px}
+  .menu-tools{
+    gap:8px;
+    margin-bottom:12px;
+  }
+  .search-wrap input,
+  .menu-count{
+    height:52px;
+  }
+  .category-tabs{
+    top:78px;
+    gap:8px;
+    padding-top:6px;
+    padding-bottom:12px;
+    margin-bottom:10px;
+  }
+  .tab{
+    min-height:38px;
+    padding:0 14px;
+    font-size:13px;
+  }
+  .menu-grid{gap:10px}
+  .menu-card{
+    padding:18px;
+    border-radius:22px;
+    min-height:auto;
+  }
+  .menu-card__top{
+    margin-bottom:12px;
+    min-height:22px;
+  }
+  .menu-card h3{
+    font-size:25px;
+    letter-spacing:-.035em;
+  }
+  .menu-card p{
+    margin:10px 0 14px;
+    font-size:13.5px;
+    -webkit-line-clamp:2;
+  }
+  .menu-card__meta{
+    align-items:center;
+    padding-top:12px;
+  }
+  .menu-card__meta strong{
+    font-size:28px;
+  }
+  .menu-card__order{
+    min-height:44px;
+  }
+}
+
+@media (max-width:390px){
+  .section-head--menu h2{font-size:50px}
+  .menu-card h3{font-size:23px}
+}
+
+</style>
+  <script>document.documentElement.classList.replace('no-js','js');</script>
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <header class="header" data-header>
+    <a class="brand" href="#top" aria-label="Топка — на главную">
+      <img src="assets/logo-horizontal.png" alt="Топка" />
+    </a>
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="#menu">Меню</a>
+      <a href="#hits">Хиты</a>
+      <a href="#how">Как заказать</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="header__phone" href="#order">Заказать</a>
+    <button class="burger" type="button" data-menu-toggle aria-label="Открыть меню">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main id="top">
+    <section class="hero reveal">
+      <div class="hero__content">
+        <span class="eyebrow">закусочная №1</span>
+        <h1>Горячая еда<br><span>из тандыра</span></h1>
+        <p>Шашлык, сувлаки, шаверма, комбо и закуски. Выбирайте блюдо в меню и сразу отправляйте заказ в Telegram, WhatsApp или звонком.</p>
+        <div class="hero__actions">
+          <a class="btn btn--dark" href="#menu">Смотреть меню</a>
+          <a class="btn btn--light" href="#order">Заказать сейчас</a>
+        </div>
+        <div class="hero__stats" aria-label="Преимущества">
+          <div><b>41</b><span>позиция в меню</span></div>
+          <div><b>7</b><span>категорий</span></div>
+          <div><b>1</b><span>клик до заявки</span></div>
+        </div>
+      </div>
+
+      <div class="hero__visual" aria-hidden="true">
+        <img class="hero__spiral" src="assets/spiral-orange.png" alt="" />
+        <div class="hero__photo">
+          <img src="assets/shashlik.webp" alt="" />
+          <span>из тандыра</span>
+        </div>
+        <div class="hero__mascot">
+          <img src="assets/logo-mark.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section class="marquee" aria-label="Фирменная строка">
+      <div class="marquee__track">
+        <span>топка</span><span>шаверма</span><span>шашлык</span><span>сувлаки</span><span>комбо</span><span>закуски</span>
+        <span>топка</span><span>шаверма</span><span>шашлык</span><span>сувлаки</span><span>комбо</span><span>закуски</span>
+      </div>
+    </section>
+
+    <section class="section split reveal" id="about">
+      <div class="panel panel--brown">
+        <span class="eyebrow eyebrow--cream">быстро и сытно</span>
+        <h2>Горячее мясо, шаверма и комбо без лишних поисков</h2>
+        <p>На сайте сразу видно, что есть в меню: состав, вес и цена. Гость выбирает блюдо, нажимает «Заказать» и получает готовый текст заявки.</p>
+        <div class="mini-benefits mini-benefits--contrast">
+          <span>цены на виду</span>
+          <span>заказ в 1 клик</span>
+          <span>удобно с телефона</span>
+        </div>
+      </div>
+      <div class="panel panel--pattern">
+        <span class="eyebrow eyebrow--cream">что заказать</span>
+        <h3>Перекус, обед или набор на компанию</h3>
+        <p>Сувлаки и шаверма — когда нужно быстро. Шашлык из тандыра — когда хочется горячего мяса. Комбо — когда берёте домой или на компанию.</p>
+        <div class="mini-benefits">
+          <span>Шаверма</span>
+          <span>Шашлык</span>
+          <span>Комбо</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hits reveal" id="hits">
+      <div class="section-head">
+        <span class="eyebrow">популярное</span>
+        <h2>Хиты Топки</h2>
+        <p>Самое понятное для первого заказа: мясо из тандыра, шаверма и большие наборы.</p>
+      </div>
+      <div class="hit-grid" data-hit-grid>
+        <div class="hit-skeleton">Загружаем хиты меню…</div>
+      </div>
+    </section>
+
+    <section class="section menu-section reveal" id="menu">
+      <div class="section-head section-head--menu">
+        <div>
+          <span class="eyebrow">меню</span>
+          <h2>Меню</h2>
+        </div>
+        <p>Шашлык из тандыра, шаверма, комбо, закуски, салаты и десерты. Выберите категорию или найдите блюдо по названию.</p>
+      </div>
+
+      <div class="menu-tools">
+        <div class="search-wrap">
+          <input type="search" data-menu-search placeholder="Поиск по меню" autocomplete="off" />
+        </div>
+        <div class="menu-count"><span data-menu-count>0</span> блюд</div>
+      </div>
+
+      <div class="category-tabs" data-category-tabs aria-label="Категории меню">
+        <button class="tab is-active" type="button" data-filter="all">Всё меню</button>
+      </div>
+
+      <div class="menu-status" data-menu-status>Меню загружается…</div>
+      <div class="menu-grid" data-menu-grid></div>
+    </section>
+
+    <section class="section order reveal" id="order">
+      <div class="order__content">
+        <span class="eyebrow">заказ</span>
+        <h2>Заказать просто</h2>
+        <p data-order-text>Нажмите «Заказать» на карточке — текст заявки появится здесь. Останется отправить его в удобный канал связи.</p>
+        <textarea class="order__message" data-order-message readonly>Здравствуйте! Хочу сделать заказ в Топке.</textarea>
+        <div class="order__actions">
+          <a class="btn btn--dark" data-tg-link href="#contacts">Telegram</a>
+          <a class="btn btn--green" data-wa-link href="#contacts">WhatsApp</a>
+          <a class="btn btn--light" href="#contacts">Позвонить</a>
+        </div>
+      </div>
+      <div class="order__card" id="how">
+        <img src="assets/logo-vertical.png" alt="Топка" />
+        <ol>
+          <li>Открываете меню</li>
+          <li>Выбираете блюдо</li>
+          <li>Отправляете заявку</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section contacts reveal" id="contacts">
+      <div class="contacts__info">
+        <span class="eyebrow">контакты</span>
+        <h2>Заказ и самовывоз</h2>
+        <dl>
+          <div><dt>Каналы связи</dt><dd>Звонок, Telegram или WhatsApp</dd></div>
+          <div><dt>Формат</dt><dd>Заказ заранее и самовывоз</dd></div>
+          <div><dt>В меню</dt><dd>Шашлык, шаверма, комбо, закуски, салаты и десерты</dd></div>
+          <div><dt>Оплата</dt><dd>При подтверждении заказа</dd></div>
+        </dl>
+      </div>
+      <div class="map-card">
+        <img src="assets/pattern-word.png" alt="" aria-hidden="true" />
+        <div>
+          <strong>Закажите заранее</strong>
+          <span>Выберите блюда на сайте, отправьте заявку и заберите горячий заказ удобным способом.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img src="assets/logo-horizontal.png" alt="Топка" />
+    <p>© 2026 Топка. Горячая еда на лету.</p>
+    <a href="#top">Наверх</a>
+  </footer>
+
+  <a class="floating-order" href="#menu">Смотреть меню</a>
+  <button class="scroll-top" type="button" data-scroll-top aria-label="Наверх">↑</button>
+
+  <script>
+// Порядок категорий и подписи для отрисовки меню через JS
+window.TOPKA_CATEGORIES = [
+  { id: 'all', label: 'Все' },
+  { id: 'tandoor', label: 'Тандыр' },
+  { id: 'combo', label: 'Комбо' },
+  { id: 'shawarma', label: 'Шаверма' },
+  { id: 'snacks', label: 'Закуски' },
+  { id: 'salads', label: 'Салаты' },
+  { id: 'desserts', label: 'Десерты' },
+  { id: 'extras', label: 'Допы' }
+];
+
+// Меню вынесено отдельно, чтобы быстро менять цены, вес, состав и добавлять позиции.
+// Данные обновлены по актуальному PDF-меню: тандыр, комбо, шаверма, закуски, салаты, десерты и допы.
+window.TOPKA_MENU = [
+  {
+    "title": "Сувлак куриный 1 шт",
+    "category": "tandoor",
+    "categoryLabel": "Из тандыра",
+    "weight": "100 г",
+    "price": "210 ₽",
+    "description": "Куриный сувлак из тандыра. Удобный горячий перекус или дополнение к заказу.",
+    "tag": "сувлак"
+  },
+  {
+    "title": "Сувлак свиной 1 шт",
+    "category": "tandoor",
+    "categoryLabel": "Из тандыра",
+    "weight": "100 г",
+    "price": "230 ₽",
+    "description": "Свиной сувлак из тандыра — горячий, сытный и простой формат на каждый день.",
+    "tag": "сувлак"
+  },
+  {
+    "title": "Шашлык в тандыре из свинины",
+    "category": "tandoor",
+    "categoryLabel": "Из тандыра",
+    "weight": "100/20/10 г",
+    "price": "230 ₽",
+    "description": "Фирменный шашлык из шейки молочного поросёнка, приготовленный в тандыре.",
+    "tag": "шашлык"
+  },
+  {
+    "title": "Шашлык в тандыре из филе грудки цыплёнка",
+    "category": "tandoor",
+    "categoryLabel": "Из тандыра",
+    "weight": "100/20/10 г",
+    "price": "210 ₽",
+    "description": "Фирменный шашлык из филе грудки кукурузного цыплёнка, приготовленного в тандыре.",
+    "tag": "шашлык"
+  },
+  {
+    "title": "Шашлык в тандыре из филе бедра цыплёнка",
+    "category": "tandoor",
+    "categoryLabel": "Из тандыра",
+    "weight": "100/20/10 г",
+    "price": "210 ₽",
+    "description": "Фирменный шашлык из филе бедра кукурузного цыплёнка, приготовленного в тандыре.",
+    "tag": "шашлык"
+  },
+  {
+    "title": "Мини комбо куриный",
+    "category": "combo",
+    "categoryLabel": "Комбо",
+    "weight": "250 г",
+    "price": "350 ₽",
+    "description": "На пите с салатом коул слоу, маринованным луком и соусом.",
+    "tag": "мини"
+  },
+  {
+    "title": "Мини комбо свиной",
+    "category": "combo",
+    "categoryLabel": "Комбо",
+    "weight": "250 г",
+    "price": "390 ₽",
+    "description": "На пите с салатом коул слоу, маринованным луком и соусом.",
+    "tag": "мини"
+  },
+  {
+    "title": "Комбо Пикник куриный",
+    "category": "combo",
+    "categoryLabel": "Комбо",
+    "weight": "1210 г",
+    "price": "1450 ₽",
+    "description": "Сувлаки куриные, коул слоу, ачучук, картофельные дольки, малиновый лук, соус, пита.",
+    "tag": "для компании"
+  },
+  {
+    "title": "Комбо Пикник свиной",
+    "category": "combo",
+    "categoryLabel": "Комбо",
+    "weight": "1210 г",
+    "price": "1550 ₽",
+    "description": "Сувлаки свиные, коул слоу, ачучук, картофельные дольки, малиновый лук, соус, пита.",
+    "tag": "для компании"
+  },
+  {
+    "title": "Комбо Поляна куриный",
+    "category": "combo",
+    "categoryLabel": "Комбо",
+    "weight": "1880 г",
+    "price": "2000 ₽",
+    "description": "Шашлык куриный, коул слоу, картофельные дольки, огурец, помидор, маринованный лук, соус, лаваш.",
+    "tag": "большой набор"
+  },
+  {
+    "title": "Комбо Поляна свиной",
+    "category": "combo",
+    "categoryLabel": "Комбо",
+    "weight": "1880 г",
+    "price": "2150 ₽",
+    "description": "Шашлык свиной, коул слоу, картофельные дольки, огурец, помидор, маринованный лук, соус, лаваш.",
+    "tag": "большой набор"
+  },
+  {
+    "title": "Шаверма с цыплёнком S",
+    "category": "shawarma",
+    "categoryLabel": "Шаверма",
+    "weight": "300 г",
+    "price": "330 ₽",
+    "description": "В лаваше с салатом коул слоу, помидорами, огурцами и чесночным соусом.",
+    "tag": "лаваш"
+  },
+  {
+    "title": "Шаверма с цыплёнком M",
+    "category": "shawarma",
+    "categoryLabel": "Шаверма",
+    "weight": "400 г",
+    "price": "360 ₽",
+    "description": "В лаваше с салатом коул слоу, помидорами, огурцами и чесночным соусом.",
+    "tag": "лаваш"
+  },
+  {
+    "title": "Шаверма с цыплёнком L",
+    "category": "shawarma",
+    "categoryLabel": "Шаверма",
+    "weight": "500 г",
+    "price": "400 ₽",
+    "description": "В лаваше с салатом коул слоу, помидорами, огурцами и чесночным соусом.",
+    "tag": "лаваш"
+  },
+  {
+    "title": "Шаверма в пите",
+    "category": "shawarma",
+    "categoryLabel": "Шаверма",
+    "weight": "220 г",
+    "price": "360 ₽",
+    "description": "С цыплёнком, салатом коул слоу, помидорами, огурцами и соусом.",
+    "tag": "пита"
+  },
+  {
+    "title": "Снекасти с цыплёнком, картофелем фри и соусом",
+    "category": "shawarma",
+    "categoryLabel": "Шаверма",
+    "weight": "500 г",
+    "price": "620 ₽",
+    "description": "Пита 2 шт., помидоры, огурцы, сыр, соус, картофель фри.",
+    "tag": "сытно"
+  },
+  {
+    "title": "Порция",
+    "category": "shawarma",
+    "categoryLabel": "Шаверма",
+    "weight": "350 г",
+    "price": "420 ₽",
+    "description": "Пита, цыплёнок, салат коул слоу, помидоры, огурцы, соус, картофель фри.",
+    "tag": "боул"
+  },
+  {
+    "title": "Сырные палочки / соус",
+    "category": "snacks",
+    "categoryLabel": "Закуски",
+    "weight": "100/30 г",
+    "price": "250 ₽",
+    "description": "Горячие сырные палочки с соусом.",
+    "tag": "сыр"
+  },
+  {
+    "title": "Наггетсы / соус",
+    "category": "snacks",
+    "categoryLabel": "Закуски",
+    "weight": "85/30 г",
+    "price": "230 ₽",
+    "description": "Наггетсы с соусом — быстрый перекус к заказу.",
+    "tag": "фри"
+  },
+  {
+    "title": "Кольца кальмара / соус",
+    "category": "snacks",
+    "categoryLabel": "Закуски",
+    "weight": "130/30 г",
+    "price": "310 ₽",
+    "description": "Кольца кальмара во фритюре с соусом.",
+    "tag": "фри"
+  },
+  {
+    "title": "Креветки фри / соус",
+    "category": "snacks",
+    "categoryLabel": "Закуски",
+    "weight": "45/30 г",
+    "price": "200 ₽",
+    "description": "Креветки фри с соусом.",
+    "tag": "фри"
+  },
+  {
+    "title": "Луковые кольца / соус",
+    "category": "snacks",
+    "categoryLabel": "Закуски",
+    "weight": "100/30 г",
+    "price": "200 ₽",
+    "description": "Хрустящие луковые кольца с соусом.",
+    "tag": "фри"
+  },
+  {
+    "title": "Наггетсы комбо фри",
+    "category": "snacks",
+    "categoryLabel": "Закуски",
+    "weight": "100/85/30 г",
+    "price": "340 ₽",
+    "description": "Картофель фри, наггетсы и соус.",
+    "tag": "комбо"
+  },
+  {
+    "title": "Кольца кальмара комбо фри",
+    "category": "snacks",
+    "categoryLabel": "Закуски",
+    "weight": "100/100/30 г",
+    "price": "380 ₽",
+    "description": "Картофель фри, кольца кальмара и соус.",
+    "tag": "комбо"
+  },
+  {
+    "title": "Креветки комбо фри",
+    "category": "snacks",
+    "categoryLabel": "Закуски",
+    "weight": "100/45/30 г",
+    "price": "370 ₽",
+    "description": "Картофель фри, креветки фри и соус.",
+    "tag": "комбо"
+  },
+  {
+    "title": "Картофель фри / соус",
+    "category": "snacks",
+    "categoryLabel": "Закуски",
+    "weight": "100/30/10 г",
+    "price": "170 ₽",
+    "description": "С сыром, фирменным миксом специй и соусом.",
+    "tag": "картофель"
+  },
+  {
+    "title": "Батат фри / соус",
+    "category": "snacks",
+    "categoryLabel": "Закуски",
+    "weight": "120/30/10 г",
+    "price": "220 ₽",
+    "description": "С сыром, фирменным миксом специй и соусом.",
+    "tag": "батат"
+  },
+  {
+    "title": "Картофельные дольки",
+    "category": "snacks",
+    "categoryLabel": "Закуски",
+    "weight": "150 г",
+    "price": "150 ₽",
+    "description": "Горячие картофельные дольки отдельно или к мясу.",
+    "tag": "гарнир"
+  },
+  {
+    "title": "Салат коул слоу",
+    "category": "salads",
+    "categoryLabel": "Салаты",
+    "weight": "130 г",
+    "price": "130 ₽",
+    "description": "Классический салат из капусты с морковью, заправкой из соуса провансаль.",
+    "tag": "салат"
+  },
+  {
+    "title": "Шеф салат",
+    "category": "salads",
+    "categoryLabel": "Салаты",
+    "weight": "210 г",
+    "price": "280 ₽",
+    "description": "Цыплёнок, коул слоу, огурцы, помидор, лук, соус.",
+    "tag": "салат"
+  },
+  {
+    "title": "Салат ачучук из томатов с луком",
+    "category": "salads",
+    "categoryLabel": "Салаты",
+    "weight": "130 г",
+    "price": "250 ₽",
+    "description": "Салат из узбекских розовых томатов с маринованным луком и заправкой из оливкового масла.",
+    "tag": "ачучук"
+  },
+  {
+    "title": "Греческий хворост с корицей",
+    "category": "desserts",
+    "categoryLabel": "Десерты",
+    "weight": "90 г",
+    "price": "180 ₽",
+    "description": "Завитушки из заварного теста, обжаренного во фритюре до золотистой корочки.",
+    "tag": "сладкое"
+  },
+  {
+    "title": "Греческий хворост с сахарной пудрой",
+    "category": "desserts",
+    "categoryLabel": "Десерты",
+    "weight": "90 г",
+    "price": "180 ₽",
+    "description": "Завитушки из заварного теста, обжаренного во фритюре до золотистой корочки.",
+    "tag": "сладкое"
+  },
+  {
+    "title": "Греческий хворост с мороженым",
+    "category": "desserts",
+    "categoryLabel": "Десерты",
+    "weight": "90/30 г",
+    "price": "200 ₽",
+    "description": "Хворост из заварного теста с порцией мороженого.",
+    "tag": "с мороженым"
+  },
+  {
+    "title": "Мороженое",
+    "category": "desserts",
+    "categoryLabel": "Десерты",
+    "weight": "30 г",
+    "price": "40 ₽",
+    "description": "Порция мороженого как десерт или дополнение к хворосту.",
+    "tag": "доп"
+  },
+  {
+    "title": "Топпинг",
+    "category": "desserts",
+    "categoryLabel": "Десерты",
+    "weight": "30 г",
+    "price": "40 ₽",
+    "description": "Сладкий топпинг к десертам.",
+    "tag": "доп"
+  },
+  {
+    "title": "Сыр",
+    "category": "extras",
+    "categoryLabel": "Допы",
+    "weight": "10 г",
+    "price": "40 ₽",
+    "description": "Дополнительная порция сыра к блюду.",
+    "tag": "доп"
+  },
+  {
+    "title": "Соус 30 г",
+    "category": "extras",
+    "categoryLabel": "Допы",
+    "weight": "30 г",
+    "price": "40 ₽",
+    "description": "Дополнительный соус к заказу.",
+    "tag": "соус"
+  },
+  {
+    "title": "Соус 100 г",
+    "category": "extras",
+    "categoryLabel": "Допы",
+    "weight": "100 г",
+    "price": "100 ₽",
+    "description": "Большая порция соуса к заказу.",
+    "tag": "соус"
+  },
+  {
+    "title": "Халапеньо",
+    "category": "extras",
+    "categoryLabel": "Допы",
+    "weight": "10 г",
+    "price": "30 ₽",
+    "description": "Острый халапеньо к блюду.",
+    "tag": "остро"
+  },
+  {
+    "title": "Замена картофель фри на батат фри",
+    "category": "extras",
+    "categoryLabel": "Допы",
+    "weight": "опция",
+    "price": "50 ₽",
+    "description": "Замена стандартного картофеля фри на батат фри.",
+    "tag": "замена"
+  }
+];
+
+  </script>
+  <script>
+(() => {
+  const categories = window.TOPKA_CATEGORIES || [
+    { id: 'all', label: 'Всё меню' },
+    { id: 'tandoor', label: 'Из тандыра' },
+    { id: 'combo', label: 'Комбо' },
+    { id: 'shawarma', label: 'Шаверма' },
+    { id: 'snacks', label: 'Закуски' },
+    { id: 'salads', label: 'Салаты' },
+    { id: 'desserts', label: 'Десерты' },
+    { id: 'extras', label: 'Допы' }
+  ];
+  const menu = Array.isArray(window.TOPKA_MENU) ? window.TOPKA_MENU : [];
+  const hotTitles = new Set([
+    'Комбо поляна куриный',
+    'Комбо поляна свиной',
+    'Комбо пикник куриный',
+    'Шаверма с цыплёнком',
+    'Шашлык в тандыре из свинины',
+    'Сувлак куриный 1 шт'
+  ]);
+
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+
+  function escapeHtml(value) {
+    return String(value ?? '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  function normalize(value) {
+    return String(value ?? '').toLowerCase().replaceAll('ё', 'е').trim();
+  }
+
+  function cardTemplate(item, index) {
+    const title = escapeHtml(item.title);
+    const isHot = hotTitles.has(item.title);
+    return `
+      <article class="menu-card ${isHot ? 'is-hot' : ''}" data-category="${escapeHtml(item.category)}" style="animation-delay:${Math.min(index * 25, 260)}ms">
+        <div class="menu-card__top">
+          <span>${escapeHtml(item.categoryLabel)}</span>
+          ${isHot ? '<em>хит</em>' : ''}
+        </div>
+        <h3>${title}</h3>
+        <p>${escapeHtml(item.description)}</p>
+        <div class="menu-card__meta">
+          <span>${escapeHtml(item.weight)}</span>
+          <strong>${escapeHtml(item.price)}</strong>
+        </div>
+        <a class="menu-card__order" href="#order" data-order-title="${title}" data-order-price="${escapeHtml(item.price)}">Заказать</a>
+      </article>
+    `;
+  }
+
+  function hitTemplate(item) {
+    return `
+      <article class="hit-card">
+        <span class="hit-card__label">${escapeHtml(item.categoryLabel)}</span>
+        <h3>${escapeHtml(item.title)}</h3>
+        <p>${escapeHtml(item.description)}</p>
+        <img src="assets/logo-mark.png" alt="" aria-hidden="true" />
+        <div class="hit-card__meta"><strong>${escapeHtml(item.price)}</strong><span>${escapeHtml(item.weight)}</span></div>
+      </article>
+    `;
+  }
+
+  function buildTabs() {
+    const tabs = $('[data-category-tabs]');
+    if (!tabs) return;
+    tabs.innerHTML = categories.map((category, index) => `
+      <button class="tab ${index === 0 ? 'is-active' : ''}" type="button" data-filter="${escapeHtml(category.id)}">${escapeHtml(category.label)}</button>
+    `).join('');
+  }
+
+  let activeFilter = 'all';
+  let searchQuery = '';
+
+  function getFilteredItems() {
+    return menu.filter((item) => {
+      const matchesCategory = activeFilter === 'all' || item.category === activeFilter;
+      const haystack = normalize([item.title, item.description, item.categoryLabel, item.tag].join(' '));
+      const matchesSearch = !searchQuery || haystack.includes(normalize(searchQuery));
+      return matchesCategory && matchesSearch;
+    });
+  }
+
+  function renderMenu() {
+    const grid = $('[data-menu-grid]');
+    const count = $('[data-menu-count]');
+    const status = $('[data-menu-status]');
+    if (!grid) return;
+
+    if (!menu.length) {
+      grid.innerHTML = '';
+      status?.classList.add('is-visible');
+      if (status) status.textContent = 'Меню временно недоступно. Обновите страницу или попробуйте позже.';
+      if (count) count.textContent = '0';
+      return;
+    }
+
+    const items = getFilteredItems();
+    if (count) count.textContent = String(items.length);
+    if (status) {
+      status.classList.toggle('is-visible', !items.length);
+      status.textContent = !items.length ? 'По этому запросу ничего не найдено. Попробуйте другую категорию или поиск.' : '';
+    }
+    grid.innerHTML = items.map(cardTemplate).join('');
+  }
+
+  function renderHits() {
+    const grid = $('[data-hit-grid]');
+    if (!grid || !menu.length) return;
+    const hits = menu.filter(item => hotTitles.has(item.title)).slice(0, 4);
+    grid.innerHTML = hits.map(hitTemplate).join('');
+  }
+
+  function bindEvents() {
+    const header = $('[data-header]');
+    const scrollTopButton = $('[data-scroll-top]');
+
+    $('[data-menu-toggle]')?.addEventListener('click', () => header?.classList.toggle('is-open'));
+
+    document.addEventListener('click', (event) => {
+      const navLink = event.target.closest('.nav a');
+      if (navLink) header?.classList.remove('is-open');
+
+      const tab = event.target.closest('[data-filter]');
+      if (tab) {
+        activeFilter = tab.dataset.filter || 'all';
+        $$('[data-filter]').forEach(button => button.classList.remove('is-active'));
+        tab.classList.add('is-active');
+        renderMenu();
+      }
+
+      const order = event.target.closest('[data-order-title]');
+      if (order) {
+        const title = order.dataset.orderTitle;
+        const price = order.dataset.orderPrice;
+        const message = `Здравствуйте! Хочу заказать: ${title} — ${price}.`;
+        const text = $('[data-order-text]');
+        const area = $('[data-order-message]');
+        const wa = $('[data-wa-link]');
+        const tg = $('[data-tg-link]');
+        if (text) text.innerHTML = `Вы выбрали: <b>${escapeHtml(title)}</b>. Текст заявки готов.`;
+        if (area) area.value = message;
+        if (wa) wa.href = '#contacts';
+        if (tg) tg.href = '#contacts';
+      }
+    });
+
+    $('[data-menu-search]')?.addEventListener('input', (event) => {
+      searchQuery = event.target.value;
+      renderMenu();
+    });
+
+    scrollTopButton?.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    window.addEventListener('scroll', () => {
+      scrollTopButton?.classList.toggle('is-visible', window.scrollY > 520);
+    }, { passive: true });
+  }
+
+  function revealOnScroll() {
+    const items = $$('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      items.forEach(item => item.classList.add('is-visible'));
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    items.forEach(item => observer.observe(item));
+  }
+
+  function init() {
+    buildTabs();
+    renderHits();
+    renderMenu();
+    bindEvents();
+    revealOnScroll();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
+  </script>
+</body>
+</html>
