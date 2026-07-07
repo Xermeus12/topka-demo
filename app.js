@@ -1,7 +1,7 @@
 (() => {
   const categories = window.TOPKA_CATEGORIES || [
-    { id: 'all', label: 'Всё меню' },
-    { id: 'tandoor', label: 'Из тандыра' },
+    { id: 'all', label: 'Все' },
+    { id: 'tandoor', label: 'Тандыр' },
     { id: 'combo', label: 'Комбо' },
     { id: 'shawarma', label: 'Шаверма' },
     { id: 'snacks', label: 'Закуски' },
@@ -11,10 +11,10 @@
   ];
   const menu = Array.isArray(window.TOPKA_MENU) ? window.TOPKA_MENU : [];
   const hotTitles = new Set([
-    'Комбо поляна куриный',
-    'Комбо поляна свиной',
-    'Комбо пикник куриный',
-    'Шаверма с цыплёнком',
+    'Комбо Поляна куриный',
+    'Комбо Поляна свиной',
+    'Комбо Пикник куриный',
+    'Шаверма с цыплёнком M',
     'Шашлык в тандыре из свинины',
     'Сувлак куриный 1 шт'
   ]);
@@ -39,7 +39,7 @@
     const title = escapeHtml(item.title);
     const isHot = hotTitles.has(item.title);
     return `
-      <article class="menu-card ${isHot ? 'is-hot' : ''}" data-category="${escapeHtml(item.category)}" style="animation-delay:${Math.min(index * 25, 260)}ms">
+      <article class="menu-card ${isHot ? 'is-hot' : ''}" data-category="${escapeHtml(item.category)}" style="animation-delay:${Math.min(index * 18, 180)}ms">
         <div class="menu-card__top">
           <span>${escapeHtml(item.categoryLabel)}</span>
           ${isHot ? '<em>хит</em>' : ''}
@@ -105,7 +105,7 @@
     if (count) count.textContent = String(items.length);
     if (status) {
       status.classList.toggle('is-visible', !items.length);
-      status.textContent = !items.length ? 'По этому запросу ничего не найдено. Попробуйте другую категорию или поиск.' : '';
+      status.textContent = !items.length ? 'Ничего не найдено. Попробуйте другую категорию или поиск.' : '';
     }
     grid.innerHTML = items.map(cardTemplate).join('');
   }
@@ -148,6 +148,7 @@
         if (area) area.value = message;
         if (wa) wa.href = '#contacts';
         if (tg) tg.href = '#contacts';
+        header?.classList.remove('is-open');
       }
     });
 
@@ -178,7 +179,7 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.08 });
     items.forEach(item => observer.observe(item));
   }
 
