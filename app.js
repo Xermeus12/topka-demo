@@ -121,11 +121,11 @@
     const header = $('[data-header]');
     const scrollTopButton = $('[data-scroll-top]');
 
-    $('[data-menu-toggle]')?.addEventListener('click', () => header?.classList.toggle('is-open'));
+    $('[data-menu-toggle]')?.addEventListener('click', () => { header?.classList.toggle('is-open'); syncStickyOffsets(); });
 
     document.addEventListener('click', (event) => {
       const navLink = event.target.closest('.nav a');
-      if (navLink) header?.classList.remove('is-open');
+      if (navLink) { header?.classList.remove('is-open'); syncStickyOffsets(); }
 
       const tab = event.target.closest('[data-filter]');
       if (tab) {
@@ -149,6 +149,7 @@
         if (wa) wa.href = '#contacts';
         if (tg) tg.href = '#contacts';
         header?.classList.remove('is-open');
+        syncStickyOffsets();
       }
     });
 
@@ -164,6 +165,14 @@
     window.addEventListener('scroll', () => {
       scrollTopButton?.classList.toggle('is-visible', window.scrollY > 520);
     }, { passive: true });
+  }
+
+
+  function syncStickyOffsets() {
+    const header = $('[data-header]');
+    if (!header) return;
+    const height = Math.ceil(header.getBoundingClientRect().height);
+    document.documentElement.style.setProperty('--header-height', `${height}px`);
   }
 
   function revealOnScroll() {
@@ -188,6 +197,9 @@
     renderHits();
     renderMenu();
     bindEvents();
+    syncStickyOffsets();
+    window.addEventListener('resize', syncStickyOffsets);
+    window.addEventListener('orientationchange', syncStickyOffsets);
     revealOnScroll();
   }
 

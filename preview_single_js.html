@@ -100,10 +100,12 @@
   --font-head:'Phenomena','Arial Narrow',Arial,sans-serif;
   --font-body:'Arimo',Arial,sans-serif;
   --container:min(1180px,calc(100% - 28px));
+  --header-height:74px;
 }
 
+
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:94px;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-height) + 26px);-webkit-text-size-adjust:100%}
 body{margin:0;min-width:320px;font-family:var(--font-body);color:var(--brown);background:var(--cream);overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
@@ -117,7 +119,7 @@ button{cursor:pointer}
 *::-webkit-scrollbar{height:8px;width:8px}
 *::-webkit-scrollbar-thumb{background:rgba(91,36,23,.22);border-radius:999px}
 
-.header,.hero,.section{width:var(--container);margin:0 auto}
+.header,.hero,.section,.marquee{width:var(--container);margin:0 auto}
 .section{padding:56px 0}.section + .section{padding-top:34px}
 .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}.js .reveal.is-visible{opacity:1;transform:none}
 
@@ -130,7 +132,7 @@ h2{font-size:clamp(38px,12vw,62px)}
 h3{font-size:clamp(26px,8vw,38px)}
 p{line-height:1.58;margin:0}.hero__lead,.section-head p,.panel p,.order p,.contacts dd{font-size:16px;color:rgba(91,36,23,.78)}
 
-.header{position:sticky;top:10px;z-index:60;min-height:68px;margin-top:12px;padding:10px 12px 10px 16px;display:flex;align-items:center;gap:14px;border:1px solid rgba(91,36,23,.12);border-radius:999px;background:rgba(255,247,224,.92);backdrop-filter:blur(18px);box-shadow:0 16px 44px rgba(79,35,24,.10)}
+.header{position:sticky;top:10px;z-index:70;min-height:68px;margin-top:12px;padding:10px 12px 10px 16px;display:flex;align-items:center;gap:14px;border:1px solid rgba(91,36,23,.12);border-radius:999px;background:rgba(255,247,224,.96);backdrop-filter:blur(18px);box-shadow:0 16px 44px rgba(79,35,24,.10)}
 .brand{width:144px;flex:0 0 auto}.brand img{width:100%}
 .nav,.header__cta{display:none}
 .burger{display:block;width:46px;height:46px;margin-left:auto;border:0;border-radius:50%;background:var(--brown);padding:13px}.burger span{display:block;height:2px;margin:5px 0;background:var(--cream);border-radius:8px;transition:.2s ease}
@@ -142,21 +144,21 @@ p{line-height:1.58;margin:0}.hero__lead,.section-head p,.panel p,.order p,.conta
 .hero__actions{display:grid;grid-template-columns:1fr;gap:10px}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:15px 18px;border-radius:999px;font-weight:900;text-align:center;transition:transform .18s ease,box-shadow .18s ease,background .18s ease}.btn:hover{transform:translateY(-2px)}
 .btn--dark{background:var(--brown);color:var(--cream);box-shadow:0 12px 26px rgba(79,35,24,.18)}.btn--light{background:var(--cream-2);color:var(--brown);border:1px solid rgba(91,36,23,.16)}.btn--green{background:var(--green);color:var(--cream)}
-.hero__list{display:grid;gap:10px;padding:0;margin:0;list-style:none}.hero__list li{position:relative;padding-left:18px;font-size:15px;color:rgba(91,36,23,.8)}.hero__list li:before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--orange)}
-.hero__stats{display:grid;grid-template-columns:1fr;gap:10px}.hero__stats div{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:22px;background:rgba(255,255,255,.5);border:1px solid rgba(91,36,23,.08);box-shadow:var(--shadow-soft)}.hero__stats b{display:block;font-family:var(--font-head);font-size:34px;line-height:1;color:var(--orange)}.hero__stats span{font-size:13px;font-weight:900;color:rgba(91,36,23,.74)}
+.hero__list{display:grid;gap:10px;padding:0;margin:0;list-style:none;max-width:520px}.hero__list li{position:relative;padding-left:18px;font-size:15px;color:rgba(91,36,23,.8)}.hero__list li:before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--orange)}
+.hero__stats{display:grid;grid-template-columns:1fr;gap:10px;max-width:760px}.hero__stats div{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:22px;background:rgba(255,255,255,.5);border:1px solid rgba(91,36,23,.08);box-shadow:var(--shadow-soft)}.hero__stats b{display:block;font-family:var(--font-head);font-size:34px;line-height:1;color:var(--orange)}.hero__stats span{font-size:13px;font-weight:900;color:rgba(91,36,23,.74)}
 
-.hero__media{position:relative;display:grid;gap:12px}
+.hero__media{position:relative;display:grid;gap:12px;align-self:stretch}
 .hero__photo-card{position:relative;overflow:hidden;border-radius:32px;box-shadow:var(--shadow);background:#d8c29f}
 .hero__photo-card img{width:100%;height:320px;object-fit:cover}
 .hero__photo-badge{position:absolute;left:14px;bottom:14px;padding:10px 14px;border-radius:999px;background:rgba(91,36,23,.95);color:var(--cream);font-size:12px;font-weight:900;letter-spacing:.07em;text-transform:uppercase}
-.hero__mini-card{padding:18px 18px 16px;border-radius:26px;color:var(--cream);box-shadow:var(--shadow-soft)}
+.hero__mini-card{padding:18px 18px 16px;border-radius:26px;color:var(--cream);box-shadow:var(--shadow-soft);position:relative;overflow:hidden}
 .hero__mini-card strong{display:block;font-family:var(--font-head);font-size:34px;line-height:.92;letter-spacing:-.015em;text-transform:uppercase;margin-bottom:8px}
 .hero__mini-card span{display:block;font-size:14px;line-height:1.45;color:rgba(255,241,201,.9)}
 .hero__mini-card--orange{background:linear-gradient(180deg,var(--orange),#d77534)}
+.hero__mini-card--orange:after{content:'';position:absolute;right:14px;top:14px;width:88px;height:88px;border-radius:24px;background:rgba(255,241,201,.9);background-image:url('assets/logo-mark.png');background-repeat:no-repeat;background-position:center;background-size:72px auto;opacity:.95}
 .hero__mini-card--green{background:linear-gradient(180deg,var(--green),var(--green-dark));background-image:linear-gradient(180deg,rgba(91,126,58,.98),rgba(70,100,41,.98)),url('assets/pattern-mascot.png');background-size:auto,110px auto;background-blend-mode:normal,soft-light}
-.hero__mascot{position:absolute;right:14px;top:14px;width:84px;padding:8px;border-radius:22px;background:rgba(255,241,201,.93);box-shadow:var(--shadow-soft)}
 
-.marquee{overflow:hidden;padding:10px 0 2px}.marquee__track{display:flex;gap:22px;min-width:max-content;animation:marquee 28s linear infinite}.marquee span{font-family:var(--font-head);font-size:24px;text-transform:uppercase;color:rgba(91,36,23,.24)}@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee{overflow:hidden;padding:6px 0 8px}.marquee--soft{mask-image:linear-gradient(90deg,transparent 0,black 8%,black 92%,transparent 100%)}.marquee__track{display:flex;gap:26px;min-width:max-content;animation:marquee 28s linear infinite}.marquee span{font-family:var(--font-head);font-size:24px;text-transform:uppercase;color:rgba(91,36,23,.20)}@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 .split,.order,.contacts{display:grid;gap:14px}.panel,.order__content,.order__card,.contacts__info,.map-card{padding:26px;border-radius:30px;box-shadow:var(--shadow-soft)}
 .panel{display:flex;flex-direction:column;justify-content:space-between;gap:18px}.panel h2,.panel h3{margin-top:14px}
@@ -173,7 +175,7 @@ p{line-height:1.58;margin:0}.hero__lead,.section-head p,.panel p,.order p,.conta
 .search-wrap input{width:100%;height:60px;padding:0 22px;border:2px solid rgba(91,36,23,.10);border-radius:999px;background:rgba(255,255,255,.82);color:var(--brown);outline:none;font-size:18px}
 .search-wrap input::placeholder{color:rgba(91,36,23,.46)}.search-wrap input:focus{border-color:var(--orange);box-shadow:0 0 0 5px rgba(235,143,80,.12)}
 .menu-count{height:60px;padding:0 18px;display:flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;background:var(--brown);color:var(--cream);font-weight:900;white-space:nowrap;justify-self:start;min-width:126px}.menu-count span{font-family:var(--font-head);font-size:28px;line-height:1}.menu-count small{font-size:15px;letter-spacing:.02em}
-.tabs-wrap{position:sticky;top:78px;z-index:20;padding:8px 0 10px;background:linear-gradient(180deg,rgba(255,241,201,.96),rgba(255,241,201,.78),rgba(255,241,201,0))}
+.tabs-wrap{position:sticky;top:calc(var(--header-height) + 18px);z-index:50;padding:8px 0 10px;background:linear-gradient(180deg,rgba(255,241,201,.98),rgba(255,241,201,.90),rgba(255,241,201,0))}
 .category-tabs{display:flex;gap:8px;overflow-x:auto;padding:2px 0 2px;scrollbar-width:none}.category-tabs::-webkit-scrollbar{display:none}
 .tab{flex:0 0 auto;min-height:42px;padding:0 18px;border:1px solid rgba(91,36,23,.09);border-radius:999px;background:rgba(255,255,255,.78);color:var(--brown);font-size:14px;font-weight:900;box-shadow:0 8px 18px rgba(79,35,24,.05)}.tab.is-active{background:var(--orange);color:var(--cream);box-shadow:0 10px 22px rgba(235,143,80,.2)}
 .menu-status{display:none;margin:14px 0;padding:16px;border-radius:18px;background:rgba(255,255,255,.6);font-weight:900}.menu-status.is-visible{display:block}
@@ -207,21 +209,22 @@ p{line-height:1.58;margin:0}.hero__lead,.section-head p,.panel p,.order p,.conta
 }
 
 @media (min-width:760px){
-  html{scroll-padding-top:104px}
+  :root{--header-height:74px}
   .header{min-height:74px;padding:12px 14px 12px 18px}.brand{width:184px}
   .section{padding:70px 0}.hero{padding:54px 0 58px}
-  .hero__media{grid-template-columns:1.1fr .9fr;grid-template-areas:'photo orange' 'photo green';align-items:stretch}.hero__photo-card{grid-area:photo}.hero__photo-card img{height:100%}.hero__mini-card--orange{grid-area:orange}.hero__mini-card--green{grid-area:green}.hero__mascot{width:100px}
+  .hero__media{grid-template-columns:1.1fr .9fr;grid-template-areas:'photo orange' 'photo green';align-items:stretch}.hero__photo-card{grid-area:photo}.hero__photo-card img{height:100%}.hero__mini-card--orange{grid-area:orange}.hero__mini-card--green{grid-area:green}
   .section-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,420px);align-items:end;gap:24px;margin-bottom:28px}.section-head p{margin:0}
   .split,.order,.contacts{gap:18px}.panel,.order__content,.order__card,.contacts__info,.map-card{padding:34px;border-radius:34px}
-  .menu-section{padding-top:64px}.tabs-wrap{top:96px}.menu-card{padding:22px;border-radius:28px}.menu-card h3{font-size:clamp(23px,3vw,33px)}.menu-card__meta strong{font-size:34px}.floating-order{display:none}.scroll-top{bottom:18px;right:18px;width:54px;height:54px}
+  .menu-section{padding-top:64px}.menu-card{padding:22px;border-radius:28px}.menu-card h3{font-size:clamp(23px,3vw,33px)}.menu-card__meta strong{font-size:34px}.floating-order{display:none}.scroll-top{bottom:18px;right:18px;width:54px;height:54px}
 }
 
 @media (min-width:980px){
-  .nav{margin-left:auto;display:flex;gap:22px;align-items:center}.nav a{font-size:14px;font-weight:900;letter-spacing:.02em;opacity:.78}.nav a:hover{opacity:1;color:var(--orange)}
+  :root{--header-height:78px}
+  .nav{margin-left:auto;display:flex;gap:20px;align-items:center}.nav a{font-size:14px;font-weight:900;letter-spacing:.02em;opacity:.78}.nav a:hover{opacity:1;color:var(--orange)}
   .header__cta{display:inline-flex;padding:14px 20px;border-radius:999px;background:var(--brown);color:var(--cream);font-weight:900;box-shadow:0 12px 24px rgba(79,35,24,.16)}
   .burger{display:none}
-  .hero{min-height:calc(100vh - 110px);grid-template-columns:minmax(0,1fr) minmax(450px,1fr);gap:44px;padding:76px 0 64px}
-  .hero__media{min-height:560px;grid-template-columns:1.22fr .78fr;gap:16px}.hero__photo-card{border-radius:38px}.hero__photo-card img{height:100%}.hero__mini-card{padding:24px 24px 20px;border-radius:30px}.hero__mini-card strong{font-size:44px}.hero__mascot{right:18px;top:18px;width:112px}
+  .hero{min-height:calc(100vh - 110px);grid-template-columns:minmax(0,1fr) minmax(450px,1fr);gap:44px;padding:60px 0 64px}
+  .hero__media{min-height:560px;grid-template-columns:1.22fr .78fr;gap:16px}.hero__photo-card{border-radius:38px}.hero__photo-card img{height:100%}.hero__mini-card{padding:24px 24px 20px;border-radius:30px}.hero__mini-card strong{font-size:44px}
   .split{grid-template-columns:1.1fr .9fr}.panel{min-height:360px;padding:42px}.panel p{font-size:18px}
   .hit-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
   .order{grid-template-columns:1.1fr .9fr}.contacts{grid-template-columns:.92fr 1.08fr}
@@ -245,6 +248,13 @@ p{line-height:1.58;margin:0}.hero__lead,.section-head p,.panel p,.order p,.conta
   .map-card strong{font-size:34px}
 }
 
+@media (max-width:759px){
+  :root{--header-height:68px}
+  .hero__mini-card--orange:after{width:72px;height:72px;background-size:58px auto;right:12px;top:12px;border-radius:18px}
+  .hero__mini-card strong{max-width:70%}
+  .marquee{padding-top:2px}
+}
+
 </style>
   <script>document.documentElement.classList.replace('no-js','js');</script>
 </head>
@@ -257,7 +267,6 @@ p{line-height:1.58;margin:0}.hero__lead,.section-head p,.panel p,.order p,.conta
     </a>
     <nav class="nav" aria-label="Основная навигация">
       <a href="#menu">Меню</a>
-      <a href="#hits">Популярное</a>
       <a href="#order">Заказать</a>
       <a href="#contacts">Контакты</a>
     </nav>
@@ -271,8 +280,8 @@ p{line-height:1.58;margin:0}.hero__lead,.section-head p,.panel p,.order p,.conta
     <section class="hero reveal">
       <div class="hero__copy">
         <span class="eyebrow">закусочная №1</span>
-        <h1>Шашлык, шаверма и комбо<br><span>без долгих поисков</span></h1>
-        <p class="hero__lead">Горячее мясо из тандыра, сувлаки, шаверма, закуски и большие наборы. Смотрите актуальное меню, выбирайте блюда и сразу переходите к заказу.</p>
+        <h1>Закажите еду<br><span>в пару кликов</span></h1>
+        <p class="hero__lead">Шашлык из тандыра, шаверма, сувлаки и комбо-наборы. Откройте меню, выберите блюда и сразу отправьте заказ.</p>
         <div class="hero__actions">
           <a class="btn btn--dark" href="#menu">Смотреть меню</a>
           <a class="btn btn--light" href="#order">Заказать сейчас</a>
@@ -280,7 +289,6 @@ p{line-height:1.58;margin:0}.hero__lead,.section-head p,.panel p,.order p,.conta
         <ul class="hero__list" aria-label="Преимущества">
           <li>Актуальное меню с ценами и весом</li>
           <li>Заказ в Telegram, WhatsApp или звонком</li>
-          <li>Подходит и для перекуса, и для набора на компанию</li>
         </ul>
         <div class="hero__stats" aria-label="Преимущества">
           <div><b>41</b><span>позиция в меню</span></div>
@@ -302,11 +310,11 @@ p{line-height:1.58;margin:0}.hero__lead,.section-head p,.panel p,.order p,.conta
           <strong>Комбо<br>и шаверма</strong>
           <span>быстро, сытно и удобно</span>
         </div>
-        <img class="hero__mascot" src="assets/logo-mark.png" alt="" />
+        
       </div>
     </section>
 
-    <section class="marquee" aria-label="Фирменная строка">
+    <section class="marquee marquee--soft" aria-label="Фирменная строка">
       <div class="marquee__track">
         <span>топка</span><span>шаверма</span><span>шашлык</span><span>сувлаки</span><span>комбо</span><span>закуски</span>
         <span>топка</span><span>шаверма</span><span>шашлык</span><span>сувлаки</span><span>комбо</span><span>закуски</span>
@@ -346,7 +354,7 @@ p{line-height:1.58;margin:0}.hero__lead,.section-head p,.panel p,.order p,.conta
           <span class="eyebrow">популярное</span>
           <h2>Хиты Топки</h2>
         </div>
-        <p>Самые понятные позиции для первого заказа: мясо из тандыра, шаверма и большие наборы.</p>
+        <p>Самые популярные позиции, с которых удобно начать заказ.</p>
       </div>
       <div class="hit-grid" data-hit-grid>
         <div class="hit-skeleton">Загружаем хиты меню…</div>
@@ -359,7 +367,7 @@ p{line-height:1.58;margin:0}.hero__lead,.section-head p,.panel p,.order p,.conta
           <span class="eyebrow">актуальное меню</span>
           <h2>Меню</h2>
         </div>
-        <p>Выберите категорию или найдите блюдо по названию. В карточках — состав, вес и цена.</p>
+        <p>Выберите категорию или найдите блюдо по названию.</p>
       </div>
 
       <div class="menu-tools">
@@ -383,7 +391,7 @@ p{line-height:1.58;margin:0}.hero__lead,.section-head p,.panel p,.order p,.conta
       <div class="order__content">
         <span class="eyebrow">заказ</span>
         <h2>Заказать просто</h2>
-        <p data-order-text>Нажмите «Заказать» на карточке — текст заявки появится здесь. Останется отправить его в удобный канал связи.</p>
+        <p data-order-text>Нажмите «Заказать» на карточке — текст заявки появится здесь.</p>
         <textarea class="order__message" data-order-message readonly>Здравствуйте! Хочу сделать заказ в Топке.</textarea>
         <div class="order__actions">
           <a class="btn btn--dark" data-tg-link href="#contacts">Telegram</a>
@@ -943,11 +951,11 @@ window.TOPKA_MENU = [
     const header = $('[data-header]');
     const scrollTopButton = $('[data-scroll-top]');
 
-    $('[data-menu-toggle]')?.addEventListener('click', () => header?.classList.toggle('is-open'));
+    $('[data-menu-toggle]')?.addEventListener('click', () => { header?.classList.toggle('is-open'); syncStickyOffsets(); });
 
     document.addEventListener('click', (event) => {
       const navLink = event.target.closest('.nav a');
-      if (navLink) header?.classList.remove('is-open');
+      if (navLink) { header?.classList.remove('is-open'); syncStickyOffsets(); }
 
       const tab = event.target.closest('[data-filter]');
       if (tab) {
@@ -971,6 +979,7 @@ window.TOPKA_MENU = [
         if (wa) wa.href = '#contacts';
         if (tg) tg.href = '#contacts';
         header?.classList.remove('is-open');
+        syncStickyOffsets();
       }
     });
 
@@ -986,6 +995,14 @@ window.TOPKA_MENU = [
     window.addEventListener('scroll', () => {
       scrollTopButton?.classList.toggle('is-visible', window.scrollY > 520);
     }, { passive: true });
+  }
+
+
+  function syncStickyOffsets() {
+    const header = $('[data-header]');
+    if (!header) return;
+    const height = Math.ceil(header.getBoundingClientRect().height);
+    document.documentElement.style.setProperty('--header-height', `${height}px`);
   }
 
   function revealOnScroll() {
@@ -1010,6 +1027,9 @@ window.TOPKA_MENU = [
     renderHits();
     renderMenu();
     bindEvents();
+    syncStickyOffsets();
+    window.addEventListener('resize', syncStickyOffsets);
+    window.addEventListener('orientationchange', syncStickyOffsets);
     revealOnScroll();
   }
 
