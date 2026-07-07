@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Топка — горячая еда на лету</title>
+  <title>Топка — шашлык, шаверма и комбо</title>
   <meta name="description" content="Топка — закусочная с шашлыком из тандыра, сувлаками, шавермой, комбо-наборами, закусками, салатами и десертами." />
-  <meta property="og:title" content="Топка — горячая еда на лету" />
+  <meta property="og:title" content="Топка — шашлык, шаверма и комбо" />
   <meta property="og:description" content="Шашлык из тандыра, сувлаки, шаверма, комбо и закуски. Смотрите меню и оформляйте заказ в пару кликов." />
   <meta property="og:image" content="assets/shashlik.webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,11 +23,11 @@
     </a>
     <nav class="nav" aria-label="Основная навигация">
       <a href="#menu">Меню</a>
-      <a href="#hits">Хиты</a>
-      <a href="#how">Как заказать</a>
+      <a href="#hits">Популярное</a>
+      <a href="#order">Заказать</a>
       <a href="#contacts">Контакты</a>
     </nav>
-    <a class="header__phone" href="#order">Заказать</a>
+    <a class="header__cta" href="#menu">Смотреть меню</a>
     <button class="burger" type="button" data-menu-toggle aria-label="Открыть меню">
       <span></span><span></span><span></span>
     </button>
@@ -35,14 +35,19 @@
 
   <main id="top">
     <section class="hero reveal">
-      <div class="hero__content">
+      <div class="hero__copy">
         <span class="eyebrow">закусочная №1</span>
-        <h1>Горячая еда<br><span>из тандыра</span></h1>
-        <p>Шашлык, сувлаки, шаверма, комбо и закуски. Выбирайте блюдо в меню и сразу отправляйте заказ в Telegram, WhatsApp или звонком.</p>
+        <h1>Шашлык, шаверма и комбо<br><span>без долгих поисков</span></h1>
+        <p class="hero__lead">Горячее мясо из тандыра, сувлаки, шаверма, закуски и большие наборы. Смотрите актуальное меню, выбирайте блюда и сразу переходите к заказу.</p>
         <div class="hero__actions">
           <a class="btn btn--dark" href="#menu">Смотреть меню</a>
           <a class="btn btn--light" href="#order">Заказать сейчас</a>
         </div>
+        <ul class="hero__list" aria-label="Преимущества">
+          <li>Актуальное меню с ценами и весом</li>
+          <li>Заказ в Telegram, WhatsApp или звонком</li>
+          <li>Подходит и для перекуса, и для набора на компанию</li>
+        </ul>
         <div class="hero__stats" aria-label="Преимущества">
           <div><b>41</b><span>позиция в меню</span></div>
           <div><b>7</b><span>категорий</span></div>
@@ -50,15 +55,20 @@
         </div>
       </div>
 
-      <div class="hero__visual" aria-hidden="true">
-        <img class="hero__spiral" src="assets/spiral-orange.png" alt="" />
-        <div class="hero__photo">
-          <img src="assets/shashlik.webp" alt="" />
-          <span>из тандыра</span>
+      <div class="hero__media" aria-hidden="true">
+        <div class="hero__photo-card">
+          <img src="assets/shashlik.webp" alt="Шашлык в тандыре" />
+          <div class="hero__photo-badge">горячее из тандыра</div>
         </div>
-        <div class="hero__mascot">
-          <img src="assets/logo-mark.png" alt="" />
+        <div class="hero__mini-card hero__mini-card--orange">
+          <strong>Шашлык<br>в тандыре</strong>
+          <span>свинина, цыплёнок, сувлаки</span>
         </div>
+        <div class="hero__mini-card hero__mini-card--green">
+          <strong>Комбо<br>и шаверма</strong>
+          <span>быстро, сытно и удобно</span>
+        </div>
+        <img class="hero__mascot" src="assets/logo-mark.png" alt="" />
       </div>
     </section>
 
@@ -72,22 +82,22 @@
     <section class="section split reveal" id="about">
       <div class="panel panel--brown">
         <div>
-          <span class="eyebrow eyebrow--cream">быстро и сытно</span>
-          <h2>Горячее мясо, шаверма и комбо без лишних поисков</h2>
+          <span class="eyebrow eyebrow--cream">почему удобно</span>
+          <h2>Выбрали блюдо — сразу отправили заявку</h2>
         </div>
-        <p>Всё основное сразу на экране: состав, вес, цена и кнопка заказа. Гость выбирает блюдо и получает готовый текст заявки.</p>
+        <p>На сайте сразу видно категорию, состав, вес и цену. Не нужно листать бесконечные сторис или искать меню в переписке.</p>
         <div class="mini-benefits mini-benefits--contrast">
-          <span>цены на виду</span>
-          <span>заказ в 1 клик</span>
+          <span>актуальные цены</span>
+          <span>понятные карточки</span>
           <span>удобно с телефона</span>
         </div>
       </div>
       <div class="panel panel--pattern">
         <div>
-          <span class="eyebrow eyebrow--cream">что заказать</span>
-          <h3>Перекус, обед или набор на компанию</h3>
+          <span class="eyebrow eyebrow--cream">что выбрать</span>
+          <h3>Быстрый перекус или набор на компанию</h3>
         </div>
-        <p>Сувлаки и шаверма — быстро перекусить. Шашлык из тандыра — взять горячее мясо. Комбо — домой, в офис или на компанию.</p>
+        <p>Шаверма и сувлаки — когда нужно быстро. Шашлык из тандыра — если хочется горячего. Комбо — когда нужен сытный набор домой, в офис или на компанию.</p>
         <div class="mini-benefits">
           <span>Шаверма</span>
           <span>Шашлык</span>
@@ -102,7 +112,7 @@
           <span class="eyebrow">популярное</span>
           <h2>Хиты Топки</h2>
         </div>
-        <p>Самое понятное для первого заказа: мясо из тандыра, шаверма и большие наборы.</p>
+        <p>Самые понятные позиции для первого заказа: мясо из тандыра, шаверма и большие наборы.</p>
       </div>
       <div class="hit-grid" data-hit-grid>
         <div class="hit-skeleton">Загружаем хиты меню…</div>
@@ -122,11 +132,13 @@
         <div class="search-wrap">
           <input type="search" data-menu-search placeholder="Поиск по меню" autocomplete="off" />
         </div>
-        <div class="menu-count"><span data-menu-count>0</span> блюд</div>
+        <div class="menu-count"><span data-menu-count>0</span><small>блюд</small></div>
       </div>
 
-      <div class="category-tabs" data-category-tabs aria-label="Категории меню">
-        <button class="tab is-active" type="button" data-filter="all">Все</button>
+      <div class="tabs-wrap">
+        <div class="category-tabs" data-category-tabs aria-label="Категории меню">
+          <button class="tab is-active" type="button" data-filter="all">Все</button>
+        </div>
       </div>
 
       <div class="menu-status" data-menu-status>Меню загружается…</div>
@@ -145,7 +157,7 @@
           <a class="btn btn--light" href="#contacts">Позвонить</a>
         </div>
       </div>
-      <div class="order__card" id="how">
+      <div class="order__card">
         <img src="assets/logo-vertical.png" alt="Топка" />
         <ol>
           <li>Открываете меню</li>
@@ -169,8 +181,8 @@
       <div class="map-card">
         <img src="assets/pattern-word.png" alt="" aria-hidden="true" />
         <div>
-          <strong>Закажите заранее</strong>
-          <span>Выберите блюда на сайте, отправьте заявку и заберите горячий заказ удобным способом.</span>
+          <strong>Выберите блюда заранее</strong>
+          <span>Откройте меню, соберите заказ и отправьте готовый текст заявки в удобный канал связи.</span>
         </div>
       </div>
     </section>

@@ -47,8 +47,8 @@
         <h3>${title}</h3>
         <p>${escapeHtml(item.description)}</p>
         <div class="menu-card__meta">
-          <span>${escapeHtml(item.weight)}</span>
           <strong>${escapeHtml(item.price)}</strong>
+          <span>${escapeHtml(item.weight)}</span>
         </div>
         <a class="menu-card__order" href="#order" data-order-title="${title}" data-order-price="${escapeHtml(item.price)}">Заказать</a>
       </article>
