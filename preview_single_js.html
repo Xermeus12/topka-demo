@@ -460,6 +460,174 @@ h3{line-height:.88}.hero__lead{font-size:20px;max-width:600px}
   .contacts__buttons .btn{width:100%}
 }
 
+/* === V5 FIX: компактная верхняя шапка + аккуратный знак в карточке === */
+.header{
+  width:min(1080px, calc(100% - 32px));
+  min-height:62px;
+  padding:8px 10px 8px 14px;
+  gap:12px;
+}
+.brand{width:136px}
+.header.is-open{width:min(1080px, calc(100% - 20px))}
+
+/* знак в оранжевой карточке больше не давит на заголовок */
+.hero__mini-card--orange{
+  isolation:isolate;
+}
+.hero__mini-card--orange:after{
+  right:-18px;
+  top:auto;
+  bottom:-20px;
+  width:132px;
+  height:132px;
+  border-radius:0;
+  background:transparent;
+  background-image:url('assets/logo-mark.png');
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:120px auto;
+  opacity:.18;
+  z-index:0;
+  pointer-events:none;
+}
+.hero__mini-card--orange strong,
+.hero__mini-card--orange span{
+  position:relative;
+  z-index:1;
+}
+
+@media (min-width:760px){
+  .header{min-height:64px;padding:9px 10px 9px 16px}
+  .brand{width:158px}
+}
+
+@media (min-width:980px){
+  :root{--header-height:66px}
+  .header{
+    width:min(1080px, calc(100% - 64px));
+    min-height:66px;
+    padding:9px 10px 9px 18px;
+  }
+  .brand{width:166px}
+  .nav{gap:16px;margin-left:auto}
+  .nav a{font-size:13px}
+  .header__cta{
+    padding:12px 18px;
+    min-height:46px;
+    align-items:center;
+  }
+  .hero__mini-card--orange{
+    padding-top:28px;
+    padding-right:24px;
+  }
+  .hero__mini-card--orange strong{
+    max-width:100%;
+    padding-right:0;
+  }
+  .hero__mini-card--orange:after{
+    right:-20px;
+    bottom:-22px;
+    width:142px;
+    height:142px;
+    background-size:128px auto;
+    opacity:.16;
+  }
+}
+
+@media (min-width:1280px){
+  .header{width:min(1120px, calc(100% - 96px))}
+}
+
+@media (max-width:759px){
+  .header{width:min(100% - 18px, 1080px);min-height:60px}
+  .brand{width:128px}
+  .hero__mini-card--orange:after{
+    right:-14px;
+    bottom:-18px;
+    top:auto;
+    width:112px;
+    height:112px;
+    background-size:102px auto;
+    border-radius:0;
+    opacity:.16;
+  }
+  .hero__mini-card strong{max-width:100%;padding-right:0}
+}
+
+/* === V6 FIX: ещё компактнее верхнее меню + убрать кривой значок из карточки === */
+.header{
+  width:min(920px, calc(100% - 36px));
+  min-height:58px;
+  padding:7px 9px 7px 14px;
+  gap:10px;
+  border-radius:999px;
+}
+.brand{width:126px}
+.header.is-open{width:min(920px, calc(100% - 18px))}
+.header__cta{
+  min-height:42px;
+  padding:10px 15px;
+  font-size:14px;
+}
+.nav{gap:14px}
+.nav a{font-size:13px}
+
+/* В оранжевой карточке оставляем чистый текст без налезающего знака */
+.hero__mini-card--orange:after{
+  display:none !important;
+}
+.hero__mini-card--orange{
+  padding-right:24px;
+}
+.hero__mini-card--orange strong,
+.hero__mini-card--orange span{
+  max-width:100%;
+  padding-right:0 !important;
+}
+
+@media (min-width:760px){
+  :root{--header-height:60px}
+  .header{
+    width:min(920px, calc(100% - 48px));
+    min-height:60px;
+    padding:8px 9px 8px 15px;
+  }
+  .brand{width:140px}
+}
+
+@media (min-width:980px){
+  :root{--header-height:62px}
+  .header{
+    width:min(940px, calc(100% - 96px));
+    min-height:62px;
+    padding:8px 9px 8px 16px;
+  }
+  .brand{width:146px}
+  .nav{gap:14px;margin-left:auto}
+  .nav a{font-size:13px}
+  .header__cta{
+    min-height:44px;
+    padding:10px 16px;
+    font-size:14px;
+  }
+}
+
+@media (min-width:1280px){
+  .header{width:min(960px, calc(100% - 120px))}
+}
+
+@media (max-width:759px){
+  :root{--header-height:58px}
+  .header{
+    width:min(100% - 18px, 920px);
+    min-height:58px;
+    padding:7px 9px 7px 12px;
+  }
+  .brand{width:122px}
+  .burger{width:42px;height:42px;padding:11px}
+  .hero__mini-card--orange{padding-right:18px}
+}
+
 </style>
   <script>document.documentElement.classList.replace('no-js','js');</script>
 </head>
