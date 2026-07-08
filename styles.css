@@ -1735,3 +1735,41 @@ html{scroll-padding-top:24px !important;}
     font-size:12.5px !important;
   }
 }
+
+/* === V15 FIX: на мобилке убираем эффект пропадания/появления меню === */
+@media (max-width: 760px){
+  /* Секции не должны быть невидимыми из-за reveal-анимации */
+  .js .reveal,
+  .js .reveal.is-visible,
+  .section.reveal,
+  .menu-section.reveal{
+    opacity:1 !important;
+    visibility:visible !important;
+    transform:none !important;
+    transition:none !important;
+    animation:none !important;
+  }
+
+  /* Карточки блюд сразу видимые, без fade/slide-анимации */
+  .menu-grid,
+  .menu-card,
+  .menu-card.is-hot{
+    opacity:1 !important;
+    visibility:visible !important;
+    transform:none !important;
+    animation:none !important;
+    transition:none !important;
+  }
+
+  .menu-card[style]{
+    animation-delay:0ms !important;
+  }
+
+  /* Позиции меню должны отображаться обычным списком без исчезаний */
+  [data-menu-grid] > *{
+    opacity:1 !important;
+    visibility:visible !important;
+    transform:none !important;
+    animation:none !important;
+  }
+}
