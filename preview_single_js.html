@@ -1695,6 +1695,58 @@ html{scroll-padding-top:24px !important;}
   }
 }
 
+
+/* === V14 FIX: скролл именно к позициям меню на мобилке === */
+.menu-grid{
+  scroll-margin-top:calc(var(--header-height, 86px) + 18px) !important;
+}
+
+@media (max-width:760px){
+  /* Категории компактнее, чтобы позиции меню начинались выше */
+  .category-tabs{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:8px !important;
+  }
+
+  .tab{
+    min-height:44px !important;
+    padding:0 10px !important;
+    border-radius:16px !important;
+    font-size:13px !important;
+    line-height:1.05 !important;
+  }
+
+  .tabs-wrap{
+    margin-bottom:14px !important;
+  }
+
+  .menu-grid{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:12px !important;
+    scroll-margin-top:calc(var(--header-height, 72px) + 14px) !important;
+    touch-action:pan-y !important;
+  }
+
+  .menu-card,
+  .menu-card *{
+    max-width:100% !important;
+  }
+}
+
+@media (max-width:420px){
+  /* Не уводим категории в одну колонку: из-за этого позиции меню слишком низко */
+  .category-tabs{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+
+  .tab{
+    min-height:42px !important;
+    border-radius:15px !important;
+    font-size:12.5px !important;
+  }
+}
+
 </style>
   <script>document.documentElement.classList.replace('no-js','js');</script>
 </head>
@@ -2425,6 +2477,21 @@ window.TOPKA_MENU = [
     grid.innerHTML = hits.map(hitTemplate).join('');
   }
 
+
+  function scrollToMenuPositions() {
+    if (!window.matchMedia('(max-width: 760px)').matches) return;
+    const grid = $('[data-menu-grid]');
+    if (!grid) return;
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const headerHeight = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 72;
+        const top = grid.getBoundingClientRect().top + window.pageYOffset - headerHeight - 14;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      });
+    });
+  }
+
   function bindEvents() {
     const header = $('[data-header]');
     const scrollTopButton = $('[data-scroll-top]');
@@ -2441,6 +2508,7 @@ window.TOPKA_MENU = [
         $$('[data-filter]').forEach(button => button.classList.remove('is-active'));
         tab.classList.add('is-active');
         renderMenu();
+        scrollToMenuPositions();
       }
 
       const order = event.target.closest('[data-order-title]');
