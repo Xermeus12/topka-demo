@@ -824,6 +824,308 @@ body{padding-top:calc(var(--header-height) + 6px);}
   .header__cta{padding:0 10px !important;font-size:11px;}
 }
 
+
+/* === V10: HERO/ШАПКА, НЕ МЕНЮ. Full-screen parallax header like Fusion === */
+body{padding-top:0 !important;}
+html{scroll-padding-top:24px !important;}
+
+.page-bg{display:none !important;}
+
+.header{
+  position:absolute !important;
+  top:0 !important;
+  left:0 !important;
+  right:0 !important;
+  z-index:80 !important;
+  width:100% !important;
+  max-width:none !important;
+  margin:0 !important;
+  padding:22px 34px !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:linear-gradient(180deg,rgba(0,0,0,.48),rgba(0,0,0,0)) !important;
+  box-shadow:none !important;
+  backdrop-filter:none !important;
+  color:#fff !important;
+}
+.header__top{
+  max-width:1280px !important;
+  margin:0 auto !important;
+  display:grid !important;
+  grid-template-columns:1fr auto 1fr !important;
+  align-items:center !important;
+  gap:20px !important;
+}
+.brand{justify-self:center !important;grid-column:2 !important;}
+.brand img{
+  width:118px !important;
+  filter:drop-shadow(0 10px 22px rgba(0,0,0,.35));
+}
+.brand__meta,.header__bottom{display:none !important;}
+.nav{
+  display:flex !important;
+  justify-self:start !important;
+  grid-column:1 !important;
+  margin:0 !important;
+  gap:26px !important;
+}
+.nav a{
+  color:#fff !important;
+  font-size:15px !important;
+  font-weight:800 !important;
+  opacity:.95 !important;
+  text-shadow:0 2px 10px rgba(0,0,0,.35);
+}
+.header__actions{
+  display:flex !important;
+  justify-self:end !important;
+  grid-column:3 !important;
+  gap:10px !important;
+}
+.header__ghost{
+  background:transparent !important;
+  border:0 !important;
+  color:#fff !important;
+  min-height:42px !important;
+  padding:0 6px !important;
+  text-shadow:0 2px 10px rgba(0,0,0,.35);
+}
+.header__cta{
+  min-height:42px !important;
+  padding:0 18px !important;
+  background:rgba(255,255,255,.14) !important;
+  border:1px solid rgba(255,255,255,.35) !important;
+  color:#fff !important;
+  box-shadow:none !important;
+  backdrop-filter:blur(10px);
+}
+.burger{display:none !important;}
+
+.hero{
+  width:100vw !important;
+  max-width:none !important;
+  margin:0 !important;
+  padding:0 !important;
+  display:block !important;
+}
+.hero__banner{
+  width:100vw !important;
+  height:100vh !important;
+  min-height:720px !important;
+  max-height:900px !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  background:#111 !important;
+  overflow:hidden !important;
+  position:relative !important;
+}
+.hero__image{
+  display:block !important;
+  position:absolute !important;
+  inset:-8% 0 0 !important;
+  z-index:-3 !important;
+  height:116% !important;
+  overflow:hidden !important;
+}
+.hero__image img{
+  width:100% !important;
+  height:116% !important;
+  object-fit:cover !important;
+  object-position:center 45% !important;
+  transform:translate3d(0,var(--parallax-y,0px),0) scale(1.08) !important;
+  will-change:transform !important;
+}
+.hero__overlay{
+  position:absolute !important;
+  inset:0 !important;
+  z-index:-2 !important;
+  background:
+    radial-gradient(circle at 78% 24%,rgba(235,143,80,.18),transparent 32%),
+    linear-gradient(90deg,rgba(0,0,0,.68) 0%,rgba(0,0,0,.47) 36%,rgba(0,0,0,.16) 63%,rgba(0,0,0,.50) 100%) !important;
+}
+.hero__center-logo{
+  position:absolute;
+  z-index:2;
+  top:72px;
+  left:50%;
+  width:128px;
+  transform:translateX(-50%);
+  filter:drop-shadow(0 12px 26px rgba(0,0,0,.35));
+}
+.hero__content{
+  position:relative !important;
+  z-index:2 !important;
+  max-width:1280px !important;
+  margin:0 auto !important;
+  min-height:100vh !important;
+  height:100vh !important;
+  display:flex !important;
+  align-items:flex-end !important;
+  padding:0 34px 150px !important;
+}
+.hero__copy{
+  max-width:700px !important;
+  color:#fff !important;
+  gap:18px !important;
+}
+.eyebrow--hero{
+  color:#fff !important;
+  background:rgba(255,255,255,.16) !important;
+  backdrop-filter:blur(8px);
+}
+.hero__copy h1{
+  color:#fff !important;
+  font-size:clamp(70px,8vw,128px) !important;
+  line-height:.82 !important;
+  max-width:720px !important;
+  text-shadow:0 8px 32px rgba(0,0,0,.38);
+}
+.hero__copy h1 span{color:var(--orange) !important;}
+.hero__lead{
+  max-width:620px !important;
+  color:rgba(255,241,201,.94) !important;
+  font-size:22px !important;
+  text-shadow:0 3px 16px rgba(0,0,0,.36);
+}
+.hero__actions .btn--dark{
+  background:var(--orange) !important;
+  color:#fff !important;
+}
+.hero__actions .btn--light{
+  background:rgba(255,255,255,.12) !important;
+  color:#fff !important;
+  border-color:rgba(255,255,255,.34) !important;
+  backdrop-filter:blur(10px);
+}
+.hero__list li{
+  color:rgba(255,241,201,.90) !important;
+  text-shadow:0 3px 14px rgba(0,0,0,.30);
+}
+.hero__aside{display:none !important;}
+
+.hero__bottom-line{
+  position:absolute !important;
+  z-index:3 !important;
+  left:0 !important;
+  right:0 !important;
+  bottom:0 !important;
+  height:92px !important;
+  padding:0 32px !important;
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+  gap:18px !important;
+  background:#171717 !important;
+  border-top:1px solid rgba(255,255,255,.08) !important;
+  overflow-x:auto !important;
+}
+.hero__bottom-line a,
+.hero__bottom-line span{
+  min-width:220px;
+  height:50px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 28px;
+  border-radius:999px;
+  background:#2DBB4F;
+  color:#fff !important;
+  font-family:var(--font-body) !important;
+  font-size:15px !important;
+  font-weight:900 !important;
+  text-transform:none !important;
+  white-space:nowrap;
+}
+.hero__bottom-line a:first-child{background:#3d3d3d;}
+.hero__bottom-line a:last-child{min-width:320px;}
+
+.marquee{margin-top:0 !important;}
+
+.tabs-wrap{position:static !important;top:auto !important;background:transparent !important;}
+.floating-order{display:none !important;}
+.scroll-top{right:22px !important;bottom:22px !important;}
+
+@media (max-width:900px){
+  .header{
+    position:absolute !important;
+    padding:16px 18px !important;
+  }
+  .header__top{
+    display:flex !important;
+    justify-content:space-between !important;
+  }
+  .brand{
+    grid-column:auto !important;
+    justify-self:auto !important;
+  }
+  .brand img{width:106px !important;}
+  .nav{display:none !important;}
+  .header__actions{display:none !important;}
+  .burger{
+    display:flex !important;
+    align-items:center;
+    justify-content:center;
+    background:rgba(0,0,0,.38) !important;
+    border:1px solid rgba(255,255,255,.22) !important;
+  }
+  .header.is-open{
+    background:rgba(18,18,18,.92) !important;
+    backdrop-filter:blur(18px) !important;
+  }
+  .header.is-open .nav{
+    display:grid !important;
+    width:100%;
+    order:3;
+    padding-top:14px;
+  }
+  .header.is-open .nav a{
+    background:rgba(255,255,255,.08);
+    border-radius:12px;
+  }
+  .header.is-open .header__actions{
+    display:grid !important;
+    width:100%;
+    order:4;
+  }
+  .hero__center-logo{display:none;}
+  .hero__banner{
+    min-height:720px !important;
+    height:100svh !important;
+  }
+  .hero__content{
+    height:100svh !important;
+    min-height:720px !important;
+    padding:110px 20px 132px !important;
+    align-items:flex-end !important;
+  }
+  .hero__copy h1{
+    font-size:clamp(48px,16vw,76px) !important;
+  }
+  .hero__lead{font-size:17px !important;}
+  .hero__bottom-line{
+    justify-content:flex-start !important;
+    padding:0 16px !important;
+    height:84px !important;
+    scrollbar-width:none;
+  }
+  .hero__bottom-line::-webkit-scrollbar{display:none;}
+  .hero__bottom-line a,
+  .hero__bottom-line span{
+    min-width:190px;
+    height:46px;
+    font-size:14px !important;
+  }
+  .hero__bottom-line a:last-child{min-width:230px;}
+}
+
+@media (max-width:520px){
+  .hero__banner{min-height:680px !important;}
+  .hero__content{min-height:680px !important;padding:96px 16px 124px !important;}
+  .hero__copy h1{font-size:clamp(42px,17vw,64px) !important;}
+  .hero__lead{font-size:16px !important;}
+  .hero__actions{display:grid !important;grid-template-columns:1fr !important;width:100%;}
+}
+
 </style>
   <script>document.documentElement.classList.replace('no-js','js');</script>
 </head>
@@ -871,6 +1173,7 @@ body{padding-top:calc(var(--header-height) + 6px);}
           <img src="assets/shashlik.webp" alt="Шашлык в тандыре" />
         </div>
         <div class="hero__overlay"></div>
+        <img class="hero__center-logo" src="assets/logo-vertical.png" alt="Топка" />
         <div class="hero__content">
           <div class="hero__copy">
             <span class="eyebrow eyebrow--hero">закусочная №1</span>
@@ -898,11 +1201,9 @@ body{padding-top:calc(var(--header-height) + 6px);}
           </div>
         </div>
         <div class="hero__bottom-line">
-          <span>Шашлык из тандыра</span>
-          <span>Шаверма</span>
-          <span>Сувлаки</span>
-          <span>Комбо</span>
-          <span>Закуски</span>
+          <a href="#menu">Смотреть меню</a>
+          <a href="#order">Самовывоз</a>
+          <a href="#contacts">Связаться</a>
         </div>
       </div>
     </section>
@@ -1613,6 +1914,25 @@ window.TOPKA_MENU = [
     document.documentElement.style.setProperty('--header-height', `${height}px`);
   }
 
+  function initHeroParallax() {
+    const heroImage = document.querySelector('.hero__image img');
+    const hero = document.querySelector('.hero__banner');
+    if (!heroImage || !hero) return;
+
+    const update = () => {
+      const rect = hero.getBoundingClientRect();
+      const viewport = window.innerHeight || document.documentElement.clientHeight;
+      if (rect.bottom < 0 || rect.top > viewport) return;
+      const progress = Math.min(Math.max(-rect.top / Math.max(rect.height, 1), 0), 1);
+      const offset = Math.round(progress * 90);
+      heroImage.style.setProperty('--parallax-y', `${offset}px`);
+    };
+
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+  }
+
   function revealOnScroll() {
     const items = $$('.reveal');
     if (!('IntersectionObserver' in window)) {
@@ -1638,6 +1958,7 @@ window.TOPKA_MENU = [
     syncStickyOffsets();
     window.addEventListener('resize', syncStickyOffsets);
     window.addEventListener('orientationchange', syncStickyOffsets);
+    initHeroParallax();
     revealOnScroll();
   }
 

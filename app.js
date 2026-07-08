@@ -175,6 +175,25 @@
     document.documentElement.style.setProperty('--header-height', `${height}px`);
   }
 
+  function initHeroParallax() {
+    const heroImage = document.querySelector('.hero__image img');
+    const hero = document.querySelector('.hero__banner');
+    if (!heroImage || !hero) return;
+
+    const update = () => {
+      const rect = hero.getBoundingClientRect();
+      const viewport = window.innerHeight || document.documentElement.clientHeight;
+      if (rect.bottom < 0 || rect.top > viewport) return;
+      const progress = Math.min(Math.max(-rect.top / Math.max(rect.height, 1), 0), 1);
+      const offset = Math.round(progress * 90);
+      heroImage.style.setProperty('--parallax-y', `${offset}px`);
+    };
+
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+  }
+
   function revealOnScroll() {
     const items = $$('.reveal');
     if (!('IntersectionObserver' in window)) {
@@ -200,6 +219,7 @@
     syncStickyOffsets();
     window.addEventListener('resize', syncStickyOffsets);
     window.addEventListener('orientationchange', syncStickyOffsets);
+    initHeroParallax();
     revealOnScroll();
   }
 
