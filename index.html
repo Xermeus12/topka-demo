@@ -15,18 +15,37 @@
   <div class="page-bg" aria-hidden="true"></div>
 
   <header class="header" data-header>
-    <a class="brand" href="#top" aria-label="Топка — на главную">
-      <img src="assets/logo-horizontal.png" alt="Топка" />
-    </a>
-    <nav class="nav" aria-label="Основная навигация">
-      <a href="#menu">Меню</a>
-      <a href="#order">Заказать</a>
-      <a href="#contacts">Контакты</a>
-    </nav>
-    <a class="header__cta" href="#menu">Смотреть меню</a>
-    <button class="burger" type="button" data-menu-toggle aria-label="Открыть меню">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="header__top">
+      <a class="brand" href="#top" aria-label="Топка — на главную">
+        <img src="assets/logo-horizontal.png" alt="Топка" />
+        <div class="brand__meta">
+          <span>закусочная</span>
+          <small>шашлык, шаверма, сувлаки</small>
+        </div>
+      </a>
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#menu">Меню</a>
+        <a href="#hits">Популярное</a>
+        <a href="#order">Заказать</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <div class="header__actions">
+        <a class="header__ghost" href="#contacts">Связаться</a>
+        <a class="header__cta" href="#menu">Смотреть меню</a>
+      </div>
+      <button class="burger" type="button" data-menu-toggle aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="header__bottom">
+      <div class="header__chips" aria-label="Основные категории">
+        <span>Шашлык из тандыра</span>
+        <span>Шаверма</span>
+        <span>Сувлаки</span>
+        <span>Комбо</span>
+      </div>
+      <div class="header__note">Заказ через Telegram, WhatsApp или звонок</div>
+    </div>
   </header>
 
   <main id="top">
