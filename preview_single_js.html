@@ -695,6 +695,78 @@ h3{line-height:.88}.hero__lead{font-size:20px;max-width:600px}
   .hero{padding-top:26px;}
 }
 
+
+/* === V8 HERO REWORK: wide image banner like reference === */
+.hero{padding:34px 0 44px;display:block;}
+.hero__banner{position:relative;overflow:hidden;min-height:620px;border-radius:42px;background:var(--brown);box-shadow:0 28px 54px rgba(79,35,24,.16);isolation:isolate;}
+.hero__image{position:absolute;inset:0;z-index:-3;}
+.hero__image img{width:100%;height:100%;object-fit:cover;object-position:center;}
+.hero__overlay{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg, rgba(255,247,224,.98) 0%, rgba(255,247,224,.94) 34%, rgba(255,247,224,.72) 52%, rgba(91,36,23,.18) 70%, rgba(91,36,23,.34) 100%);}
+.hero__content{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0, 1.1fr) minmax(280px, .56fr);gap:24px;align-items:end;min-height:620px;padding:54px 54px 110px;}
+.eyebrow--hero{background:rgba(91,36,23,.10);}
+.hero__copy{display:flex;flex-direction:column;gap:18px;max-width:620px;}
+.hero__copy h1{max-width:560px;font-size:clamp(62px,8vw,118px);line-height:.87;letter-spacing:-.035em;text-wrap:balance;}
+.hero__copy h1 span{display:block;color:var(--orange);}
+.hero__lead{max-width:540px;font-size:22px;line-height:1.5;color:rgba(91,36,23,.82);}
+.hero__actions{display:flex;flex-wrap:wrap;gap:12px;}
+.hero__actions .btn{min-width:210px;}
+.hero__list{display:grid;gap:10px;padding:0;margin:4px 0 0;list-style:none;max-width:520px;}
+.hero__list li{position:relative;padding-left:18px;font-size:17px;color:rgba(91,36,23,.84);}
+.hero__list li:before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--orange);}
+.hero__aside{display:grid;gap:14px;align-self:end;justify-self:end;width:min(100%, 320px);}
+.hero__feature{padding:22px 22px 20px;border-radius:28px;background:rgba(91,36,23,.90);color:var(--cream);backdrop-filter:blur(10px);box-shadow:0 18px 32px rgba(79,35,24,.18);}
+.hero__feature span{display:block;margin-bottom:10px;font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,241,201,.7);}
+.hero__feature strong{display:block;font-family:var(--font-head);font-size:34px;line-height:.92;text-transform:uppercase;color:var(--cream);}
+.hero__stats{display:grid;grid-template-columns:1fr;gap:10px;max-width:none;}
+.hero__stats div{display:flex;align-items:center;gap:12px;padding:16px 18px;border-radius:24px;background:rgba(255,247,224,.94);border:1px solid rgba(91,36,23,.08);box-shadow:0 14px 28px rgba(79,35,24,.10);}
+.hero__stats b{display:block;font-family:var(--font-head);font-size:36px;line-height:1;color:var(--orange);}
+.hero__stats span{font-size:13px;font-weight:900;color:rgba(91,36,23,.74);text-transform:uppercase;letter-spacing:.03em;}
+.hero__bottom-line{position:absolute;left:0;right:0;bottom:0;display:flex;gap:22px;align-items:center;padding:18px 30px;border-top:1px solid rgba(255,255,255,.16);background:linear-gradient(90deg, rgba(91,36,23,.92), rgba(120,53,33,.88));overflow:hidden;}
+.hero__bottom-line span{flex:0 0 auto;font-family:var(--font-head);font-size:26px;letter-spacing:.02em;text-transform:uppercase;color:rgba(255,241,201,.95);}
+
+.hero__media,.hero__photo-card,.hero__photo-badge,.hero__mini-card{display:none !important;}
+
+@media (max-width:1199px){
+  .hero__banner{min-height:580px;}
+  .hero__content{grid-template-columns:minmax(0,1fr) 280px;min-height:580px;padding:46px 38px 98px;}
+  .hero__copy h1{font-size:clamp(56px,7vw,92px);}
+  .hero__lead{font-size:19px;max-width:500px;}
+}
+
+@media (max-width:979px){
+  .hero{padding-top:28px;}
+  .hero__banner{min-height:auto;border-radius:34px;}
+  .hero__overlay{background:linear-gradient(180deg, rgba(255,247,224,.95) 0%, rgba(255,247,224,.88) 34%, rgba(255,247,224,.55) 56%, rgba(91,36,23,.42) 100%);}
+  .hero__content{grid-template-columns:1fr;gap:18px;min-height:auto;padding:34px 24px 96px;}
+  .hero__copy{max-width:none;}
+  .hero__copy h1{max-width:620px;font-size:clamp(46px,10vw,78px);}
+  .hero__lead{font-size:18px;max-width:620px;}
+  .hero__aside{justify-self:start;width:min(100%, 420px);}
+  .hero__stats{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .hero__stats div{display:grid;gap:4px;align-content:start;padding:16px 14px;}
+  .hero__bottom-line{gap:16px;padding:16px 20px;overflow-x:auto;scrollbar-width:none;}
+  .hero__bottom-line::-webkit-scrollbar{display:none;}
+  .hero__bottom-line span{font-size:22px;}
+}
+
+@media (max-width:640px){
+  .hero{padding:24px 0 34px;}
+  .hero__banner{border-radius:28px;}
+  .hero__content{padding:26px 18px 82px;}
+  .hero__copy{gap:14px;}
+  .hero__copy h1{font-size:clamp(40px,12vw,58px);line-height:.88;}
+  .hero__lead{font-size:16px;line-height:1.5;}
+  .hero__actions{display:grid;grid-template-columns:1fr;gap:10px;}
+  .hero__actions .btn{min-width:0;width:100%;}
+  .hero__list li{font-size:15px;}
+  .hero__feature{padding:18px 18px 16px;border-radius:22px;}
+  .hero__feature strong{font-size:28px;}
+  .hero__stats{grid-template-columns:1fr;gap:8px;}
+  .hero__stats div{display:flex;padding:14px 16px;border-radius:20px;}
+  .hero__bottom-line{padding:14px 16px;}
+  .hero__bottom-line span{font-size:18px;}
+}
+
 </style>
   <script>document.documentElement.classList.replace('no-js','js');</script>
 </head>
@@ -737,39 +809,44 @@ h3{line-height:.88}.hero__lead{font-size:20px;max-width:600px}
 
   <main id="top">
     <section class="hero reveal">
-      <div class="hero__copy">
-        <span class="eyebrow">закусочная №1</span>
-        <h1>Закажите еду<br><span>в пару кликов</span></h1>
-        <p class="hero__lead">Шашлык из тандыра, шаверма, сувлаки и комбо-наборы. Откройте меню, выберите блюда и сразу отправьте заказ.</p>
-        <div class="hero__actions">
-          <a class="btn btn--dark" href="#menu">Смотреть меню</a>
-          <a class="btn btn--light" href="#order">Заказать сейчас</a>
-        </div>
-        <ul class="hero__list" aria-label="Преимущества">
-          <li>Актуальное меню с ценами и весом</li>
-          <li>Заказ в Telegram, WhatsApp или звонком</li>
-        </ul>
-        <div class="hero__stats" aria-label="Преимущества">
-          <div><b>41</b><span>позиция в меню</span></div>
-          <div><b>7</b><span>категорий</span></div>
-          <div><b>1</b><span>клик до заявки</span></div>
-        </div>
-      </div>
-
-      <div class="hero__media" aria-hidden="true">
-        <div class="hero__photo-card">
+      <div class="hero__banner">
+        <div class="hero__image">
           <img src="assets/shashlik.webp" alt="Шашлык в тандыре" />
-          <div class="hero__photo-badge">горячее из тандыра</div>
         </div>
-        <div class="hero__mini-card hero__mini-card--orange">
-          <strong>Шашлык<br>в тандыре</strong>
-          <span>свинина, цыплёнок, сувлаки</span>
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+          <div class="hero__copy">
+            <span class="eyebrow eyebrow--hero">закусочная №1</span>
+            <h1>Закажите еду<br><span>без лишних действий</span></h1>
+            <p class="hero__lead">Шашлык из тандыра, шаверма, сувлаки и комбо-наборы. Откройте меню, выберите блюда и сразу отправьте заказ в удобный канал связи.</p>
+            <div class="hero__actions">
+              <a class="btn btn--dark" href="#menu">Смотреть меню</a>
+              <a class="btn btn--light" href="#order">Заказать сейчас</a>
+            </div>
+            <ul class="hero__list" aria-label="Преимущества">
+              <li>Актуальное меню с ценами и весом</li>
+              <li>Заказ в Telegram, WhatsApp или звонком</li>
+            </ul>
+          </div>
+          <div class="hero__aside">
+            <div class="hero__feature">
+              <span>Формат</span>
+              <strong>Быстрый заказ и самовывоз</strong>
+            </div>
+            <div class="hero__stats" aria-label="Преимущества">
+              <div><b>41</b><span>позиция в меню</span></div>
+              <div><b>7</b><span>категорий</span></div>
+              <div><b>1</b><span>клик до заявки</span></div>
+            </div>
+          </div>
         </div>
-        <div class="hero__mini-card hero__mini-card--green">
-          <strong>Комбо<br>и шаверма</strong>
-          <span>быстро, сытно и удобно</span>
+        <div class="hero__bottom-line">
+          <span>Шашлык из тандыра</span>
+          <span>Шаверма</span>
+          <span>Сувлаки</span>
+          <span>Комбо</span>
+          <span>Закуски</span>
         </div>
-        
       </div>
     </section>
 
