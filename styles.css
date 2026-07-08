@@ -1609,3 +1609,77 @@ html{scroll-padding-top:24px !important;}
     min-height:46px !important;
   }
 }
+
+/* === V13 FIX: mobile scroll for menu items === */
+@media (max-width: 760px){
+  html,
+  body{
+    height:auto !important;
+    min-height:100% !important;
+    overflow-x:hidden !important;
+    overflow-y:auto !important;
+    -webkit-overflow-scrolling:touch !important;
+    overscroll-behavior-y:auto !important;
+    touch-action:pan-y !important;
+  }
+
+  main,
+  .section,
+  .menu-section,
+  .menu-tools,
+  .tabs-wrap,
+  .category-tabs,
+  .menu-grid{
+    height:auto !important;
+    max-height:none !important;
+    overflow-y:visible !important;
+    -webkit-overflow-scrolling:touch !important;
+    touch-action:pan-y !important;
+  }
+
+  .tabs-wrap{
+    position:relative !important;
+    top:auto !important;
+    z-index:2 !important;
+    pointer-events:auto !important;
+  }
+
+  .menu-grid{
+    position:relative !important;
+    z-index:1 !important;
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:12px !important;
+    padding-bottom:34px !important;
+  }
+
+  .menu-card{
+    position:relative !important;
+    min-height:0 !important;
+    height:auto !important;
+    touch-action:pan-y !important;
+  }
+
+  .menu-card a,
+  .tab,
+  .burger{
+    touch-action:manipulation !important;
+  }
+
+  .header.is-open{
+    max-height:calc(100svh - 10px) !important;
+    overflow-y:auto !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+}
+
+@media (max-width: 420px){
+  .menu-section{
+    padding-left:14px !important;
+    padding-right:14px !important;
+  }
+
+  .menu-grid{
+    gap:10px !important;
+  }
+}
