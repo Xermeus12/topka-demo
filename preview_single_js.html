@@ -1785,6 +1785,397 @@ html{scroll-padding-top:24px !important;}
   }
 }
 
+/* === V16 POLISH: ноутбуки, герой и общая доводка сайта === */
+
+/* Герой: текст больше не пересекается с верхней навигацией */
+.hero__copy{
+  align-items:flex-start !important;
+}
+
+.eyebrow--hero{
+  width:max-content !important;
+  max-width:100% !important;
+  flex:0 0 auto !important;
+  align-self:flex-start !important;
+}
+
+@media (min-width:901px){
+  .header{
+    padding:20px 34px 18px !important;
+  }
+
+  .header__top{
+    height:70px !important;
+    min-height:70px !important;
+    align-items:center !important;
+  }
+
+  .brand{
+    height:70px !important;
+  }
+
+  .brand img{
+    height:58px !important;
+    max-height:58px !important;
+  }
+
+  .nav,
+  .header__actions{
+    align-self:center !important;
+    transform:none !important;
+  }
+
+  .hero__content{
+    align-items:flex-start !important;
+    justify-content:flex-start !important;
+    padding-top:178px !important;
+    padding-bottom:58px !important;
+    height:auto !important;
+    min-height:clamp(720px,100vh,920px) !important;
+  }
+
+  .hero__copy{
+    max-width:min(670px,58vw) !important;
+    gap:16px !important;
+  }
+
+  .hero__copy h1{
+    max-width:670px !important;
+    font-size:clamp(58px,6vw,106px) !important;
+    line-height:.82 !important;
+    letter-spacing:-.025em !important;
+    margin-top:10px !important;
+  }
+
+  .hero__lead{
+    max-width:600px !important;
+    font-size:clamp(18px,1.45vw,22px) !important;
+    line-height:1.42 !important;
+  }
+
+  .hero__actions{
+    gap:12px !important;
+    margin-top:4px !important;
+  }
+
+  .hero__actions .btn{
+    min-height:54px !important;
+    min-width:190px !important;
+    padding-left:24px !important;
+    padding-right:24px !important;
+  }
+
+  .hero__list{
+    gap:8px !important;
+    margin-top:2px !important;
+  }
+
+  .hero__list li{
+    font-size:16px !important;
+    line-height:1.35 !important;
+  }
+}
+
+/* Самый проблемный диапазон: ноуты 1280–1440 и невысокие экраны */
+@media (min-width:901px) and (max-width:1480px){
+  .header{
+    padding-left:28px !important;
+    padding-right:28px !important;
+  }
+
+  .header__top{
+    gap:18px !important;
+  }
+
+  .brand img{
+    height:52px !important;
+    max-height:52px !important;
+    max-width:142px !important;
+  }
+
+  .nav{
+    gap:18px !important;
+  }
+
+  .nav a{
+    font-size:13px !important;
+  }
+
+  .header__ghost,
+  .header__cta{
+    min-height:40px !important;
+    padding-left:14px !important;
+    padding-right:14px !important;
+    font-size:13px !important;
+  }
+
+  .hero__content{
+    padding-top:158px !important;
+    padding-left:28px !important;
+    padding-right:28px !important;
+    padding-bottom:46px !important;
+    min-height:720px !important;
+  }
+
+  .hero__copy{
+    max-width:590px !important;
+    gap:13px !important;
+  }
+
+  .hero__copy h1{
+    max-width:590px !important;
+    font-size:clamp(54px,5.4vw,84px) !important;
+    line-height:.84 !important;
+    margin-top:8px !important;
+  }
+
+  .hero__lead{
+    max-width:560px !important;
+    font-size:18px !important;
+    line-height:1.42 !important;
+  }
+
+  .hero__actions .btn{
+    min-width:180px !important;
+    min-height:50px !important;
+  }
+}
+
+@media (min-width:901px) and (max-height:820px){
+  .hero__banner{
+    min-height:680px !important;
+  }
+
+  .hero__content{
+    min-height:680px !important;
+    padding-top:146px !important;
+    padding-bottom:38px !important;
+  }
+
+  .hero__copy{
+    gap:12px !important;
+  }
+
+  .hero__copy h1{
+    font-size:clamp(52px,5.1vw,78px) !important;
+  }
+
+  .hero__lead{
+    font-size:17px !important;
+  }
+
+  .hero__list li{
+    font-size:15px !important;
+  }
+}
+
+/* Широкие экраны: оставляем эффектный первый экран, но без гигантомании */
+@media (min-width:1481px){
+  .hero__content{
+    padding-top:176px !important;
+  }
+
+  .hero__copy h1{
+    font-size:clamp(82px,5.8vw,116px) !important;
+  }
+}
+
+/* Мобилка/планшеты: герой компактный, меню видимо сразу */
+@media (max-width:900px){
+  .hero__copy{
+    align-items:flex-start !important;
+  }
+
+  .eyebrow--hero{
+    min-height:30px !important;
+    padding:0 12px !important;
+    font-size:11px !important;
+  }
+
+  .hero__content{
+    justify-content:flex-start !important;
+    align-items:flex-start !important;
+    padding-top:100px !important;
+  }
+
+  .hero__copy h1{
+    margin-top:4px !important;
+  }
+}
+
+/* Общая доводка секций: меньше пустоты, ровнее сетки */
+.section{
+  padding-top:64px !important;
+  padding-bottom:64px !important;
+}
+
+.marquee{
+  margin-bottom:8px !important;
+}
+
+@media (max-width:760px){
+  .section{
+    padding-top:42px !important;
+    padding-bottom:42px !important;
+  }
+
+  .section-head{
+    margin-bottom:18px !important;
+  }
+
+  .section-head h2,
+  .order__content h2,
+  .contacts__info h2{
+    font-size:clamp(42px,14vw,64px) !important;
+    line-height:.86 !important;
+  }
+}
+
+/* Карточки меню: стабильная высота, без налезаний цены/веса/кнопки */
+.menu-grid{
+  align-items:stretch !important;
+}
+
+.menu-card{
+  min-height:100% !important;
+  display:flex !important;
+  flex-direction:column !important;
+}
+
+.menu-card h3{
+  overflow-wrap:normal !important;
+  word-break:normal !important;
+  hyphens:none !important;
+}
+
+.menu-card p{
+  flex:0 0 auto !important;
+}
+
+.menu-card__meta{
+  margin-top:auto !important;
+}
+
+.menu-card__meta strong,
+.hit-card__meta strong{
+  white-space:nowrap !important;
+}
+
+@media (min-width:980px){
+  .menu-grid{
+    gap:18px !important;
+  }
+
+  .menu-card{
+    padding:22px !important;
+  }
+
+  .menu-card h3{
+    font-size:clamp(24px,1.85vw,32px) !important;
+  }
+}
+
+@media (max-width:760px){
+  .menu-section{
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+
+  .menu-tools{
+    gap:10px !important;
+    margin-bottom:12px !important;
+  }
+
+  .search-wrap input{
+    height:54px !important;
+    font-size:16px !important;
+    padding:0 18px !important;
+  }
+
+  .menu-count{
+    height:50px !important;
+    width:100% !important;
+  }
+
+  .menu-grid{
+    gap:12px !important;
+    padding-bottom:24px !important;
+  }
+
+  .menu-card{
+    padding:18px !important;
+    border-radius:22px !important;
+  }
+
+  .menu-card h3{
+    font-size:clamp(23px,8vw,30px) !important;
+    line-height:.92 !important;
+  }
+
+  .menu-card p{
+    font-size:14px !important;
+    line-height:1.45 !important;
+    margin:10px 0 14px !important;
+  }
+
+  .menu-card__meta{
+    grid-template-columns:1fr auto !important;
+    gap:10px !important;
+  }
+
+  .menu-card__meta strong{
+    font-size:30px !important;
+  }
+
+  .menu-card__order{
+    min-height:46px !important;
+  }
+}
+
+/* Хиты, заказ и контакты: аккуратнее на ноутбуках и телефонах */
+@media (min-width:980px) and (max-width:1280px){
+  .hit-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+
+  .hit-card{
+    min-height:220px !important;
+  }
+
+  .order,
+  .contacts{
+    grid-template-columns:1fr 1fr !important;
+  }
+
+  .order__card-body h3{
+    font-size:clamp(54px,5vw,72px) !important;
+  }
+
+  .map-card__content strong{
+    font-size:clamp(54px,5vw,76px) !important;
+  }
+}
+
+@media (max-width:760px){
+  .hit-card{
+    min-height:210px !important;
+    padding:20px !important;
+  }
+
+  .order__content,
+  .order__card,
+  .contacts__info,
+  .map-card{
+    padding:24px 18px !important;
+    border-radius:26px !important;
+  }
+
+  .order__message{
+    min-height:130px !important;
+    font-size:15px !important;
+  }
+}
+
 </style>
   <script>document.documentElement.classList.replace('no-js','js');</script>
 </head>
