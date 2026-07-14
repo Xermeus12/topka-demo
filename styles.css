@@ -2518,3 +2518,153 @@ body[data-menu-source="api"] .menu-status::before{
     font-size:34px;
   }
 }
+
+
+/* ===== Premium hits section polish v26 ===== */
+.hits .section-head{
+  display:grid !important;
+  grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);
+  gap:24px 40px;
+  align-items:end;
+  margin-bottom:32px;
+}
+.hits .section-head p{
+  max-width:540px;
+  font-size:clamp(18px,1.5vw,22px);
+  line-height:1.5;
+  justify-self:end;
+  color:rgba(91,36,23,.82);
+}
+.hits .section-head h2{
+  font-size:clamp(64px,8vw,112px);
+  line-height:.88;
+  letter-spacing:-.04em;
+}
+.hit-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  gap:26px !important;
+}
+.hit-card{
+  position:relative;
+  min-height:560px !important;
+  padding:28px !important;
+  border-radius:34px !important;
+  overflow:hidden;
+  isolation:isolate;
+  box-shadow:0 24px 60px rgba(91,36,23,.12) !important;
+  border:1px solid rgba(91,36,23,.08) !important;
+  display:flex !important;
+  flex-direction:column;
+  gap:16px;
+}
+.hit-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at top right, rgba(255,255,255,.22), transparent 38%);
+  z-index:-1;
+}
+.hit-card:nth-child(odd){
+  background:linear-gradient(180deg,#6f2514 0%, #7d2d18 100%) !important;
+}
+.hit-card:nth-child(even){
+  background:linear-gradient(180deg,#fbf7ef 0%, #f6efe2 100%) !important;
+}
+.hit-card__label{
+  display:inline-flex;
+  align-self:flex-start;
+  padding:9px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.12);
+  font-size:12px !important;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+.hit-card:nth-child(even) .hit-card__label{
+  background:rgba(233,145,73,.14);
+  color:rgba(91,36,23,.62) !important;
+}
+.hit-card h3{
+  font-size:clamp(40px,4.2vw,64px) !important;
+  line-height:.88 !important;
+  letter-spacing:-.04em;
+  max-width:90%;
+  text-wrap:balance;
+}
+.hit-card p{
+  font-size:clamp(18px,1.35vw,24px) !important;
+  line-height:1.5 !important;
+  max-width:88%;
+  margin:0;
+}
+.hit-card:nth-child(odd) p{
+  color:rgba(255,241,201,.92) !important;
+}
+.hit-card img{
+  position:relative !important;
+  right:auto !important;
+  bottom:auto !important;
+  order:4;
+  width:100% !important;
+  height:220px !important;
+  margin-top:auto !important;
+  border-radius:24px !important;
+  object-fit:cover !important;
+  opacity:1 !important;
+  box-shadow:0 18px 32px rgba(0,0,0,.18);
+  border:1px solid rgba(255,255,255,.14);
+}
+.hit-card:nth-child(even) img{
+  border-color:rgba(91,36,23,.08);
+}
+.hit-card__meta{
+  order:5;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:16px;
+  padding-top:4px;
+}
+.hit-card__meta strong{
+  font-size:clamp(44px,3vw,58px) !important;
+  line-height:.9;
+}
+.hit-card__meta span{
+  font-size:18px !important;
+  font-weight:800;
+  line-height:1;
+}
+.hit-card:nth-child(odd) .hit-card__meta span{
+  color:rgba(255,241,201,.9);
+}
+@media (min-width:1500px){
+  .hit-grid{gap:30px !important;}
+  .hit-card{min-height:600px !important;}
+  .hit-card img{height:250px !important;}
+}
+@media (max-width:1180px){
+  .hits .section-head{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  .hits .section-head p{justify-self:start;max-width:700px;}
+  .hit-card{min-height:520px !important;}
+  .hit-card h3{max-width:100%;}
+  .hit-card p{max-width:100%;}
+}
+@media (max-width:860px){
+  .hit-grid{grid-template-columns:1fr !important;gap:18px !important;}
+  .hit-card{min-height:auto !important;padding:22px !important;border-radius:28px !important;}
+  .hit-card h3{font-size:clamp(34px,9vw,48px) !important;max-width:100%;}
+  .hit-card p{font-size:18px !important;max-width:100%;}
+  .hit-card img{height:210px !important;border-radius:20px !important;}
+}
+@media (max-width:560px){
+  .hits .section-head h2{font-size:clamp(48px,16vw,74px);}
+  .hits .section-head p{font-size:18px;}
+  .hit-card{padding:18px !important;gap:12px;}
+  .hit-card__label{padding:8px 12px;}
+  .hit-card img{height:190px !important;}
+  .hit-card__meta strong{font-size:36px !important;}
+  .hit-card__meta span{font-size:16px !important;}
+}
