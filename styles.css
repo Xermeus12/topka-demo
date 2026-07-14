@@ -2273,3 +2273,26 @@ body[data-menu-source="api"] .menu-status::before{
     transform:none !important;
   }
 }
+
+
+/* === V19: адрес и карточка Яндекс Карт === */
+.map-card__link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:46px;
+  margin-top:18px;
+  padding:0 18px;
+  border-radius:999px;
+  background:#fff7e8;
+  color:#5b2417;
+  font-weight:900;
+  text-decoration:none;
+  box-shadow:0 12px 24px rgba(0,0,0,.12);
+}
+.map-card__link:hover{
+  transform:translateY(-1px);
+}
+.contacts__buttons{
+  flex-wrap:wrap;
+}
