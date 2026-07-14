@@ -2164,3 +2164,56 @@ html{scroll-padding-top:24px !important;}
     font-size:15px !important;
   }
 }
+
+
+/* === V17: заказ через Яндекс Еду и обновлённые контакты === */
+.btn--yandex{
+  background:#ffcc00;
+  color:#171717;
+  border:1px solid rgba(23,23,23,.08);
+  box-shadow:0 12px 26px rgba(255,204,0,.24);
+}
+.btn--yandex:hover{
+  transform:translateY(-1px);
+  box-shadow:0 16px 30px rgba(255,204,0,.30);
+}
+.order__content h2{
+  margin:14px 0 16px;
+}
+.order__content > p{
+  max-width:680px;
+  line-height:1.65;
+}
+.order__note{
+  display:block;
+  margin-top:18px;
+  padding-top:16px;
+  border-top:1px solid rgba(91,36,23,.10);
+  color:rgba(91,36,23,.62);
+  font-size:13px;
+  line-height:1.55;
+}
+.contacts__info dd a{
+  color:var(--brown);
+  font-weight:900;
+  text-decoration-thickness:1px;
+  text-underline-offset:3px;
+}
+.contacts__info dd a:hover{
+  color:var(--orange);
+}
+.menu-card__order{
+  padding:10px 16px;
+  text-align:center;
+  line-height:1.2;
+}
+@media (max-width:519px){
+  .order__actions .btn,
+  .contacts__buttons .btn{
+    width:100%;
+  }
+  .menu-card__order{
+    min-height:50px;
+    font-size:14px;
+  }
+}

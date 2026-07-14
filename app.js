@@ -10,6 +10,7 @@
     { id: 'extras', label: 'Допы' }
   ];
   const menu = Array.isArray(window.TOPKA_MENU) ? window.TOPKA_MENU : [];
+  const YANDEX_EDA_URL = 'https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link';
   const hotTitles = new Set([
     'Комбо Поляна куриный',
     'Комбо Поляна свиной',
@@ -50,7 +51,7 @@
           <strong>${escapeHtml(item.price)}</strong>
           <span>${escapeHtml(item.weight)}</span>
         </div>
-        <a class="menu-card__order" href="#order" data-order-title="${title}" data-order-price="${escapeHtml(item.price)}">Заказать</a>
+        <a class="menu-card__order" href="${YANDEX_EDA_URL}" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
       </article>
     `;
   }
@@ -149,23 +150,6 @@
         tab.classList.add('is-active');
         renderMenu();
         scrollToMenuPositions();
-      }
-
-      const order = event.target.closest('[data-order-title]');
-      if (order) {
-        const title = order.dataset.orderTitle;
-        const price = order.dataset.orderPrice;
-        const message = `Здравствуйте! Хочу заказать: ${title} — ${price}.`;
-        const text = $('[data-order-text]');
-        const area = $('[data-order-message]');
-        const wa = $('[data-wa-link]');
-        const tg = $('[data-tg-link]');
-        if (text) text.innerHTML = `Вы выбрали: <b>${escapeHtml(title)}</b>. Текст заявки готов.`;
-        if (area) area.value = message;
-        if (wa) wa.href = '#contacts';
-        if (tg) tg.href = '#contacts';
-        header?.classList.remove('is-open');
-        syncStickyOffsets();
       }
     });
 

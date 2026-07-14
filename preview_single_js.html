@@ -2176,6 +2176,59 @@ html{scroll-padding-top:24px !important;}
   }
 }
 
+
+/* === V17: заказ через Яндекс Еду и обновлённые контакты === */
+.btn--yandex{
+  background:#ffcc00;
+  color:#171717;
+  border:1px solid rgba(23,23,23,.08);
+  box-shadow:0 12px 26px rgba(255,204,0,.24);
+}
+.btn--yandex:hover{
+  transform:translateY(-1px);
+  box-shadow:0 16px 30px rgba(255,204,0,.30);
+}
+.order__content h2{
+  margin:14px 0 16px;
+}
+.order__content > p{
+  max-width:680px;
+  line-height:1.65;
+}
+.order__note{
+  display:block;
+  margin-top:18px;
+  padding-top:16px;
+  border-top:1px solid rgba(91,36,23,.10);
+  color:rgba(91,36,23,.62);
+  font-size:13px;
+  line-height:1.55;
+}
+.contacts__info dd a{
+  color:var(--brown);
+  font-weight:900;
+  text-decoration-thickness:1px;
+  text-underline-offset:3px;
+}
+.contacts__info dd a:hover{
+  color:var(--orange);
+}
+.menu-card__order{
+  padding:10px 16px;
+  text-align:center;
+  line-height:1.2;
+}
+@media (max-width:519px){
+  .order__actions .btn,
+  .contacts__buttons .btn{
+    width:100%;
+  }
+  .menu-card__order{
+    min-height:50px;
+    font-size:14px;
+  }
+}
+
 </style>
   <script>document.documentElement.classList.replace('no-js','js');</script>
 </head>
@@ -2194,7 +2247,7 @@ html{scroll-padding-top:24px !important;}
       <nav class="nav" aria-label="Основная навигация">
         <a href="#menu">Меню</a>
         <a href="#hits">Популярное</a>
-        <a href="#order">Заказать</a>
+        <a href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать</a>
         <a href="#contacts">Контакты</a>
       </nav>
       <div class="header__actions">
@@ -2212,7 +2265,7 @@ html{scroll-padding-top:24px !important;}
         <span>Сувлаки</span>
         <span>Комбо</span>
       </div>
-      <div class="header__note">Заказ через Telegram, WhatsApp или звонок</div>
+      <div class="header__note">Заказ онлайн через Яндекс Еду</div>
     </div>
   </header>
 
@@ -2228,14 +2281,14 @@ html{scroll-padding-top:24px !important;}
           <div class="hero__copy">
             <span class="eyebrow eyebrow--hero">закусочная №1</span>
             <h1>Закажите еду<br><span>без лишних действий</span></h1>
-            <p class="hero__lead">Шашлык из тандыра, шаверма, сувлаки и комбо-наборы. Откройте меню, выберите блюда и сразу отправьте заказ в удобный канал связи.</p>
+            <p class="hero__lead">Шашлык из тандыра, шаверма, сувлаки и комбо-наборы. Посмотрите позиции и оформите заказ через Яндекс Еду.</p>
             <div class="hero__actions">
               <a class="btn btn--dark" href="#menu">Смотреть меню</a>
-              <a class="btn btn--light" href="#order">Заказать сейчас</a>
+              <a class="btn btn--yandex" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
             </div>
             <ul class="hero__list" aria-label="Преимущества">
               <li>Актуальное меню с ценами и весом</li>
-              <li>Заказ в Telegram, WhatsApp или звонком</li>
+              <li>Онлайн-заказ через Яндекс Еду</li>
             </ul>
           </div>
           <div class="hero__aside">
@@ -2252,7 +2305,7 @@ html{scroll-padding-top:24px !important;}
         </div>
         <div class="hero__bottom-line">
           <a href="#menu">Смотреть меню</a>
-          <a href="#order">Самовывоз</a>
+          <a href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать</a>
           <a href="#contacts">Связаться</a>
         </div>
       </div>
@@ -2270,9 +2323,9 @@ html{scroll-padding-top:24px !important;}
       <div class="panel panel--brown">
         <div>
           <span class="eyebrow eyebrow--cream">почему удобно</span>
-          <h2>Выбрали блюдо — сразу отправили заявку</h2>
+          <h2>Выбрали блюдо — оформите заказ в Яндекс Еде</h2>
         </div>
-        <p>На сайте сразу видно категорию, состав, вес и цену. Не нужно листать бесконечные сторис или искать меню в переписке.</p>
+        <p>На сайте сразу видно категорию, состав, вес и цену. Для оформления заказа достаточно перейти в Яндекс Еду.</p>
         <div class="mini-benefits mini-benefits--contrast">
           <span>актуальные цены</span>
           <span>понятные карточки</span>
@@ -2335,26 +2388,25 @@ html{scroll-padding-top:24px !important;}
     <section class="section order reveal" id="order">
       <div class="order__content">
         <span class="eyebrow">заказ</span>
-        <h2>Заказать просто</h2>
-        <p data-order-text>Нажмите «Заказать» на карточке — текст заявки появится здесь.</p>
-        <textarea class="order__message" data-order-message readonly>Здравствуйте! Хочу сделать заказ в Топке.</textarea>
+        <h2>Заказать в Яндекс Еде</h2>
+        <p>Выберите блюда на сайте, а затем перейдите в карточку «Топки» в Яндекс Еде для оформления и оплаты заказа.</p>
         <div class="order__actions">
-          <a class="btn btn--dark" data-tg-link href="#contacts">Telegram</a>
-          <a class="btn btn--green" data-wa-link href="#contacts">WhatsApp</a>
-          <a class="btn btn--light" href="#contacts">Позвонить</a>
+          <a class="btn btn--yandex" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Открыть Яндекс Еду</a>
+          <a class="btn btn--light" href="tel:+79197360000">Позвонить в заведение</a>
         </div>
+        <p class="order__note">Заказ, состав корзины, способ получения и оплата оформляются на стороне Яндекс Еды.</p>
       </div>
       <div class="order__card order__card--new">
         <img class="order__mascot" src="assets/logo-mark.png" alt="Топка" />
         <div class="order__card-body">
           <span class="eyebrow eyebrow--cream">как это работает</span>
           <h3>Три шага<br>до заказа</h3>
-          <p>Кнопка на карточке блюда собирает короткий текст заявки. Его можно отправить в Telegram, WhatsApp или продиктовать по телефону.</p>
+          <p>Посмотрите меню, выберите подходящие позиции и оформите заказ в официальной карточке заведения.</p>
         </div>
         <div class="order-steps">
-          <div><b>1</b><span>Открыть меню</span></div>
-          <div><b>2</b><span>Выбрать блюдо</span></div>
-          <div><b>3</b><span>Отправить заявку</span></div>
+          <div><b>1</b><span>Посмотреть меню</span></div>
+          <div><b>2</b><span>Перейти в Яндекс Еду</span></div>
+          <div><b>3</b><span>Оформить заказ</span></div>
         </div>
       </div>
     </section>
@@ -2362,26 +2414,27 @@ html{scroll-padding-top:24px !important;}
     <section class="section contacts reveal" id="contacts">
       <div class="contacts__info">
         <span class="eyebrow">контакты</span>
-        <h2>Заказ и самовывоз</h2>
+        <h2>Заказ и контакты</h2>
         <dl>
-          <div><dt>Каналы связи</dt><dd>Звонок, Telegram или WhatsApp</dd></div>
-          <div><dt>Формат</dt><dd>Заказ заранее и самовывоз</dd></div>
-          <div><dt>Что в меню</dt><dd>Шашлык, шаверма, комбо, закуски, салаты и десерты</dd></div>
+          <div><dt>Заведение</dt><dd><a href="tel:+79197360000">+7 919 736-00-00</a></dd></div>
+          <div><dt>Директор</dt><dd><a href="tel:+79185973882">+7 918 597-38-82</a></dd></div>
+          <div><dt>Заказ онлайн</dt><dd><a href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Яндекс Еда</a></dd></div>
+          <div><dt>Формат</dt><dd>Заказ через Яндекс Еду и самовывоз</dd></div>
         </dl>
         <div class="contacts__buttons">
-          <a class="btn btn--dark" href="#menu">Выбрать блюда</a>
-          <a class="btn btn--light" href="#order">Перейти к заказу</a>
+          <a class="btn btn--yandex" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+          <a class="btn btn--light" href="tel:+79197360000">Позвонить</a>
         </div>
       </div>
       <div class="map-card map-card--new">
         <img src="assets/pattern-word.png" alt="" aria-hidden="true" />
         <div class="map-card__content">
-          <span class="eyebrow eyebrow--cream">перед визитом</span>
-          <strong>Соберите заказ заранее</strong>
-          <p>Так проще: выбрали позиции, отправили заявку и забрали горячее без лишних уточнений.</p>
+          <span class="eyebrow eyebrow--cream">перед заказом</span>
+          <strong>Выберите блюда заранее</strong>
+          <p>Посмотрите состав, вес и цены на сайте, затем откройте Яндекс Еду и оформите заказ.</p>
           <div class="map-card__chips">
+            <span>Яндекс Еда</span>
             <span>самовывоз</span>
-            <span>мессенджеры</span>
             <span>горячее меню</span>
           </div>
         </div>
@@ -2395,7 +2448,7 @@ html{scroll-padding-top:24px !important;}
     <a href="#top">Наверх</a>
   </footer>
 
-  <a class="floating-order" href="#menu">Смотреть меню</a>
+  <a class="floating-order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
   <button class="scroll-top" type="button" data-scroll-top aria-label="Наверх">↑</button>
 
   <script>
@@ -2799,6 +2852,7 @@ window.TOPKA_MENU = [
     { id: 'extras', label: 'Допы' }
   ];
   const menu = Array.isArray(window.TOPKA_MENU) ? window.TOPKA_MENU : [];
+  const YANDEX_EDA_URL = 'https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link';
   const hotTitles = new Set([
     'Комбо Поляна куриный',
     'Комбо Поляна свиной',
@@ -2839,7 +2893,7 @@ window.TOPKA_MENU = [
           <strong>${escapeHtml(item.price)}</strong>
           <span>${escapeHtml(item.weight)}</span>
         </div>
-        <a class="menu-card__order" href="#order" data-order-title="${title}" data-order-price="${escapeHtml(item.price)}">Заказать</a>
+        <a class="menu-card__order" href="${YANDEX_EDA_URL}" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
       </article>
     `;
   }
@@ -2938,23 +2992,6 @@ window.TOPKA_MENU = [
         tab.classList.add('is-active');
         renderMenu();
         scrollToMenuPositions();
-      }
-
-      const order = event.target.closest('[data-order-title]');
-      if (order) {
-        const title = order.dataset.orderTitle;
-        const price = order.dataset.orderPrice;
-        const message = `Здравствуйте! Хочу заказать: ${title} — ${price}.`;
-        const text = $('[data-order-text]');
-        const area = $('[data-order-message]');
-        const wa = $('[data-wa-link]');
-        const tg = $('[data-tg-link]');
-        if (text) text.innerHTML = `Вы выбрали: <b>${escapeHtml(title)}</b>. Текст заявки готов.`;
-        if (area) area.value = message;
-        if (wa) wa.href = '#contacts';
-        if (tg) tg.href = '#contacts';
-        header?.classList.remove('is-open');
-        syncStickyOffsets();
       }
     });
 
