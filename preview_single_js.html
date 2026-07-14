@@ -2,12 +2,65 @@
 <html lang="ru" class="no-js">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Топка — шашлык, шаверма и комбо</title>
-  <meta name="description" content="Топка — закусочная с шашлыком из тандыра, сувлаками, шавермой, комбо-наборами, закусками, салатами и десертами." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+  <title>Топка — шашлык, шаверма и комбо | Заказ через Яндекс Еду</title>
+  <meta name="description" content="Меню закусочной «Топка»: шашлык из тандыра, сувлаки, шаверма, комбо, закуски, салаты и десерты. Актуальные цены и заказ через Яндекс Еду." />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta name="theme-color" content="#5b2417" />
+  <meta name="application-name" content="Топка" />
+  <meta name="format-detection" content="telephone=yes" />
+
+  <link rel="canonical" href="./" />
+  <link rel="icon" href="assets/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <link rel="preload" href="assets/shashlik.webp" as="image" type="image/webp" fetchpriority="high" />
+  <link rel="dns-prefetch" href="//eda.yandex.ru" />
+  <link rel="preconnect" href="https://eda.yandex.ru" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:site_name" content="Топка" />
   <meta property="og:title" content="Топка — шашлык, шаверма и комбо" />
-  <meta property="og:description" content="Шашлык из тандыра, сувлаки, шаверма, комбо и закуски. Смотрите меню и оформляйте заказ в пару кликов." />
-  <meta property="og:image" content="assets/shashlik.webp" />
+  <meta property="og:description" content="Актуальное меню закусочной «Топка» и заказ через Яндекс Еду." />
+  <meta property="og:url" content="./" />
+  <meta property="og:image" content="assets/og-topka.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Топка — шашлык, шаверма и комбо" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Топка — шашлык, шаверма и комбо" />
+  <meta name="twitter:description" content="Актуальное меню закусочной «Топка» и заказ через Яндекс Еду." />
+  <meta name="twitter:image" content="assets/og-topka.jpg" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Топка",
+    "description": "Закусочная с шашлыком из тандыра, сувлаками, шавермой, комбо-наборами, закусками, салатами и десертами.",
+    "url": "./",
+    "image": "assets/og-topka.jpg",
+    "logo": "assets/logo-horizontal.png",
+    "telephone": "+7 919 736-00-00",
+    "priceRange": "₽₽",
+    "servesCuisine": ["Шашлык", "Шаверма", "Сувлаки", "Фастфуд"],
+    "acceptsReservations": false,
+    "hasMenu": {
+      "@type": "Menu",
+      "name": "Меню закусочной «Топка»",
+      "url": "#menu"
+    },
+    "sameAs": ["https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link"]
+  }
+  </script>
+
   <style>
 @font-face{
   font-family:'Phenomena';
@@ -2229,6 +2282,62 @@ html{scroll-padding-top:24px !important;}
   }
 }
 
+
+/* === V18: SEO/API-ready карточки и доступность === */
+.visually-hidden{
+  position:absolute !important;
+  width:1px !important;
+  height:1px !important;
+  padding:0 !important;
+  margin:-1px !important;
+  overflow:hidden !important;
+  clip:rect(0,0,0,0) !important;
+  white-space:nowrap !important;
+  border:0 !important;
+}
+
+.menu-card__image{
+  width:100%;
+  aspect-ratio:16/10;
+  object-fit:cover;
+  border-radius:18px;
+  margin-bottom:14px;
+  background:rgba(91,36,23,.06);
+}
+
+.menu-card__image--placeholder{
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(235,143,80,.25), transparent 38%),
+    rgba(255,247,232,.92);
+}
+
+.menu-card__image--placeholder img{
+  width:76px;
+  height:80px;
+  object-fit:contain;
+  opacity:.48;
+}
+
+body[data-menu-source="api"] .menu-status::before{
+  content:"";
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{ scroll-behavior:auto !important; }
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+  }
+  .reveal{
+    opacity:1 !important;
+    transform:none !important;
+  }
+}
+
 </style>
   <script>document.documentElement.classList.replace('no-js','js');</script>
 </head>
@@ -2238,13 +2347,13 @@ html{scroll-padding-top:24px !important;}
   <header class="header" data-header>
     <div class="header__top">
       <a class="brand" href="#top" aria-label="Топка — на главную">
-        <img src="assets/logo-horizontal.png" alt="Топка" />
+        <img src="assets/logo-horizontal.png" width="720" height="327" alt="Топка" decoding="async" />
         <div class="brand__meta">
           <span>закусочная</span>
           <small>шашлык, шаверма, сувлаки</small>
         </div>
       </a>
-      <nav class="nav" aria-label="Основная навигация">
+      <nav class="nav" id="site-navigation" aria-label="Основная навигация">
         <a href="#menu">Меню</a>
         <a href="#hits">Популярное</a>
         <a href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать</a>
@@ -2254,7 +2363,7 @@ html{scroll-padding-top:24px !important;}
         <a class="header__ghost" href="#contacts">Связаться</a>
         <a class="header__cta" href="#menu">Смотреть меню</a>
       </div>
-      <button class="burger" type="button" data-menu-toggle aria-label="Открыть меню">
+      <button class="burger" type="button" data-menu-toggle aria-label="Открыть меню" aria-expanded="false" aria-controls="site-navigation">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -2273,10 +2382,10 @@ html{scroll-padding-top:24px !important;}
     <section class="hero reveal">
       <div class="hero__banner">
         <div class="hero__image">
-          <img src="assets/shashlik.webp" alt="Шашлык в тандыре" />
+          <img src="assets/shashlik.webp" width="1500" height="1081" alt="Шашлык в тандыре" fetchpriority="high" decoding="async" />
         </div>
         <div class="hero__overlay"></div>
-        <img class="hero__center-logo" src="assets/logo-vertical.png" alt="Топка" />
+        <img class="hero__center-logo" src="assets/logo-vertical.png" width="480" height="578" alt="Топка" decoding="async" />
         <div class="hero__content">
           <div class="hero__copy">
             <span class="eyebrow eyebrow--hero">закусочная №1</span>
@@ -2297,8 +2406,8 @@ html{scroll-padding-top:24px !important;}
               <strong>Быстрый заказ и самовывоз</strong>
             </div>
             <div class="hero__stats" aria-label="Преимущества">
-              <div><b>41</b><span>позиция в меню</span></div>
-              <div><b>7</b><span>категорий</span></div>
+              <div><b data-stat-items>41</b><span>позиция в меню</span></div>
+              <div><b data-stat-categories>7</b><span>категорий</span></div>
               <div><b>1</b><span>клик до заявки</span></div>
             </div>
           </div>
@@ -2355,11 +2464,38 @@ html{scroll-padding-top:24px !important;}
         <p>Самые популярные позиции, с которых удобно начать заказ.</p>
       </div>
       <div class="hit-grid" data-hit-grid>
-        <div class="hit-skeleton">Загружаем хиты меню…</div>
+        <article class="hit-card" itemscope itemtype="https://schema.org/MenuItem">
+          <span class="hit-card__label">Из тандыра</span>
+          <h3 itemprop="name">Сувлак куриный 1 шт</h3>
+          <p itemprop="description">Куриный сувлак из тандыра. Удобный горячий перекус или дополнение к заказу.</p>
+          <img src="assets/logo-mark.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+          <div class="hit-card__meta"><strong>210 ₽</strong><span>100 г</span></div>
+        </article>
+        <article class="hit-card" itemscope itemtype="https://schema.org/MenuItem">
+          <span class="hit-card__label">Из тандыра</span>
+          <h3 itemprop="name">Шашлык в тандыре из свинины</h3>
+          <p itemprop="description">Фирменный шашлык из шейки молочного поросёнка, приготовленный в тандыре.</p>
+          <img src="assets/logo-mark.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+          <div class="hit-card__meta"><strong>230 ₽</strong><span>100/20/10 г</span></div>
+        </article>
+        <article class="hit-card" itemscope itemtype="https://schema.org/MenuItem">
+          <span class="hit-card__label">Комбо</span>
+          <h3 itemprop="name">Комбо Пикник куриный</h3>
+          <p itemprop="description">Сувлаки куриные, коул слоу, ачучук, картофельные дольки, малиновый лук, соус, пита.</p>
+          <img src="assets/logo-mark.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+          <div class="hit-card__meta"><strong>1450 ₽</strong><span>1210 г</span></div>
+        </article>
+        <article class="hit-card" itemscope itemtype="https://schema.org/MenuItem">
+          <span class="hit-card__label">Комбо</span>
+          <h3 itemprop="name">Комбо Поляна куриный</h3>
+          <p itemprop="description">Шашлык куриный, коул слоу, картофельные дольки, огурец, помидор, маринованный лук, соус, лаваш.</p>
+          <img src="assets/logo-mark.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+          <div class="hit-card__meta"><strong>2000 ₽</strong><span>1880 г</span></div>
+        </article>
       </div>
     </section>
 
-    <section class="section menu-section reveal" id="menu">
+    <section class="section menu-section reveal" id="menu" itemscope itemtype="https://schema.org/Menu">
       <div class="section-head section-head--menu">
         <div>
           <span class="eyebrow">актуальное меню</span>
@@ -2370,7 +2506,8 @@ html{scroll-padding-top:24px !important;}
 
       <div class="menu-tools">
         <div class="search-wrap">
-          <input type="search" data-menu-search placeholder="Поиск по меню" autocomplete="off" />
+          <label class="visually-hidden" for="menu-search">Поиск по меню</label>
+          <input id="menu-search" type="search" data-menu-search placeholder="Поиск по меню" autocomplete="off" enterkeyhint="search" />
         </div>
         <div class="menu-count"><span data-menu-count>0</span><small>блюд</small></div>
       </div>
@@ -2382,7 +2519,623 @@ html{scroll-padding-top:24px !important;}
       </div>
 
       <div class="menu-status" data-menu-status>Меню загружается…</div>
-      <div class="menu-grid" data-menu-grid></div>
+      <div class="menu-grid" data-menu-grid>
+        <article class="menu-card is-hot" data-category="tandoor" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Из тандыра</span>
+            <em>хит</em>
+          </div>
+          <h3 itemprop="name">Сувлак куриный 1 шт</h3>
+          <p itemprop="description">Куриный сувлак из тандыра. Удобный горячий перекус или дополнение к заказу.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="210">210 ₽</strong>
+            <span>100 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="tandoor" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Из тандыра</span>
+            
+          </div>
+          <h3 itemprop="name">Сувлак свиной 1 шт</h3>
+          <p itemprop="description">Свиной сувлак из тандыра — горячий, сытный и простой формат на каждый день.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="230">230 ₽</strong>
+            <span>100 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card is-hot" data-category="tandoor" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Из тандыра</span>
+            <em>хит</em>
+          </div>
+          <h3 itemprop="name">Шашлык в тандыре из свинины</h3>
+          <p itemprop="description">Фирменный шашлык из шейки молочного поросёнка, приготовленный в тандыре.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="230">230 ₽</strong>
+            <span>100/20/10 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="tandoor" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Из тандыра</span>
+            
+          </div>
+          <h3 itemprop="name">Шашлык в тандыре из филе грудки цыплёнка</h3>
+          <p itemprop="description">Фирменный шашлык из филе грудки кукурузного цыплёнка, приготовленного в тандыре.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="210">210 ₽</strong>
+            <span>100/20/10 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="tandoor" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Из тандыра</span>
+            
+          </div>
+          <h3 itemprop="name">Шашлык в тандыре из филе бедра цыплёнка</h3>
+          <p itemprop="description">Фирменный шашлык из филе бедра кукурузного цыплёнка, приготовленного в тандыре.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="210">210 ₽</strong>
+            <span>100/20/10 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="combo" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Комбо</span>
+            
+          </div>
+          <h3 itemprop="name">Мини комбо куриный</h3>
+          <p itemprop="description">На пите с салатом коул слоу, маринованным луком и соусом.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="350">350 ₽</strong>
+            <span>250 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="combo" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Комбо</span>
+            
+          </div>
+          <h3 itemprop="name">Мини комбо свиной</h3>
+          <p itemprop="description">На пите с салатом коул слоу, маринованным луком и соусом.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="390">390 ₽</strong>
+            <span>250 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card is-hot" data-category="combo" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Комбо</span>
+            <em>хит</em>
+          </div>
+          <h3 itemprop="name">Комбо Пикник куриный</h3>
+          <p itemprop="description">Сувлаки куриные, коул слоу, ачучук, картофельные дольки, малиновый лук, соус, пита.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="1450">1450 ₽</strong>
+            <span>1210 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="combo" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Комбо</span>
+            
+          </div>
+          <h3 itemprop="name">Комбо Пикник свиной</h3>
+          <p itemprop="description">Сувлаки свиные, коул слоу, ачучук, картофельные дольки, малиновый лук, соус, пита.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="1550">1550 ₽</strong>
+            <span>1210 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card is-hot" data-category="combo" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Комбо</span>
+            <em>хит</em>
+          </div>
+          <h3 itemprop="name">Комбо Поляна куриный</h3>
+          <p itemprop="description">Шашлык куриный, коул слоу, картофельные дольки, огурец, помидор, маринованный лук, соус, лаваш.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="2000">2000 ₽</strong>
+            <span>1880 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card is-hot" data-category="combo" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Комбо</span>
+            <em>хит</em>
+          </div>
+          <h3 itemprop="name">Комбо Поляна свиной</h3>
+          <p itemprop="description">Шашлык свиной, коул слоу, картофельные дольки, огурец, помидор, маринованный лук, соус, лаваш.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="2150">2150 ₽</strong>
+            <span>1880 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="shawarma" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Шаверма</span>
+            
+          </div>
+          <h3 itemprop="name">Шаверма с цыплёнком S</h3>
+          <p itemprop="description">В лаваше с салатом коул слоу, помидорами, огурцами и чесночным соусом.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="330">330 ₽</strong>
+            <span>300 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card is-hot" data-category="shawarma" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Шаверма</span>
+            <em>хит</em>
+          </div>
+          <h3 itemprop="name">Шаверма с цыплёнком M</h3>
+          <p itemprop="description">В лаваше с салатом коул слоу, помидорами, огурцами и чесночным соусом.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="360">360 ₽</strong>
+            <span>400 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="shawarma" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Шаверма</span>
+            
+          </div>
+          <h3 itemprop="name">Шаверма с цыплёнком L</h3>
+          <p itemprop="description">В лаваше с салатом коул слоу, помидорами, огурцами и чесночным соусом.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="400">400 ₽</strong>
+            <span>500 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="shawarma" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Шаверма</span>
+            
+          </div>
+          <h3 itemprop="name">Шаверма в пите</h3>
+          <p itemprop="description">С цыплёнком, салатом коул слоу, помидорами, огурцами и соусом.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="360">360 ₽</strong>
+            <span>220 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="shawarma" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Шаверма</span>
+            
+          </div>
+          <h3 itemprop="name">Снекасти с цыплёнком, картофелем фри и соусом</h3>
+          <p itemprop="description">Пита 2 шт., помидоры, огурцы, сыр, соус, картофель фри.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="620">620 ₽</strong>
+            <span>500 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="shawarma" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Шаверма</span>
+            
+          </div>
+          <h3 itemprop="name">Порция</h3>
+          <p itemprop="description">Пита, цыплёнок, салат коул слоу, помидоры, огурцы, соус, картофель фри.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="420">420 ₽</strong>
+            <span>350 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="snacks" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Закуски</span>
+            
+          </div>
+          <h3 itemprop="name">Сырные палочки / соус</h3>
+          <p itemprop="description">Горячие сырные палочки с соусом.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="250">250 ₽</strong>
+            <span>100/30 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="snacks" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Закуски</span>
+            
+          </div>
+          <h3 itemprop="name">Наггетсы / соус</h3>
+          <p itemprop="description">Наггетсы с соусом — быстрый перекус к заказу.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="230">230 ₽</strong>
+            <span>85/30 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="snacks" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Закуски</span>
+            
+          </div>
+          <h3 itemprop="name">Кольца кальмара / соус</h3>
+          <p itemprop="description">Кольца кальмара во фритюре с соусом.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="310">310 ₽</strong>
+            <span>130/30 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="snacks" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Закуски</span>
+            
+          </div>
+          <h3 itemprop="name">Креветки фри / соус</h3>
+          <p itemprop="description">Креветки фри с соусом.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="200">200 ₽</strong>
+            <span>45/30 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="snacks" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Закуски</span>
+            
+          </div>
+          <h3 itemprop="name">Луковые кольца / соус</h3>
+          <p itemprop="description">Хрустящие луковые кольца с соусом.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="200">200 ₽</strong>
+            <span>100/30 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="snacks" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Закуски</span>
+            
+          </div>
+          <h3 itemprop="name">Наггетсы комбо фри</h3>
+          <p itemprop="description">Картофель фри, наггетсы и соус.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="340">340 ₽</strong>
+            <span>100/85/30 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="snacks" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Закуски</span>
+            
+          </div>
+          <h3 itemprop="name">Кольца кальмара комбо фри</h3>
+          <p itemprop="description">Картофель фри, кольца кальмара и соус.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="380">380 ₽</strong>
+            <span>100/100/30 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="snacks" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Закуски</span>
+            
+          </div>
+          <h3 itemprop="name">Креветки комбо фри</h3>
+          <p itemprop="description">Картофель фри, креветки фри и соус.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="370">370 ₽</strong>
+            <span>100/45/30 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="snacks" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Закуски</span>
+            
+          </div>
+          <h3 itemprop="name">Картофель фри / соус</h3>
+          <p itemprop="description">С сыром, фирменным миксом специй и соусом.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="170">170 ₽</strong>
+            <span>100/30/10 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="snacks" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Закуски</span>
+            
+          </div>
+          <h3 itemprop="name">Батат фри / соус</h3>
+          <p itemprop="description">С сыром, фирменным миксом специй и соусом.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="220">220 ₽</strong>
+            <span>120/30/10 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="snacks" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Закуски</span>
+            
+          </div>
+          <h3 itemprop="name">Картофельные дольки</h3>
+          <p itemprop="description">Горячие картофельные дольки отдельно или к мясу.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="150">150 ₽</strong>
+            <span>150 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="salads" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Салаты</span>
+            
+          </div>
+          <h3 itemprop="name">Салат коул слоу</h3>
+          <p itemprop="description">Классический салат из капусты с морковью, заправкой из соуса провансаль.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="130">130 ₽</strong>
+            <span>130 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="salads" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Салаты</span>
+            
+          </div>
+          <h3 itemprop="name">Шеф салат</h3>
+          <p itemprop="description">Цыплёнок, коул слоу, огурцы, помидор, лук, соус.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="280">280 ₽</strong>
+            <span>210 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="salads" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Салаты</span>
+            
+          </div>
+          <h3 itemprop="name">Салат ачучук из томатов с луком</h3>
+          <p itemprop="description">Салат из узбекских розовых томатов с маринованным луком и заправкой из оливкового масла.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="250">250 ₽</strong>
+            <span>130 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="desserts" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Десерты</span>
+            
+          </div>
+          <h3 itemprop="name">Греческий хворост с корицей</h3>
+          <p itemprop="description">Завитушки из заварного теста, обжаренного во фритюре до золотистой корочки.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="180">180 ₽</strong>
+            <span>90 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="desserts" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Десерты</span>
+            
+          </div>
+          <h3 itemprop="name">Греческий хворост с сахарной пудрой</h3>
+          <p itemprop="description">Завитушки из заварного теста, обжаренного во фритюре до золотистой корочки.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="180">180 ₽</strong>
+            <span>90 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="desserts" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Десерты</span>
+            
+          </div>
+          <h3 itemprop="name">Греческий хворост с мороженым</h3>
+          <p itemprop="description">Хворост из заварного теста с порцией мороженого.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="200">200 ₽</strong>
+            <span>90/30 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="desserts" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Десерты</span>
+            
+          </div>
+          <h3 itemprop="name">Мороженое</h3>
+          <p itemprop="description">Порция мороженого как десерт или дополнение к хворосту.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="40">40 ₽</strong>
+            <span>30 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="desserts" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Десерты</span>
+            
+          </div>
+          <h3 itemprop="name">Топпинг</h3>
+          <p itemprop="description">Сладкий топпинг к десертам.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="40">40 ₽</strong>
+            <span>30 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="extras" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Допы</span>
+            
+          </div>
+          <h3 itemprop="name">Сыр</h3>
+          <p itemprop="description">Дополнительная порция сыра к блюду.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="40">40 ₽</strong>
+            <span>10 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="extras" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Допы</span>
+            
+          </div>
+          <h3 itemprop="name">Соус 30 г</h3>
+          <p itemprop="description">Дополнительный соус к заказу.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="40">40 ₽</strong>
+            <span>30 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="extras" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Допы</span>
+            
+          </div>
+          <h3 itemprop="name">Соус 100 г</h3>
+          <p itemprop="description">Большая порция соуса к заказу.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="100">100 ₽</strong>
+            <span>100 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="extras" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Допы</span>
+            
+          </div>
+          <h3 itemprop="name">Халапеньо</h3>
+          <p itemprop="description">Острый халапеньо к блюду.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="30">30 ₽</strong>
+            <span>10 г</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+        <article class="menu-card" data-category="extras" itemscope itemtype="https://schema.org/MenuItem">
+          <div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="assets/logo-mark.png" alt="" loading="lazy" /></div>
+          <div class="menu-card__top">
+            <span>Допы</span>
+            
+          </div>
+          <h3 itemprop="name">Замена картофель фри на батат фри</h3>
+          <p itemprop="description">Замена стандартного картофеля фри на батат фри.</p>
+          <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="RUB" />
+            <strong itemprop="price" content="50">50 ₽</strong>
+            <span>опция</span>
+          </div>
+          <a class="menu-card__order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        </article>
+      </div>
     </section>
 
     <section class="section order reveal" id="order">
@@ -2397,7 +3150,7 @@ html{scroll-padding-top:24px !important;}
         <p class="order__note">Заказ, состав корзины, способ получения и оплата оформляются на стороне Яндекс Еды.</p>
       </div>
       <div class="order__card order__card--new">
-        <img class="order__mascot" src="assets/logo-mark.png" alt="Топка" />
+        <img class="order__mascot" src="assets/logo-mark.png" width="360" height="376" alt="Топка" loading="lazy" decoding="async" />
         <div class="order__card-body">
           <span class="eyebrow eyebrow--cream">как это работает</span>
           <h3>Три шага<br>до заказа</h3>
@@ -2427,7 +3180,7 @@ html{scroll-padding-top:24px !important;}
         </div>
       </div>
       <div class="map-card map-card--new">
-        <img src="assets/pattern-word.png" alt="" aria-hidden="true" />
+        <img src="assets/pattern-word.png" width="1600" height="1131" alt="" aria-hidden="true" loading="lazy" decoding="async" />
         <div class="map-card__content">
           <span class="eyebrow eyebrow--cream">перед заказом</span>
           <strong>Выберите блюда заранее</strong>
@@ -2443,7 +3196,7 @@ html{scroll-padding-top:24px !important;}
   </main>
 
   <footer class="footer">
-    <img src="assets/logo-horizontal.png" alt="Топка" />
+    <img src="assets/logo-horizontal.png" width="720" height="327" alt="Топка" decoding="async" />
     <p>© 2026 Топка. Горячая еда на лету.</p>
     <a href="#top">Наверх</a>
   </footer>
@@ -2452,415 +3205,1122 @@ html{scroll-padding-top:24px !important;}
   <button class="scroll-top" type="button" data-scroll-top aria-label="Наверх">↑</button>
 
   <script>
-// Порядок категорий и подписи для отрисовки меню через JS
+// Локальный резерв меню.
+// После подключения API этот файл остаётся fallback-источником, если сервер временно недоступен.
 window.TOPKA_CATEGORIES = [
-  { id: 'all', label: 'Все' },
-  { id: 'tandoor', label: 'Тандыр' },
-  { id: 'combo', label: 'Комбо' },
-  { id: 'shawarma', label: 'Шаверма' },
-  { id: 'snacks', label: 'Закуски' },
-  { id: 'salads', label: 'Салаты' },
-  { id: 'desserts', label: 'Десерты' },
-  { id: 'extras', label: 'Допы' }
-];
-
-// Меню вынесено отдельно, чтобы быстро менять цены, вес, состав и добавлять позиции.
-// Данные обновлены по актуальному PDF-меню: тандыр, комбо, шаверма, закуски, салаты, десерты и допы.
-window.TOPKA_MENU = [
   {
-    "title": "Сувлак куриный 1 шт",
-    "category": "tandoor",
-    "categoryLabel": "Из тандыра",
-    "weight": "100 г",
-    "price": "210 ₽",
-    "description": "Куриный сувлак из тандыра. Удобный горячий перекус или дополнение к заказу.",
-    "tag": "сувлак"
+    "id": "tandoor",
+    "label": "Тандыр",
+    "sort": 10,
+    "isActive": true
   },
   {
-    "title": "Сувлак свиной 1 шт",
-    "category": "tandoor",
-    "categoryLabel": "Из тандыра",
-    "weight": "100 г",
-    "price": "230 ₽",
-    "description": "Свиной сувлак из тандыра — горячий, сытный и простой формат на каждый день.",
-    "tag": "сувлак"
+    "id": "combo",
+    "label": "Комбо",
+    "sort": 20,
+    "isActive": true
   },
   {
-    "title": "Шашлык в тандыре из свинины",
-    "category": "tandoor",
-    "categoryLabel": "Из тандыра",
-    "weight": "100/20/10 г",
-    "price": "230 ₽",
-    "description": "Фирменный шашлык из шейки молочного поросёнка, приготовленный в тандыре.",
-    "tag": "шашлык"
+    "id": "shawarma",
+    "label": "Шаверма",
+    "sort": 30,
+    "isActive": true
   },
   {
-    "title": "Шашлык в тандыре из филе грудки цыплёнка",
-    "category": "tandoor",
-    "categoryLabel": "Из тандыра",
-    "weight": "100/20/10 г",
-    "price": "210 ₽",
-    "description": "Фирменный шашлык из филе грудки кукурузного цыплёнка, приготовленного в тандыре.",
-    "tag": "шашлык"
+    "id": "snacks",
+    "label": "Закуски",
+    "sort": 40,
+    "isActive": true
   },
   {
-    "title": "Шашлык в тандыре из филе бедра цыплёнка",
-    "category": "tandoor",
-    "categoryLabel": "Из тандыра",
-    "weight": "100/20/10 г",
-    "price": "210 ₽",
-    "description": "Фирменный шашлык из филе бедра кукурузного цыплёнка, приготовленного в тандыре.",
-    "tag": "шашлык"
+    "id": "salads",
+    "label": "Салаты",
+    "sort": 50,
+    "isActive": true
   },
   {
-    "title": "Мини комбо куриный",
-    "category": "combo",
-    "categoryLabel": "Комбо",
-    "weight": "250 г",
-    "price": "350 ₽",
-    "description": "На пите с салатом коул слоу, маринованным луком и соусом.",
-    "tag": "мини"
+    "id": "desserts",
+    "label": "Десерты",
+    "sort": 60,
+    "isActive": true
   },
   {
-    "title": "Мини комбо свиной",
-    "category": "combo",
-    "categoryLabel": "Комбо",
-    "weight": "250 г",
-    "price": "390 ₽",
-    "description": "На пите с салатом коул слоу, маринованным луком и соусом.",
-    "tag": "мини"
-  },
-  {
-    "title": "Комбо Пикник куриный",
-    "category": "combo",
-    "categoryLabel": "Комбо",
-    "weight": "1210 г",
-    "price": "1450 ₽",
-    "description": "Сувлаки куриные, коул слоу, ачучук, картофельные дольки, малиновый лук, соус, пита.",
-    "tag": "для компании"
-  },
-  {
-    "title": "Комбо Пикник свиной",
-    "category": "combo",
-    "categoryLabel": "Комбо",
-    "weight": "1210 г",
-    "price": "1550 ₽",
-    "description": "Сувлаки свиные, коул слоу, ачучук, картофельные дольки, малиновый лук, соус, пита.",
-    "tag": "для компании"
-  },
-  {
-    "title": "Комбо Поляна куриный",
-    "category": "combo",
-    "categoryLabel": "Комбо",
-    "weight": "1880 г",
-    "price": "2000 ₽",
-    "description": "Шашлык куриный, коул слоу, картофельные дольки, огурец, помидор, маринованный лук, соус, лаваш.",
-    "tag": "большой набор"
-  },
-  {
-    "title": "Комбо Поляна свиной",
-    "category": "combo",
-    "categoryLabel": "Комбо",
-    "weight": "1880 г",
-    "price": "2150 ₽",
-    "description": "Шашлык свиной, коул слоу, картофельные дольки, огурец, помидор, маринованный лук, соус, лаваш.",
-    "tag": "большой набор"
-  },
-  {
-    "title": "Шаверма с цыплёнком S",
-    "category": "shawarma",
-    "categoryLabel": "Шаверма",
-    "weight": "300 г",
-    "price": "330 ₽",
-    "description": "В лаваше с салатом коул слоу, помидорами, огурцами и чесночным соусом.",
-    "tag": "лаваш"
-  },
-  {
-    "title": "Шаверма с цыплёнком M",
-    "category": "shawarma",
-    "categoryLabel": "Шаверма",
-    "weight": "400 г",
-    "price": "360 ₽",
-    "description": "В лаваше с салатом коул слоу, помидорами, огурцами и чесночным соусом.",
-    "tag": "лаваш"
-  },
-  {
-    "title": "Шаверма с цыплёнком L",
-    "category": "shawarma",
-    "categoryLabel": "Шаверма",
-    "weight": "500 г",
-    "price": "400 ₽",
-    "description": "В лаваше с салатом коул слоу, помидорами, огурцами и чесночным соусом.",
-    "tag": "лаваш"
-  },
-  {
-    "title": "Шаверма в пите",
-    "category": "shawarma",
-    "categoryLabel": "Шаверма",
-    "weight": "220 г",
-    "price": "360 ₽",
-    "description": "С цыплёнком, салатом коул слоу, помидорами, огурцами и соусом.",
-    "tag": "пита"
-  },
-  {
-    "title": "Снекасти с цыплёнком, картофелем фри и соусом",
-    "category": "shawarma",
-    "categoryLabel": "Шаверма",
-    "weight": "500 г",
-    "price": "620 ₽",
-    "description": "Пита 2 шт., помидоры, огурцы, сыр, соус, картофель фри.",
-    "tag": "сытно"
-  },
-  {
-    "title": "Порция",
-    "category": "shawarma",
-    "categoryLabel": "Шаверма",
-    "weight": "350 г",
-    "price": "420 ₽",
-    "description": "Пита, цыплёнок, салат коул слоу, помидоры, огурцы, соус, картофель фри.",
-    "tag": "боул"
-  },
-  {
-    "title": "Сырные палочки / соус",
-    "category": "snacks",
-    "categoryLabel": "Закуски",
-    "weight": "100/30 г",
-    "price": "250 ₽",
-    "description": "Горячие сырные палочки с соусом.",
-    "tag": "сыр"
-  },
-  {
-    "title": "Наггетсы / соус",
-    "category": "snacks",
-    "categoryLabel": "Закуски",
-    "weight": "85/30 г",
-    "price": "230 ₽",
-    "description": "Наггетсы с соусом — быстрый перекус к заказу.",
-    "tag": "фри"
-  },
-  {
-    "title": "Кольца кальмара / соус",
-    "category": "snacks",
-    "categoryLabel": "Закуски",
-    "weight": "130/30 г",
-    "price": "310 ₽",
-    "description": "Кольца кальмара во фритюре с соусом.",
-    "tag": "фри"
-  },
-  {
-    "title": "Креветки фри / соус",
-    "category": "snacks",
-    "categoryLabel": "Закуски",
-    "weight": "45/30 г",
-    "price": "200 ₽",
-    "description": "Креветки фри с соусом.",
-    "tag": "фри"
-  },
-  {
-    "title": "Луковые кольца / соус",
-    "category": "snacks",
-    "categoryLabel": "Закуски",
-    "weight": "100/30 г",
-    "price": "200 ₽",
-    "description": "Хрустящие луковые кольца с соусом.",
-    "tag": "фри"
-  },
-  {
-    "title": "Наггетсы комбо фри",
-    "category": "snacks",
-    "categoryLabel": "Закуски",
-    "weight": "100/85/30 г",
-    "price": "340 ₽",
-    "description": "Картофель фри, наггетсы и соус.",
-    "tag": "комбо"
-  },
-  {
-    "title": "Кольца кальмара комбо фри",
-    "category": "snacks",
-    "categoryLabel": "Закуски",
-    "weight": "100/100/30 г",
-    "price": "380 ₽",
-    "description": "Картофель фри, кольца кальмара и соус.",
-    "tag": "комбо"
-  },
-  {
-    "title": "Креветки комбо фри",
-    "category": "snacks",
-    "categoryLabel": "Закуски",
-    "weight": "100/45/30 г",
-    "price": "370 ₽",
-    "description": "Картофель фри, креветки фри и соус.",
-    "tag": "комбо"
-  },
-  {
-    "title": "Картофель фри / соус",
-    "category": "snacks",
-    "categoryLabel": "Закуски",
-    "weight": "100/30/10 г",
-    "price": "170 ₽",
-    "description": "С сыром, фирменным миксом специй и соусом.",
-    "tag": "картофель"
-  },
-  {
-    "title": "Батат фри / соус",
-    "category": "snacks",
-    "categoryLabel": "Закуски",
-    "weight": "120/30/10 г",
-    "price": "220 ₽",
-    "description": "С сыром, фирменным миксом специй и соусом.",
-    "tag": "батат"
-  },
-  {
-    "title": "Картофельные дольки",
-    "category": "snacks",
-    "categoryLabel": "Закуски",
-    "weight": "150 г",
-    "price": "150 ₽",
-    "description": "Горячие картофельные дольки отдельно или к мясу.",
-    "tag": "гарнир"
-  },
-  {
-    "title": "Салат коул слоу",
-    "category": "salads",
-    "categoryLabel": "Салаты",
-    "weight": "130 г",
-    "price": "130 ₽",
-    "description": "Классический салат из капусты с морковью, заправкой из соуса провансаль.",
-    "tag": "салат"
-  },
-  {
-    "title": "Шеф салат",
-    "category": "salads",
-    "categoryLabel": "Салаты",
-    "weight": "210 г",
-    "price": "280 ₽",
-    "description": "Цыплёнок, коул слоу, огурцы, помидор, лук, соус.",
-    "tag": "салат"
-  },
-  {
-    "title": "Салат ачучук из томатов с луком",
-    "category": "salads",
-    "categoryLabel": "Салаты",
-    "weight": "130 г",
-    "price": "250 ₽",
-    "description": "Салат из узбекских розовых томатов с маринованным луком и заправкой из оливкового масла.",
-    "tag": "ачучук"
-  },
-  {
-    "title": "Греческий хворост с корицей",
-    "category": "desserts",
-    "categoryLabel": "Десерты",
-    "weight": "90 г",
-    "price": "180 ₽",
-    "description": "Завитушки из заварного теста, обжаренного во фритюре до золотистой корочки.",
-    "tag": "сладкое"
-  },
-  {
-    "title": "Греческий хворост с сахарной пудрой",
-    "category": "desserts",
-    "categoryLabel": "Десерты",
-    "weight": "90 г",
-    "price": "180 ₽",
-    "description": "Завитушки из заварного теста, обжаренного во фритюре до золотистой корочки.",
-    "tag": "сладкое"
-  },
-  {
-    "title": "Греческий хворост с мороженым",
-    "category": "desserts",
-    "categoryLabel": "Десерты",
-    "weight": "90/30 г",
-    "price": "200 ₽",
-    "description": "Хворост из заварного теста с порцией мороженого.",
-    "tag": "с мороженым"
-  },
-  {
-    "title": "Мороженое",
-    "category": "desserts",
-    "categoryLabel": "Десерты",
-    "weight": "30 г",
-    "price": "40 ₽",
-    "description": "Порция мороженого как десерт или дополнение к хворосту.",
-    "tag": "доп"
-  },
-  {
-    "title": "Топпинг",
-    "category": "desserts",
-    "categoryLabel": "Десерты",
-    "weight": "30 г",
-    "price": "40 ₽",
-    "description": "Сладкий топпинг к десертам.",
-    "tag": "доп"
-  },
-  {
-    "title": "Сыр",
-    "category": "extras",
-    "categoryLabel": "Допы",
-    "weight": "10 г",
-    "price": "40 ₽",
-    "description": "Дополнительная порция сыра к блюду.",
-    "tag": "доп"
-  },
-  {
-    "title": "Соус 30 г",
-    "category": "extras",
-    "categoryLabel": "Допы",
-    "weight": "30 г",
-    "price": "40 ₽",
-    "description": "Дополнительный соус к заказу.",
-    "tag": "соус"
-  },
-  {
-    "title": "Соус 100 г",
-    "category": "extras",
-    "categoryLabel": "Допы",
-    "weight": "100 г",
-    "price": "100 ₽",
-    "description": "Большая порция соуса к заказу.",
-    "tag": "соус"
-  },
-  {
-    "title": "Халапеньо",
-    "category": "extras",
-    "categoryLabel": "Допы",
-    "weight": "10 г",
-    "price": "30 ₽",
-    "description": "Острый халапеньо к блюду.",
-    "tag": "остро"
-  },
-  {
-    "title": "Замена картофель фри на батат фри",
-    "category": "extras",
-    "categoryLabel": "Допы",
-    "weight": "опция",
-    "price": "50 ₽",
-    "description": "Замена стандартного картофеля фри на батат фри.",
-    "tag": "замена"
+    "id": "extras",
+    "label": "Допы",
+    "sort": 70,
+    "isActive": true
   }
 ];
 
-</script>
-  <script>
+window.TOPKA_MENU = [
+  {
+    "id": "suvlak-kurinyy-1-sht",
+    "slug": "suvlak-kurinyy-1-sht",
+    "title": "Сувлак куриный 1 шт",
+    "category": "tandoor",
+    "categoryLabel": "Из тандыра",
+    "price": 210,
+    "priceText": "210 ₽",
+    "weight": "100 г",
+    "description": "Куриный сувлак из тандыра. Удобный горячий перекус или дополнение к заказу.",
+    "image": null,
+    "imageAlt": "Сувлак куриный 1 шт",
+    "isActive": true,
+    "isHot": true,
+    "sort": 10,
+    "tag": "сувлак",
+    "tags": [
+      "сувлак"
+    ]
+  },
+  {
+    "id": "suvlak-svinoy-1-sht",
+    "slug": "suvlak-svinoy-1-sht",
+    "title": "Сувлак свиной 1 шт",
+    "category": "tandoor",
+    "categoryLabel": "Из тандыра",
+    "price": 230,
+    "priceText": "230 ₽",
+    "weight": "100 г",
+    "description": "Свиной сувлак из тандыра — горячий, сытный и простой формат на каждый день.",
+    "image": null,
+    "imageAlt": "Сувлак свиной 1 шт",
+    "isActive": true,
+    "isHot": false,
+    "sort": 20,
+    "tag": "сувлак",
+    "tags": [
+      "сувлак"
+    ]
+  },
+  {
+    "id": "shashlyk-v-tandyre-iz-svininy",
+    "slug": "shashlyk-v-tandyre-iz-svininy",
+    "title": "Шашлык в тандыре из свинины",
+    "category": "tandoor",
+    "categoryLabel": "Из тандыра",
+    "price": 230,
+    "priceText": "230 ₽",
+    "weight": "100/20/10 г",
+    "description": "Фирменный шашлык из шейки молочного поросёнка, приготовленный в тандыре.",
+    "image": null,
+    "imageAlt": "Шашлык в тандыре из свинины",
+    "isActive": true,
+    "isHot": true,
+    "sort": 30,
+    "tag": "шашлык",
+    "tags": [
+      "шашлык"
+    ]
+  },
+  {
+    "id": "shashlyk-v-tandyre-iz-file-grudki-cyplenka",
+    "slug": "shashlyk-v-tandyre-iz-file-grudki-cyplenka",
+    "title": "Шашлык в тандыре из филе грудки цыплёнка",
+    "category": "tandoor",
+    "categoryLabel": "Из тандыра",
+    "price": 210,
+    "priceText": "210 ₽",
+    "weight": "100/20/10 г",
+    "description": "Фирменный шашлык из филе грудки кукурузного цыплёнка, приготовленного в тандыре.",
+    "image": null,
+    "imageAlt": "Шашлык в тандыре из филе грудки цыплёнка",
+    "isActive": true,
+    "isHot": false,
+    "sort": 40,
+    "tag": "шашлык",
+    "tags": [
+      "шашлык"
+    ]
+  },
+  {
+    "id": "shashlyk-v-tandyre-iz-file-bedra-cyplenka",
+    "slug": "shashlyk-v-tandyre-iz-file-bedra-cyplenka",
+    "title": "Шашлык в тандыре из филе бедра цыплёнка",
+    "category": "tandoor",
+    "categoryLabel": "Из тандыра",
+    "price": 210,
+    "priceText": "210 ₽",
+    "weight": "100/20/10 г",
+    "description": "Фирменный шашлык из филе бедра кукурузного цыплёнка, приготовленного в тандыре.",
+    "image": null,
+    "imageAlt": "Шашлык в тандыре из филе бедра цыплёнка",
+    "isActive": true,
+    "isHot": false,
+    "sort": 50,
+    "tag": "шашлык",
+    "tags": [
+      "шашлык"
+    ]
+  },
+  {
+    "id": "mini-kombo-kurinyy",
+    "slug": "mini-kombo-kurinyy",
+    "title": "Мини комбо куриный",
+    "category": "combo",
+    "categoryLabel": "Комбо",
+    "price": 350,
+    "priceText": "350 ₽",
+    "weight": "250 г",
+    "description": "На пите с салатом коул слоу, маринованным луком и соусом.",
+    "image": null,
+    "imageAlt": "Мини комбо куриный",
+    "isActive": true,
+    "isHot": false,
+    "sort": 60,
+    "tag": "мини",
+    "tags": [
+      "мини"
+    ]
+  },
+  {
+    "id": "mini-kombo-svinoy",
+    "slug": "mini-kombo-svinoy",
+    "title": "Мини комбо свиной",
+    "category": "combo",
+    "categoryLabel": "Комбо",
+    "price": 390,
+    "priceText": "390 ₽",
+    "weight": "250 г",
+    "description": "На пите с салатом коул слоу, маринованным луком и соусом.",
+    "image": null,
+    "imageAlt": "Мини комбо свиной",
+    "isActive": true,
+    "isHot": false,
+    "sort": 70,
+    "tag": "мини",
+    "tags": [
+      "мини"
+    ]
+  },
+  {
+    "id": "kombo-piknik-kurinyy",
+    "slug": "kombo-piknik-kurinyy",
+    "title": "Комбо Пикник куриный",
+    "category": "combo",
+    "categoryLabel": "Комбо",
+    "price": 1450,
+    "priceText": "1450 ₽",
+    "weight": "1210 г",
+    "description": "Сувлаки куриные, коул слоу, ачучук, картофельные дольки, малиновый лук, соус, пита.",
+    "image": null,
+    "imageAlt": "Комбо Пикник куриный",
+    "isActive": true,
+    "isHot": true,
+    "sort": 80,
+    "tag": "для компании",
+    "tags": [
+      "для компании"
+    ]
+  },
+  {
+    "id": "kombo-piknik-svinoy",
+    "slug": "kombo-piknik-svinoy",
+    "title": "Комбо Пикник свиной",
+    "category": "combo",
+    "categoryLabel": "Комбо",
+    "price": 1550,
+    "priceText": "1550 ₽",
+    "weight": "1210 г",
+    "description": "Сувлаки свиные, коул слоу, ачучук, картофельные дольки, малиновый лук, соус, пита.",
+    "image": null,
+    "imageAlt": "Комбо Пикник свиной",
+    "isActive": true,
+    "isHot": false,
+    "sort": 90,
+    "tag": "для компании",
+    "tags": [
+      "для компании"
+    ]
+  },
+  {
+    "id": "kombo-polyana-kurinyy",
+    "slug": "kombo-polyana-kurinyy",
+    "title": "Комбо Поляна куриный",
+    "category": "combo",
+    "categoryLabel": "Комбо",
+    "price": 2000,
+    "priceText": "2000 ₽",
+    "weight": "1880 г",
+    "description": "Шашлык куриный, коул слоу, картофельные дольки, огурец, помидор, маринованный лук, соус, лаваш.",
+    "image": null,
+    "imageAlt": "Комбо Поляна куриный",
+    "isActive": true,
+    "isHot": true,
+    "sort": 100,
+    "tag": "большой набор",
+    "tags": [
+      "большой набор"
+    ]
+  },
+  {
+    "id": "kombo-polyana-svinoy",
+    "slug": "kombo-polyana-svinoy",
+    "title": "Комбо Поляна свиной",
+    "category": "combo",
+    "categoryLabel": "Комбо",
+    "price": 2150,
+    "priceText": "2150 ₽",
+    "weight": "1880 г",
+    "description": "Шашлык свиной, коул слоу, картофельные дольки, огурец, помидор, маринованный лук, соус, лаваш.",
+    "image": null,
+    "imageAlt": "Комбо Поляна свиной",
+    "isActive": true,
+    "isHot": true,
+    "sort": 110,
+    "tag": "большой набор",
+    "tags": [
+      "большой набор"
+    ]
+  },
+  {
+    "id": "shaverma-s-cyplenkom-s",
+    "slug": "shaverma-s-cyplenkom-s",
+    "title": "Шаверма с цыплёнком S",
+    "category": "shawarma",
+    "categoryLabel": "Шаверма",
+    "price": 330,
+    "priceText": "330 ₽",
+    "weight": "300 г",
+    "description": "В лаваше с салатом коул слоу, помидорами, огурцами и чесночным соусом.",
+    "image": null,
+    "imageAlt": "Шаверма с цыплёнком S",
+    "isActive": true,
+    "isHot": false,
+    "sort": 120,
+    "tag": "лаваш",
+    "tags": [
+      "лаваш"
+    ]
+  },
+  {
+    "id": "shaverma-s-cyplenkom-m",
+    "slug": "shaverma-s-cyplenkom-m",
+    "title": "Шаверма с цыплёнком M",
+    "category": "shawarma",
+    "categoryLabel": "Шаверма",
+    "price": 360,
+    "priceText": "360 ₽",
+    "weight": "400 г",
+    "description": "В лаваше с салатом коул слоу, помидорами, огурцами и чесночным соусом.",
+    "image": null,
+    "imageAlt": "Шаверма с цыплёнком M",
+    "isActive": true,
+    "isHot": true,
+    "sort": 130,
+    "tag": "лаваш",
+    "tags": [
+      "лаваш"
+    ]
+  },
+  {
+    "id": "shaverma-s-cyplenkom-l",
+    "slug": "shaverma-s-cyplenkom-l",
+    "title": "Шаверма с цыплёнком L",
+    "category": "shawarma",
+    "categoryLabel": "Шаверма",
+    "price": 400,
+    "priceText": "400 ₽",
+    "weight": "500 г",
+    "description": "В лаваше с салатом коул слоу, помидорами, огурцами и чесночным соусом.",
+    "image": null,
+    "imageAlt": "Шаверма с цыплёнком L",
+    "isActive": true,
+    "isHot": false,
+    "sort": 140,
+    "tag": "лаваш",
+    "tags": [
+      "лаваш"
+    ]
+  },
+  {
+    "id": "shaverma-v-pite",
+    "slug": "shaverma-v-pite",
+    "title": "Шаверма в пите",
+    "category": "shawarma",
+    "categoryLabel": "Шаверма",
+    "price": 360,
+    "priceText": "360 ₽",
+    "weight": "220 г",
+    "description": "С цыплёнком, салатом коул слоу, помидорами, огурцами и соусом.",
+    "image": null,
+    "imageAlt": "Шаверма в пите",
+    "isActive": true,
+    "isHot": false,
+    "sort": 150,
+    "tag": "пита",
+    "tags": [
+      "пита"
+    ]
+  },
+  {
+    "id": "snekasti-s-cyplenkom-kartofelem-fri-i-sousom",
+    "slug": "snekasti-s-cyplenkom-kartofelem-fri-i-sousom",
+    "title": "Снекасти с цыплёнком, картофелем фри и соусом",
+    "category": "shawarma",
+    "categoryLabel": "Шаверма",
+    "price": 620,
+    "priceText": "620 ₽",
+    "weight": "500 г",
+    "description": "Пита 2 шт., помидоры, огурцы, сыр, соус, картофель фри.",
+    "image": null,
+    "imageAlt": "Снекасти с цыплёнком, картофелем фри и соусом",
+    "isActive": true,
+    "isHot": false,
+    "sort": 160,
+    "tag": "сытно",
+    "tags": [
+      "сытно"
+    ]
+  },
+  {
+    "id": "porciya",
+    "slug": "porciya",
+    "title": "Порция",
+    "category": "shawarma",
+    "categoryLabel": "Шаверма",
+    "price": 420,
+    "priceText": "420 ₽",
+    "weight": "350 г",
+    "description": "Пита, цыплёнок, салат коул слоу, помидоры, огурцы, соус, картофель фри.",
+    "image": null,
+    "imageAlt": "Порция",
+    "isActive": true,
+    "isHot": false,
+    "sort": 170,
+    "tag": "боул",
+    "tags": [
+      "боул"
+    ]
+  },
+  {
+    "id": "syrnye-palochki-sous",
+    "slug": "syrnye-palochki-sous",
+    "title": "Сырные палочки / соус",
+    "category": "snacks",
+    "categoryLabel": "Закуски",
+    "price": 250,
+    "priceText": "250 ₽",
+    "weight": "100/30 г",
+    "description": "Горячие сырные палочки с соусом.",
+    "image": null,
+    "imageAlt": "Сырные палочки / соус",
+    "isActive": true,
+    "isHot": false,
+    "sort": 180,
+    "tag": "сыр",
+    "tags": [
+      "сыр"
+    ]
+  },
+  {
+    "id": "naggetsy-sous",
+    "slug": "naggetsy-sous",
+    "title": "Наггетсы / соус",
+    "category": "snacks",
+    "categoryLabel": "Закуски",
+    "price": 230,
+    "priceText": "230 ₽",
+    "weight": "85/30 г",
+    "description": "Наггетсы с соусом — быстрый перекус к заказу.",
+    "image": null,
+    "imageAlt": "Наггетсы / соус",
+    "isActive": true,
+    "isHot": false,
+    "sort": 190,
+    "tag": "фри",
+    "tags": [
+      "фри"
+    ]
+  },
+  {
+    "id": "kolca-kalmara-sous",
+    "slug": "kolca-kalmara-sous",
+    "title": "Кольца кальмара / соус",
+    "category": "snacks",
+    "categoryLabel": "Закуски",
+    "price": 310,
+    "priceText": "310 ₽",
+    "weight": "130/30 г",
+    "description": "Кольца кальмара во фритюре с соусом.",
+    "image": null,
+    "imageAlt": "Кольца кальмара / соус",
+    "isActive": true,
+    "isHot": false,
+    "sort": 200,
+    "tag": "фри",
+    "tags": [
+      "фри"
+    ]
+  },
+  {
+    "id": "krevetki-fri-sous",
+    "slug": "krevetki-fri-sous",
+    "title": "Креветки фри / соус",
+    "category": "snacks",
+    "categoryLabel": "Закуски",
+    "price": 200,
+    "priceText": "200 ₽",
+    "weight": "45/30 г",
+    "description": "Креветки фри с соусом.",
+    "image": null,
+    "imageAlt": "Креветки фри / соус",
+    "isActive": true,
+    "isHot": false,
+    "sort": 210,
+    "tag": "фри",
+    "tags": [
+      "фри"
+    ]
+  },
+  {
+    "id": "lukovye-kolca-sous",
+    "slug": "lukovye-kolca-sous",
+    "title": "Луковые кольца / соус",
+    "category": "snacks",
+    "categoryLabel": "Закуски",
+    "price": 200,
+    "priceText": "200 ₽",
+    "weight": "100/30 г",
+    "description": "Хрустящие луковые кольца с соусом.",
+    "image": null,
+    "imageAlt": "Луковые кольца / соус",
+    "isActive": true,
+    "isHot": false,
+    "sort": 220,
+    "tag": "фри",
+    "tags": [
+      "фри"
+    ]
+  },
+  {
+    "id": "naggetsy-kombo-fri",
+    "slug": "naggetsy-kombo-fri",
+    "title": "Наггетсы комбо фри",
+    "category": "snacks",
+    "categoryLabel": "Закуски",
+    "price": 340,
+    "priceText": "340 ₽",
+    "weight": "100/85/30 г",
+    "description": "Картофель фри, наггетсы и соус.",
+    "image": null,
+    "imageAlt": "Наггетсы комбо фри",
+    "isActive": true,
+    "isHot": false,
+    "sort": 230,
+    "tag": "комбо",
+    "tags": [
+      "комбо"
+    ]
+  },
+  {
+    "id": "kolca-kalmara-kombo-fri",
+    "slug": "kolca-kalmara-kombo-fri",
+    "title": "Кольца кальмара комбо фри",
+    "category": "snacks",
+    "categoryLabel": "Закуски",
+    "price": 380,
+    "priceText": "380 ₽",
+    "weight": "100/100/30 г",
+    "description": "Картофель фри, кольца кальмара и соус.",
+    "image": null,
+    "imageAlt": "Кольца кальмара комбо фри",
+    "isActive": true,
+    "isHot": false,
+    "sort": 240,
+    "tag": "комбо",
+    "tags": [
+      "комбо"
+    ]
+  },
+  {
+    "id": "krevetki-kombo-fri",
+    "slug": "krevetki-kombo-fri",
+    "title": "Креветки комбо фри",
+    "category": "snacks",
+    "categoryLabel": "Закуски",
+    "price": 370,
+    "priceText": "370 ₽",
+    "weight": "100/45/30 г",
+    "description": "Картофель фри, креветки фри и соус.",
+    "image": null,
+    "imageAlt": "Креветки комбо фри",
+    "isActive": true,
+    "isHot": false,
+    "sort": 250,
+    "tag": "комбо",
+    "tags": [
+      "комбо"
+    ]
+  },
+  {
+    "id": "kartofel-fri-sous",
+    "slug": "kartofel-fri-sous",
+    "title": "Картофель фри / соус",
+    "category": "snacks",
+    "categoryLabel": "Закуски",
+    "price": 170,
+    "priceText": "170 ₽",
+    "weight": "100/30/10 г",
+    "description": "С сыром, фирменным миксом специй и соусом.",
+    "image": null,
+    "imageAlt": "Картофель фри / соус",
+    "isActive": true,
+    "isHot": false,
+    "sort": 260,
+    "tag": "картофель",
+    "tags": [
+      "картофель"
+    ]
+  },
+  {
+    "id": "batat-fri-sous",
+    "slug": "batat-fri-sous",
+    "title": "Батат фри / соус",
+    "category": "snacks",
+    "categoryLabel": "Закуски",
+    "price": 220,
+    "priceText": "220 ₽",
+    "weight": "120/30/10 г",
+    "description": "С сыром, фирменным миксом специй и соусом.",
+    "image": null,
+    "imageAlt": "Батат фри / соус",
+    "isActive": true,
+    "isHot": false,
+    "sort": 270,
+    "tag": "батат",
+    "tags": [
+      "батат"
+    ]
+  },
+  {
+    "id": "kartofelnye-dolki",
+    "slug": "kartofelnye-dolki",
+    "title": "Картофельные дольки",
+    "category": "snacks",
+    "categoryLabel": "Закуски",
+    "price": 150,
+    "priceText": "150 ₽",
+    "weight": "150 г",
+    "description": "Горячие картофельные дольки отдельно или к мясу.",
+    "image": null,
+    "imageAlt": "Картофельные дольки",
+    "isActive": true,
+    "isHot": false,
+    "sort": 280,
+    "tag": "гарнир",
+    "tags": [
+      "гарнир"
+    ]
+  },
+  {
+    "id": "salat-koul-slou",
+    "slug": "salat-koul-slou",
+    "title": "Салат коул слоу",
+    "category": "salads",
+    "categoryLabel": "Салаты",
+    "price": 130,
+    "priceText": "130 ₽",
+    "weight": "130 г",
+    "description": "Классический салат из капусты с морковью, заправкой из соуса провансаль.",
+    "image": null,
+    "imageAlt": "Салат коул слоу",
+    "isActive": true,
+    "isHot": false,
+    "sort": 290,
+    "tag": "салат",
+    "tags": [
+      "салат"
+    ]
+  },
+  {
+    "id": "shef-salat",
+    "slug": "shef-salat",
+    "title": "Шеф салат",
+    "category": "salads",
+    "categoryLabel": "Салаты",
+    "price": 280,
+    "priceText": "280 ₽",
+    "weight": "210 г",
+    "description": "Цыплёнок, коул слоу, огурцы, помидор, лук, соус.",
+    "image": null,
+    "imageAlt": "Шеф салат",
+    "isActive": true,
+    "isHot": false,
+    "sort": 300,
+    "tag": "салат",
+    "tags": [
+      "салат"
+    ]
+  },
+  {
+    "id": "salat-achuchuk-iz-tomatov-s-lukom",
+    "slug": "salat-achuchuk-iz-tomatov-s-lukom",
+    "title": "Салат ачучук из томатов с луком",
+    "category": "salads",
+    "categoryLabel": "Салаты",
+    "price": 250,
+    "priceText": "250 ₽",
+    "weight": "130 г",
+    "description": "Салат из узбекских розовых томатов с маринованным луком и заправкой из оливкового масла.",
+    "image": null,
+    "imageAlt": "Салат ачучук из томатов с луком",
+    "isActive": true,
+    "isHot": false,
+    "sort": 310,
+    "tag": "ачучук",
+    "tags": [
+      "ачучук"
+    ]
+  },
+  {
+    "id": "grecheskiy-hvorost-s-koricey",
+    "slug": "grecheskiy-hvorost-s-koricey",
+    "title": "Греческий хворост с корицей",
+    "category": "desserts",
+    "categoryLabel": "Десерты",
+    "price": 180,
+    "priceText": "180 ₽",
+    "weight": "90 г",
+    "description": "Завитушки из заварного теста, обжаренного во фритюре до золотистой корочки.",
+    "image": null,
+    "imageAlt": "Греческий хворост с корицей",
+    "isActive": true,
+    "isHot": false,
+    "sort": 320,
+    "tag": "сладкое",
+    "tags": [
+      "сладкое"
+    ]
+  },
+  {
+    "id": "grecheskiy-hvorost-s-saharnoy-pudroy",
+    "slug": "grecheskiy-hvorost-s-saharnoy-pudroy",
+    "title": "Греческий хворост с сахарной пудрой",
+    "category": "desserts",
+    "categoryLabel": "Десерты",
+    "price": 180,
+    "priceText": "180 ₽",
+    "weight": "90 г",
+    "description": "Завитушки из заварного теста, обжаренного во фритюре до золотистой корочки.",
+    "image": null,
+    "imageAlt": "Греческий хворост с сахарной пудрой",
+    "isActive": true,
+    "isHot": false,
+    "sort": 330,
+    "tag": "сладкое",
+    "tags": [
+      "сладкое"
+    ]
+  },
+  {
+    "id": "grecheskiy-hvorost-s-morozhenym",
+    "slug": "grecheskiy-hvorost-s-morozhenym",
+    "title": "Греческий хворост с мороженым",
+    "category": "desserts",
+    "categoryLabel": "Десерты",
+    "price": 200,
+    "priceText": "200 ₽",
+    "weight": "90/30 г",
+    "description": "Хворост из заварного теста с порцией мороженого.",
+    "image": null,
+    "imageAlt": "Греческий хворост с мороженым",
+    "isActive": true,
+    "isHot": false,
+    "sort": 340,
+    "tag": "с мороженым",
+    "tags": [
+      "с мороженым"
+    ]
+  },
+  {
+    "id": "morozhenoe",
+    "slug": "morozhenoe",
+    "title": "Мороженое",
+    "category": "desserts",
+    "categoryLabel": "Десерты",
+    "price": 40,
+    "priceText": "40 ₽",
+    "weight": "30 г",
+    "description": "Порция мороженого как десерт или дополнение к хворосту.",
+    "image": null,
+    "imageAlt": "Мороженое",
+    "isActive": true,
+    "isHot": false,
+    "sort": 350,
+    "tag": "доп",
+    "tags": [
+      "доп"
+    ]
+  },
+  {
+    "id": "topping",
+    "slug": "topping",
+    "title": "Топпинг",
+    "category": "desserts",
+    "categoryLabel": "Десерты",
+    "price": 40,
+    "priceText": "40 ₽",
+    "weight": "30 г",
+    "description": "Сладкий топпинг к десертам.",
+    "image": null,
+    "imageAlt": "Топпинг",
+    "isActive": true,
+    "isHot": false,
+    "sort": 360,
+    "tag": "доп",
+    "tags": [
+      "доп"
+    ]
+  },
+  {
+    "id": "syr",
+    "slug": "syr",
+    "title": "Сыр",
+    "category": "extras",
+    "categoryLabel": "Допы",
+    "price": 40,
+    "priceText": "40 ₽",
+    "weight": "10 г",
+    "description": "Дополнительная порция сыра к блюду.",
+    "image": null,
+    "imageAlt": "Сыр",
+    "isActive": true,
+    "isHot": false,
+    "sort": 370,
+    "tag": "доп",
+    "tags": [
+      "доп"
+    ]
+  },
+  {
+    "id": "sous-30-g",
+    "slug": "sous-30-g",
+    "title": "Соус 30 г",
+    "category": "extras",
+    "categoryLabel": "Допы",
+    "price": 40,
+    "priceText": "40 ₽",
+    "weight": "30 г",
+    "description": "Дополнительный соус к заказу.",
+    "image": null,
+    "imageAlt": "Соус 30 г",
+    "isActive": true,
+    "isHot": false,
+    "sort": 380,
+    "tag": "соус",
+    "tags": [
+      "соус"
+    ]
+  },
+  {
+    "id": "sous-100-g",
+    "slug": "sous-100-g",
+    "title": "Соус 100 г",
+    "category": "extras",
+    "categoryLabel": "Допы",
+    "price": 100,
+    "priceText": "100 ₽",
+    "weight": "100 г",
+    "description": "Большая порция соуса к заказу.",
+    "image": null,
+    "imageAlt": "Соус 100 г",
+    "isActive": true,
+    "isHot": false,
+    "sort": 390,
+    "tag": "соус",
+    "tags": [
+      "соус"
+    ]
+  },
+  {
+    "id": "halapeno",
+    "slug": "halapeno",
+    "title": "Халапеньо",
+    "category": "extras",
+    "categoryLabel": "Допы",
+    "price": 30,
+    "priceText": "30 ₽",
+    "weight": "10 г",
+    "description": "Острый халапеньо к блюду.",
+    "image": null,
+    "imageAlt": "Халапеньо",
+    "isActive": true,
+    "isHot": false,
+    "sort": 400,
+    "tag": "остро",
+    "tags": [
+      "остро"
+    ]
+  },
+  {
+    "id": "zamena-kartofel-fri-na-batat-fri",
+    "slug": "zamena-kartofel-fri-na-batat-fri",
+    "title": "Замена картофель фри на батат фри",
+    "category": "extras",
+    "categoryLabel": "Допы",
+    "price": 50,
+    "priceText": "50 ₽",
+    "weight": "опция",
+    "description": "Замена стандартного картофеля фри на батат фри.",
+    "image": null,
+    "imageAlt": "Замена картофель фри на батат фри",
+    "isActive": true,
+    "isHot": false,
+    "sort": 410,
+    "tag": "замена",
+    "tags": [
+      "замена"
+    ]
+  }
+];
+
+// Настройки сайта и будущего API.
+// Когда Саша развернёт API, достаточно:
+// 1) поставить enabled: true;
+// 2) при необходимости указать baseUrl;
+// 3) проверить пути menuEndpoint и categoriesEndpoint.
+window.TOPKA_CONFIG = Object.freeze({
+  api: {
+    enabled: false,
+    baseUrl: "",
+    menuEndpoint: "/api/menu",
+    categoriesEndpoint: "/api/categories",
+    timeoutMs: 8000
+  },
+  fallback: {
+    enabled: true
+  },
+  orderUrl: "https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link",
+  contacts: {
+    venuePhone: "+79197360000",
+    directorPhone: "+79185973882"
+  },
+  imageFallback: "assets/logo-mark.png"
+});
+
 (() => {
-  const categories = window.TOPKA_CATEGORIES || [
-    { id: 'all', label: 'Все' },
-    { id: 'tandoor', label: 'Тандыр' },
-    { id: 'combo', label: 'Комбо' },
-    { id: 'shawarma', label: 'Шаверма' },
-    { id: 'snacks', label: 'Закуски' },
-    { id: 'salads', label: 'Салаты' },
-    { id: 'desserts', label: 'Десерты' },
-    { id: 'extras', label: 'Допы' }
-  ];
-  const menu = Array.isArray(window.TOPKA_MENU) ? window.TOPKA_MENU : [];
-  const YANDEX_EDA_URL = 'https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link';
-  const hotTitles = new Set([
-    'Комбо Поляна куриный',
-    'Комбо Поляна свиной',
-    'Комбо Пикник куриный',
-    'Шаверма с цыплёнком M',
-    'Шашлык в тандыре из свинины',
-    'Сувлак куриный 1 шт'
-  ]);
+  const config = window.TOPKA_CONFIG || {};
+  const apiConfig = config.api || {};
+  const fallbackEnabled = config.fallback?.enabled !== false;
+
+  function cleanBaseUrl(value) {
+    return String(value || '').replace(/\/+$/, '');
+  }
+
+  function buildUrl(endpoint) {
+    const value = String(endpoint || '');
+    if (/^https?:\/\//i.test(value)) return value;
+    const baseUrl = cleanBaseUrl(apiConfig.baseUrl);
+    if (!baseUrl) return value;
+    return `${baseUrl}${value.startsWith('/') ? '' : '/'}${value}`;
+  }
+
+  function extractArray(payload) {
+    if (Array.isArray(payload)) return payload;
+    if (Array.isArray(payload?.items)) return payload.items;
+    if (Array.isArray(payload?.data)) return payload.data;
+    if (Array.isArray(payload?.results)) return payload.results;
+    return [];
+  }
+
+  async function fetchJson(endpoint) {
+    const controller = new AbortController();
+    const timeout = window.setTimeout(
+      () => controller.abort(),
+      Number(apiConfig.timeoutMs) || 8000
+    );
+
+    try {
+      const response = await fetch(buildUrl(endpoint), {
+        method: 'GET',
+        headers: { Accept: 'application/json' },
+        credentials: 'same-origin',
+        signal: controller.signal
+      });
+
+      if (!response.ok) {
+        throw new Error(`API вернул HTTP ${response.status}`);
+      }
+
+      return await response.json();
+    } finally {
+      window.clearTimeout(timeout);
+    }
+  }
+
+  function numberFromPrice(value) {
+    if (typeof value === 'number' && Number.isFinite(value)) return value;
+    const parsed = Number(String(value ?? '').replace(/[^\d.,-]/g, '').replace(',', '.'));
+    return Number.isFinite(parsed) ? parsed : 0;
+  }
+
+  function booleanValue(value, fallback = false) {
+    if (typeof value === 'boolean') return value;
+    if (value === 1 || value === '1' || value === 'true') return true;
+    if (value === 0 || value === '0' || value === 'false') return false;
+    return fallback;
+  }
+
+  function resolveImage(value) {
+    if (!value) return '';
+    const raw = String(value).trim();
+    if (!raw) return '';
+    if (/^(data:|blob:|https?:\/\/)/i.test(raw)) return raw;
+
+    try {
+      const apiBase = cleanBaseUrl(apiConfig.baseUrl);
+      if (apiBase) return new URL(raw, `${apiBase}/`).href;
+      return raw;
+    } catch {
+      return raw;
+    }
+  }
+
+  function normalizeMenuItem(item, index = 0) {
+    const title = String(item.title ?? item.name ?? '').trim();
+    const category = String(
+      item.category ?? item.categoryId ?? item.category_id ?? ''
+    ).trim();
+
+    return {
+      id: String(item.id ?? item.slug ?? `item-${index + 1}`),
+      slug: String(item.slug ?? item.id ?? `item-${index + 1}`),
+      title,
+      category,
+      categoryLabel: String(
+        item.categoryLabel ??
+        item.category_label ??
+        item.categoryName ??
+        item.category_name ??
+        category
+      ).trim(),
+      price: numberFromPrice(item.price ?? item.priceValue ?? item.price_value),
+      priceText: String(item.priceText ?? item.price_text ?? '').trim(),
+      weight: String(item.weight ?? '').trim(),
+      description: String(item.description ?? item.composition ?? '').trim(),
+      image: resolveImage(item.image ?? item.imageUrl ?? item.image_url),
+      imageAlt: String(item.imageAlt ?? item.image_alt ?? title).trim(),
+      isActive: booleanValue(
+        item.isActive ?? item.is_active ?? item.active,
+        true
+      ),
+      isHot: booleanValue(
+        item.isHot ?? item.is_hot ?? item.hot,
+        false
+      ),
+      sort: Number(item.sort ?? item.sortOrder ?? item.sort_order ?? index * 10) || 0,
+      tag: String(item.tag ?? '').trim(),
+      tags: Array.isArray(item.tags) ? item.tags.map(String) : []
+    };
+  }
+
+  function normalizeCategory(item, index = 0) {
+    const id = String(item.id ?? item.slug ?? item.code ?? '').trim();
+    return {
+      id,
+      label: String(item.label ?? item.title ?? item.name ?? id).trim(),
+      sort: Number(item.sort ?? item.sortOrder ?? item.sort_order ?? index * 10) || 0,
+      isActive: booleanValue(
+        item.isActive ?? item.is_active ?? item.active,
+        true
+      )
+    };
+  }
+
+  function deriveCategories(menu) {
+    const seen = new Map();
+    menu.forEach((item, index) => {
+      if (!item.category || seen.has(item.category)) return;
+      seen.set(item.category, {
+        id: item.category,
+        label: item.categoryLabel || item.category,
+        sort: index * 10,
+        isActive: true
+      });
+    });
+    return [...seen.values()];
+  }
+
+  function fallbackData() {
+    const menu = (Array.isArray(window.TOPKA_MENU) ? window.TOPKA_MENU : [])
+      .map(normalizeMenuItem)
+      .filter(item => item.title && item.isActive)
+      .sort((a, b) => a.sort - b.sort);
+
+    const categories = (Array.isArray(window.TOPKA_CATEGORIES) ? window.TOPKA_CATEGORIES : [])
+      .map(normalizeCategory)
+      .filter(item => item.id && item.isActive)
+      .sort((a, b) => a.sort - b.sort);
+
+    return {
+      menu,
+      categories: categories.length ? categories : deriveCategories(menu),
+      source: 'fallback',
+      warning: ''
+    };
+  }
+
+  async function load() {
+    if (!apiConfig.enabled) return fallbackData();
+
+    try {
+      const [menuPayload, categoriesPayload] = await Promise.all([
+        fetchJson(apiConfig.menuEndpoint),
+        fetchJson(apiConfig.categoriesEndpoint).catch(() => [])
+      ]);
+
+      const menu = extractArray(menuPayload)
+        .map(normalizeMenuItem)
+        .filter(item => item.title && item.isActive)
+        .sort((a, b) => a.sort - b.sort);
+
+      let categories = extractArray(categoriesPayload)
+        .map(normalizeCategory)
+        .filter(item => item.id && item.isActive)
+        .sort((a, b) => a.sort - b.sort);
+
+      if (!categories.length) categories = deriveCategories(menu);
+
+      if (!menu.length) {
+        throw new Error('API вернул пустое меню');
+      }
+
+      return { menu, categories, source: 'api', warning: '' };
+    } catch (error) {
+      console.warn('Не удалось загрузить меню из API:', error);
+
+      if (!fallbackEnabled) {
+        return {
+          menu: [],
+          categories: [],
+          source: 'error',
+          warning: 'Меню временно недоступно.'
+        };
+      }
+
+      const fallback = fallbackData();
+      fallback.warning = 'Показана резервная версия меню.';
+      return fallback;
+    }
+  }
+
+  window.TopkaMenuService = Object.freeze({
+    load,
+    normalizeMenuItem,
+    normalizeCategory
+  });
+})();
+
+(() => {
+  const config = window.TOPKA_CONFIG || {};
+  const orderUrl = config.orderUrl || '#order';
+  const imageFallback = config.imageFallback || 'assets/logo-mark.png';
+
+  let categories = [];
+  let menu = [];
+  let activeFilter = 'all';
+  let searchQuery = '';
 
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
@@ -2878,34 +4338,50 @@ window.TOPKA_MENU = [
     return String(value ?? '').toLowerCase().replaceAll('ё', 'е').trim();
   }
 
+  function formatPrice(item) {
+    if (item.priceText) return item.priceText;
+    return new Intl.NumberFormat('ru-RU', {
+      style: 'currency',
+      currency: 'RUB',
+      maximumFractionDigits: 0
+    }).format(Number(item.price) || 0);
+  }
+
   function cardTemplate(item, index) {
     const title = escapeHtml(item.title);
-    const isHot = hotTitles.has(item.title);
+    const priceText = escapeHtml(formatPrice(item));
+    const priceValue = Number(item.price) || 0;
+    const image = item.image
+      ? `<img class="menu-card__image" src="${escapeHtml(item.image)}" alt="${escapeHtml(item.imageAlt || item.title)}" loading="lazy" decoding="async" />`
+      : `<div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="${escapeHtml(imageFallback)}" alt="" loading="lazy" /></div>`;
+
     return `
-      <article class="menu-card ${isHot ? 'is-hot' : ''}" data-category="${escapeHtml(item.category)}" style="animation-delay:${Math.min(index * 18, 180)}ms">
+      <article class="menu-card ${item.isHot ? 'is-hot' : ''}" data-category="${escapeHtml(item.category)}" style="animation-delay:${Math.min(index * 18, 180)}ms" itemscope itemtype="https://schema.org/MenuItem">
+        ${image}
         <div class="menu-card__top">
           <span>${escapeHtml(item.categoryLabel)}</span>
-          ${isHot ? '<em>хит</em>' : ''}
+          ${item.isHot ? '<em>хит</em>' : ''}
         </div>
-        <h3>${title}</h3>
-        <p>${escapeHtml(item.description)}</p>
-        <div class="menu-card__meta">
-          <strong>${escapeHtml(item.price)}</strong>
+        <h3 itemprop="name">${title}</h3>
+        <p itemprop="description">${escapeHtml(item.description)}</p>
+        <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <meta itemprop="priceCurrency" content="RUB" />
+          <strong itemprop="price" content="${priceValue}">${priceText}</strong>
           <span>${escapeHtml(item.weight)}</span>
         </div>
-        <a class="menu-card__order" href="${YANDEX_EDA_URL}" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        <a class="menu-card__order" href="${escapeHtml(orderUrl)}" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
       </article>
     `;
   }
 
   function hitTemplate(item) {
     return `
-      <article class="hit-card">
+      <article class="hit-card" itemscope itemtype="https://schema.org/MenuItem">
         <span class="hit-card__label">${escapeHtml(item.categoryLabel)}</span>
-        <h3>${escapeHtml(item.title)}</h3>
-        <p>${escapeHtml(item.description)}</p>
-        <img src="assets/logo-mark.png" alt="" aria-hidden="true" />
-        <div class="hit-card__meta"><strong>${escapeHtml(item.price)}</strong><span>${escapeHtml(item.weight)}</span></div>
+        <h3 itemprop="name">${escapeHtml(item.title)}</h3>
+        <p itemprop="description">${escapeHtml(item.description)}</p>
+        <img src="${escapeHtml(item.image || imageFallback)}" alt="${item.image ? escapeHtml(item.imageAlt || item.title) : ''}" ${item.image ? '' : 'aria-hidden="true"'} loading="lazy" decoding="async" />
+        <div class="hit-card__meta"><strong>${escapeHtml(formatPrice(item))}</strong><span>${escapeHtml(item.weight)}</span></div>
       </article>
     `;
   }
@@ -2913,18 +4389,23 @@ window.TOPKA_MENU = [
   function buildTabs() {
     const tabs = $('[data-category-tabs]');
     if (!tabs) return;
-    tabs.innerHTML = categories.map((category, index) => `
+
+    const allCategories = [{ id: 'all', label: 'Все' }, ...categories];
+    tabs.innerHTML = allCategories.map((category, index) => `
       <button class="tab ${index === 0 ? 'is-active' : ''}" type="button" data-filter="${escapeHtml(category.id)}">${escapeHtml(category.label)}</button>
     `).join('');
   }
 
-  let activeFilter = 'all';
-  let searchQuery = '';
-
   function getFilteredItems() {
     return menu.filter((item) => {
       const matchesCategory = activeFilter === 'all' || item.category === activeFilter;
-      const haystack = normalize([item.title, item.description, item.categoryLabel, item.tag].join(' '));
+      const haystack = normalize([
+        item.title,
+        item.description,
+        item.categoryLabel,
+        item.tag,
+        ...(item.tags || [])
+      ].join(' '));
       const matchesSearch = !searchQuery || haystack.includes(normalize(searchQuery));
       return matchesCategory && matchesSearch;
     });
@@ -2946,20 +4427,33 @@ window.TOPKA_MENU = [
 
     const items = getFilteredItems();
     if (count) count.textContent = String(items.length);
+
     if (status) {
       status.classList.toggle('is-visible', !items.length);
-      status.textContent = !items.length ? 'Ничего не найдено. Попробуйте другую категорию или поиск.' : '';
+      status.textContent = !items.length
+        ? 'Ничего не найдено. Попробуйте другую категорию или поиск.'
+        : '';
     }
+
     grid.innerHTML = items.map(cardTemplate).join('');
   }
 
   function renderHits() {
     const grid = $('[data-hit-grid]');
-    if (!grid || !menu.length) return;
-    const hits = menu.filter(item => hotTitles.has(item.title)).slice(0, 4);
-    grid.innerHTML = hits.map(hitTemplate).join('');
+    if (!grid) return;
+
+    const hits = menu.filter(item => item.isHot).slice(0, 4);
+    grid.innerHTML = hits.length
+      ? hits.map(hitTemplate).join('')
+      : '<div class="hit-skeleton">Популярные позиции скоро появятся.</div>';
   }
 
+  function updateStats() {
+    const itemCount = $('[data-stat-items]');
+    const categoryCount = $('[data-stat-categories]');
+    if (itemCount) itemCount.textContent = String(menu.length);
+    if (categoryCount) categoryCount.textContent = String(categories.length);
+  }
 
   function scrollToMenuPositions() {
     if (!window.matchMedia('(max-width: 760px)').matches) return;
@@ -2968,7 +4462,9 @@ window.TOPKA_MENU = [
 
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        const headerHeight = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 72;
+        const headerHeight = parseFloat(
+          getComputedStyle(document.documentElement).getPropertyValue('--header-height')
+        ) || 72;
         const top = grid.getBoundingClientRect().top + window.pageYOffset - headerHeight - 14;
         window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
       });
@@ -2978,12 +4474,21 @@ window.TOPKA_MENU = [
   function bindEvents() {
     const header = $('[data-header]');
     const scrollTopButton = $('[data-scroll-top]');
+    const menuToggle = $('[data-menu-toggle]');
 
-    $('[data-menu-toggle]')?.addEventListener('click', () => { header?.classList.toggle('is-open'); syncStickyOffsets(); });
+    menuToggle?.addEventListener('click', () => {
+      const isOpen = header?.classList.toggle('is-open');
+      menuToggle.setAttribute('aria-expanded', String(Boolean(isOpen)));
+      syncStickyOffsets();
+    });
 
     document.addEventListener('click', (event) => {
       const navLink = event.target.closest('.nav a');
-      if (navLink) { header?.classList.remove('is-open'); syncStickyOffsets(); }
+      if (navLink) {
+        header?.classList.remove('is-open');
+        menuToggle?.setAttribute('aria-expanded', 'false');
+        syncStickyOffsets();
+      }
 
       const tab = event.target.closest('[data-filter]');
       if (tab) {
@@ -3009,7 +4514,6 @@ window.TOPKA_MENU = [
     }, { passive: true });
   }
 
-
   function syncStickyOffsets() {
     const header = $('[data-header]');
     if (!header) return;
@@ -3018,6 +4522,8 @@ window.TOPKA_MENU = [
   }
 
   function initHeroParallax() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     const heroImage = document.querySelector('.hero__image img');
     const hero = document.querySelector('.hero__banner');
     if (!heroImage || !hero) return;
@@ -3038,10 +4544,15 @@ window.TOPKA_MENU = [
 
   function revealOnScroll() {
     const items = $$('.reveal');
-    if (!('IntersectionObserver' in window)) {
+
+    if (
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+      !('IntersectionObserver' in window)
+    ) {
       items.forEach(item => item.classList.add('is-visible'));
       return;
     }
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -3050,19 +4561,42 @@ window.TOPKA_MENU = [
         }
       });
     }, { threshold: 0.08 });
+
     items.forEach(item => observer.observe(item));
   }
 
-  function init() {
-    buildTabs();
-    renderHits();
-    renderMenu();
+  async function init() {
     bindEvents();
     syncStickyOffsets();
-    window.addEventListener('resize', syncStickyOffsets);
-    window.addEventListener('orientationchange', syncStickyOffsets);
     initHeroParallax();
     revealOnScroll();
+
+    try {
+      const result = await window.TopkaMenuService.load();
+      menu = result.menu || [];
+      categories = result.categories || [];
+      document.body.dataset.menuSource = result.source || 'unknown';
+
+      buildTabs();
+      renderHits();
+      renderMenu();
+      updateStats();
+
+      if (result.warning) {
+        console.info(result.warning);
+      }
+    } catch (error) {
+      console.error('Ошибка инициализации меню:', error);
+      menu = [];
+      categories = [];
+      buildTabs();
+      renderHits();
+      renderMenu();
+      updateStats();
+    }
+
+    window.addEventListener('resize', syncStickyOffsets);
+    window.addEventListener('orientationchange', syncStickyOffsets);
   }
 
   if (document.readyState === 'loading') {

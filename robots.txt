@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /preview_single_js.html
+
+# После выбора домена создайте sitemap.xml из sitemap.template.xml
+# и добавьте строку:
+# Sitemap: https://ВАШ-ДОМЕН.RU/sitemap.xml

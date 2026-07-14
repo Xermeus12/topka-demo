@@ -2217,3 +2217,59 @@ html{scroll-padding-top:24px !important;}
     font-size:14px;
   }
 }
+
+
+/* === V18: SEO/API-ready карточки и доступность === */
+.visually-hidden{
+  position:absolute !important;
+  width:1px !important;
+  height:1px !important;
+  padding:0 !important;
+  margin:-1px !important;
+  overflow:hidden !important;
+  clip:rect(0,0,0,0) !important;
+  white-space:nowrap !important;
+  border:0 !important;
+}
+
+.menu-card__image{
+  width:100%;
+  aspect-ratio:16/10;
+  object-fit:cover;
+  border-radius:18px;
+  margin-bottom:14px;
+  background:rgba(91,36,23,.06);
+}
+
+.menu-card__image--placeholder{
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(235,143,80,.25), transparent 38%),
+    rgba(255,247,232,.92);
+}
+
+.menu-card__image--placeholder img{
+  width:76px;
+  height:80px;
+  object-fit:contain;
+  opacity:.48;
+}
+
+body[data-menu-source="api"] .menu-status::before{
+  content:"";
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{ scroll-behavior:auto !important; }
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+  }
+  .reveal{
+    opacity:1 !important;
+    transform:none !important;
+  }
+}

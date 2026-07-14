@@ -1,24 +1,12 @@
 (() => {
-  const categories = window.TOPKA_CATEGORIES || [
-    { id: 'all', label: 'Все' },
-    { id: 'tandoor', label: 'Тандыр' },
-    { id: 'combo', label: 'Комбо' },
-    { id: 'shawarma', label: 'Шаверма' },
-    { id: 'snacks', label: 'Закуски' },
-    { id: 'salads', label: 'Салаты' },
-    { id: 'desserts', label: 'Десерты' },
-    { id: 'extras', label: 'Допы' }
-  ];
-  const menu = Array.isArray(window.TOPKA_MENU) ? window.TOPKA_MENU : [];
-  const YANDEX_EDA_URL = 'https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&utm_medium=referral&utm_source=rst_shared_link';
-  const hotTitles = new Set([
-    'Комбо Поляна куриный',
-    'Комбо Поляна свиной',
-    'Комбо Пикник куриный',
-    'Шаверма с цыплёнком M',
-    'Шашлык в тандыре из свинины',
-    'Сувлак куриный 1 шт'
-  ]);
+  const config = window.TOPKA_CONFIG || {};
+  const orderUrl = config.orderUrl || '#order';
+  const imageFallback = config.imageFallback || 'assets/logo-mark.png';
+
+  let categories = [];
+  let menu = [];
+  let activeFilter = 'all';
+  let searchQuery = '';
 
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
@@ -36,34 +24,50 @@
     return String(value ?? '').toLowerCase().replaceAll('ё', 'е').trim();
   }
 
+  function formatPrice(item) {
+    if (item.priceText) return item.priceText;
+    return new Intl.NumberFormat('ru-RU', {
+      style: 'currency',
+      currency: 'RUB',
+      maximumFractionDigits: 0
+    }).format(Number(item.price) || 0);
+  }
+
   function cardTemplate(item, index) {
     const title = escapeHtml(item.title);
-    const isHot = hotTitles.has(item.title);
+    const priceText = escapeHtml(formatPrice(item));
+    const priceValue = Number(item.price) || 0;
+    const image = item.image
+      ? `<img class="menu-card__image" src="${escapeHtml(item.image)}" alt="${escapeHtml(item.imageAlt || item.title)}" loading="lazy" decoding="async" />`
+      : `<div class="menu-card__image menu-card__image--placeholder" aria-hidden="true"><img src="${escapeHtml(imageFallback)}" alt="" loading="lazy" /></div>`;
+
     return `
-      <article class="menu-card ${isHot ? 'is-hot' : ''}" data-category="${escapeHtml(item.category)}" style="animation-delay:${Math.min(index * 18, 180)}ms">
+      <article class="menu-card ${item.isHot ? 'is-hot' : ''}" data-category="${escapeHtml(item.category)}" style="animation-delay:${Math.min(index * 18, 180)}ms" itemscope itemtype="https://schema.org/MenuItem">
+        ${image}
         <div class="menu-card__top">
           <span>${escapeHtml(item.categoryLabel)}</span>
-          ${isHot ? '<em>хит</em>' : ''}
+          ${item.isHot ? '<em>хит</em>' : ''}
         </div>
-        <h3>${title}</h3>
-        <p>${escapeHtml(item.description)}</p>
-        <div class="menu-card__meta">
-          <strong>${escapeHtml(item.price)}</strong>
+        <h3 itemprop="name">${title}</h3>
+        <p itemprop="description">${escapeHtml(item.description)}</p>
+        <div class="menu-card__meta" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <meta itemprop="priceCurrency" content="RUB" />
+          <strong itemprop="price" content="${priceValue}">${priceText}</strong>
           <span>${escapeHtml(item.weight)}</span>
         </div>
-        <a class="menu-card__order" href="${YANDEX_EDA_URL}" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
+        <a class="menu-card__order" href="${escapeHtml(orderUrl)}" target="_blank" rel="noopener noreferrer">Заказать в Яндекс Еде</a>
       </article>
     `;
   }
 
   function hitTemplate(item) {
     return `
-      <article class="hit-card">
+      <article class="hit-card" itemscope itemtype="https://schema.org/MenuItem">
         <span class="hit-card__label">${escapeHtml(item.categoryLabel)}</span>
-        <h3>${escapeHtml(item.title)}</h3>
-        <p>${escapeHtml(item.description)}</p>
-        <img src="assets/logo-mark.png" alt="" aria-hidden="true" />
-        <div class="hit-card__meta"><strong>${escapeHtml(item.price)}</strong><span>${escapeHtml(item.weight)}</span></div>
+        <h3 itemprop="name">${escapeHtml(item.title)}</h3>
+        <p itemprop="description">${escapeHtml(item.description)}</p>
+        <img src="${escapeHtml(item.image || imageFallback)}" alt="${item.image ? escapeHtml(item.imageAlt || item.title) : ''}" ${item.image ? '' : 'aria-hidden="true"'} loading="lazy" decoding="async" />
+        <div class="hit-card__meta"><strong>${escapeHtml(formatPrice(item))}</strong><span>${escapeHtml(item.weight)}</span></div>
       </article>
     `;
   }
@@ -71,18 +75,23 @@
   function buildTabs() {
     const tabs = $('[data-category-tabs]');
     if (!tabs) return;
-    tabs.innerHTML = categories.map((category, index) => `
+
+    const allCategories = [{ id: 'all', label: 'Все' }, ...categories];
+    tabs.innerHTML = allCategories.map((category, index) => `
       <button class="tab ${index === 0 ? 'is-active' : ''}" type="button" data-filter="${escapeHtml(category.id)}">${escapeHtml(category.label)}</button>
     `).join('');
   }
 
-  let activeFilter = 'all';
-  let searchQuery = '';
-
   function getFilteredItems() {
     return menu.filter((item) => {
       const matchesCategory = activeFilter === 'all' || item.category === activeFilter;
-      const haystack = normalize([item.title, item.description, item.categoryLabel, item.tag].join(' '));
+      const haystack = normalize([
+        item.title,
+        item.description,
+        item.categoryLabel,
+        item.tag,
+        ...(item.tags || [])
+      ].join(' '));
       const matchesSearch = !searchQuery || haystack.includes(normalize(searchQuery));
       return matchesCategory && matchesSearch;
     });
@@ -104,20 +113,33 @@
 
     const items = getFilteredItems();
     if (count) count.textContent = String(items.length);
+
     if (status) {
       status.classList.toggle('is-visible', !items.length);
-      status.textContent = !items.length ? 'Ничего не найдено. Попробуйте другую категорию или поиск.' : '';
+      status.textContent = !items.length
+        ? 'Ничего не найдено. Попробуйте другую категорию или поиск.'
+        : '';
     }
+
     grid.innerHTML = items.map(cardTemplate).join('');
   }
 
   function renderHits() {
     const grid = $('[data-hit-grid]');
-    if (!grid || !menu.length) return;
-    const hits = menu.filter(item => hotTitles.has(item.title)).slice(0, 4);
-    grid.innerHTML = hits.map(hitTemplate).join('');
+    if (!grid) return;
+
+    const hits = menu.filter(item => item.isHot).slice(0, 4);
+    grid.innerHTML = hits.length
+      ? hits.map(hitTemplate).join('')
+      : '<div class="hit-skeleton">Популярные позиции скоро появятся.</div>';
   }
 
+  function updateStats() {
+    const itemCount = $('[data-stat-items]');
+    const categoryCount = $('[data-stat-categories]');
+    if (itemCount) itemCount.textContent = String(menu.length);
+    if (categoryCount) categoryCount.textContent = String(categories.length);
+  }
 
   function scrollToMenuPositions() {
     if (!window.matchMedia('(max-width: 760px)').matches) return;
@@ -126,7 +148,9 @@
 
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        const headerHeight = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 72;
+        const headerHeight = parseFloat(
+          getComputedStyle(document.documentElement).getPropertyValue('--header-height')
+        ) || 72;
         const top = grid.getBoundingClientRect().top + window.pageYOffset - headerHeight - 14;
         window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
       });
@@ -136,12 +160,21 @@
   function bindEvents() {
     const header = $('[data-header]');
     const scrollTopButton = $('[data-scroll-top]');
+    const menuToggle = $('[data-menu-toggle]');
 
-    $('[data-menu-toggle]')?.addEventListener('click', () => { header?.classList.toggle('is-open'); syncStickyOffsets(); });
+    menuToggle?.addEventListener('click', () => {
+      const isOpen = header?.classList.toggle('is-open');
+      menuToggle.setAttribute('aria-expanded', String(Boolean(isOpen)));
+      syncStickyOffsets();
+    });
 
     document.addEventListener('click', (event) => {
       const navLink = event.target.closest('.nav a');
-      if (navLink) { header?.classList.remove('is-open'); syncStickyOffsets(); }
+      if (navLink) {
+        header?.classList.remove('is-open');
+        menuToggle?.setAttribute('aria-expanded', 'false');
+        syncStickyOffsets();
+      }
 
       const tab = event.target.closest('[data-filter]');
       if (tab) {
@@ -167,7 +200,6 @@
     }, { passive: true });
   }
 
-
   function syncStickyOffsets() {
     const header = $('[data-header]');
     if (!header) return;
@@ -176,6 +208,8 @@
   }
 
   function initHeroParallax() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     const heroImage = document.querySelector('.hero__image img');
     const hero = document.querySelector('.hero__banner');
     if (!heroImage || !hero) return;
@@ -196,10 +230,15 @@
 
   function revealOnScroll() {
     const items = $$('.reveal');
-    if (!('IntersectionObserver' in window)) {
+
+    if (
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+      !('IntersectionObserver' in window)
+    ) {
       items.forEach(item => item.classList.add('is-visible'));
       return;
     }
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -208,19 +247,42 @@
         }
       });
     }, { threshold: 0.08 });
+
     items.forEach(item => observer.observe(item));
   }
 
-  function init() {
-    buildTabs();
-    renderHits();
-    renderMenu();
+  async function init() {
     bindEvents();
     syncStickyOffsets();
-    window.addEventListener('resize', syncStickyOffsets);
-    window.addEventListener('orientationchange', syncStickyOffsets);
     initHeroParallax();
     revealOnScroll();
+
+    try {
+      const result = await window.TopkaMenuService.load();
+      menu = result.menu || [];
+      categories = result.categories || [];
+      document.body.dataset.menuSource = result.source || 'unknown';
+
+      buildTabs();
+      renderHits();
+      renderMenu();
+      updateStats();
+
+      if (result.warning) {
+        console.info(result.warning);
+      }
+    } catch (error) {
+      console.error('Ошибка инициализации меню:', error);
+      menu = [];
+      categories = [];
+      buildTabs();
+      renderHits();
+      renderMenu();
+      updateStats();
+    }
+
+    window.addEventListener('resize', syncStickyOffsets);
+    window.addEventListener('orientationchange', syncStickyOffsets);
   }
 
   if (document.readyState === 'loading') {
