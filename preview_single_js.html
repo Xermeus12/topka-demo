@@ -300,7 +300,7 @@ p{line-height:1.58;margin:0}.hero__lead,.section-head p,.panel p,.order p,.conta
 .contacts__info{background:rgba(255,255,255,.72)}.contacts__info h2{margin:14px 0 18px}.contacts dl{display:grid;gap:14px;margin:0}.contacts dt{margin-bottom:4px;font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:rgba(91,36,23,.54)}.contacts dd{margin:0}
 .map-card{position:relative;overflow:hidden;display:flex;align-items:flex-end;min-height:250px;background:linear-gradient(180deg,rgba(91,126,58,.96),rgba(75,106,45,.96));color:var(--cream)}.map-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.08}.map-card div{position:relative;display:grid;gap:12px;max-width:420px}.map-card strong{font-family:var(--font-head);font-size:clamp(42px,10vw,64px);line-height:.92;text-transform:uppercase;letter-spacing:-.015em}.map-card span{font-size:16px;line-height:1.55;color:rgba(255,241,201,.9)}
 
-.footer{width:var(--container);margin:0 auto;padding:28px 0 110px;color:rgba(91,36,23,.68);font-size:14px}.footer img{width:160px;margin-bottom:10px}.footer p{margin:0 0 10px}.footer a{font-weight:900}
+.footer{width:var(--container);margin:0 auto;padding:28px 0 110px;display:grid;gap:18px;color:rgba(91,36,23,.72);font-size:14px;border-top:1px solid rgba(91,36,23,.10)}.footer__brand{display:flex;align-items:center;gap:16px;min-width:0}.footer__brand img{display:block;width:164px;height:auto;flex:0 0 auto;object-fit:contain}.footer__text{display:grid;gap:4px}.footer__text p{margin:0;line-height:1.45}.footer__actions{display:flex;flex-wrap:wrap;gap:10px}.footer__link{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 16px;border-radius:999px;background:var(--brown);color:var(--cream);font-weight:900;text-decoration:none;box-shadow:0 12px 24px rgba(79,35,24,.12)}.footer__link--ghost{background:rgba(91,36,23,.08);color:var(--brown);box-shadow:none}
 .floating-order{position:fixed;left:14px;right:14px;bottom:14px;z-index:45;display:flex;align-items:center;justify-content:center;min-height:54px;border-radius:999px;background:var(--brown);color:var(--cream);font-weight:900;box-shadow:0 18px 30px rgba(79,35,24,.22)}
 .scroll-top{position:fixed;right:14px;bottom:82px;z-index:45;width:48px;height:48px;border:0;border-radius:50%;background:var(--orange);color:var(--cream);font-size:20px;box-shadow:0 18px 30px rgba(235,143,80,.24);opacity:0;pointer-events:none;transform:translateY(12px);transition:.2s ease}.scroll-top.is-visible{opacity:1;pointer-events:auto;transform:none}
 
@@ -310,7 +310,7 @@ p{line-height:1.58;margin:0}.hero__lead,.section-head p,.panel p,.order p,.conta
   .menu-tools{grid-template-columns:minmax(0,1fr) auto}.menu-count{justify-self:stretch}
   .menu-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
   .hit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .footer{display:flex;align-items:center;justify-content:space-between;gap:18px}.footer img{margin-bottom:0}.footer p{margin:0}
+  .footer{grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:16px 24px}.footer__actions{justify-self:end}
 }
 
 @media (min-width:760px){
@@ -2363,6 +2363,228 @@ body[data-menu-source="api"] .menu-status::before{
   flex-wrap:wrap;
 }
 
+
+/* === V24: фиксы логотипа в карточке заказа и аккуратный футер === */
+.order__card--new{
+  gap:22px;
+}
+.order__mascot{
+  width:104px;
+  max-width:none;
+  height:auto;
+  object-fit:contain;
+  right:22px;
+  top:22px;
+  opacity:.32;
+  filter:none;
+}
+.order__card-body{
+  max-width:520px;
+  margin-top:22px;
+  padding-right:92px;
+}
+.order__card-body h3{
+  margin:14px 0 14px;
+  max-width:420px;
+}
+.order__card-body p{
+  max-width:440px;
+}
+.order-steps{
+  gap:12px;
+}
+.order-steps div{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+}
+
+@media (min-width:980px){
+  .order__card--new{
+    padding:34px;
+  }
+  .order__card-body h3{
+    font-size:clamp(52px,5.2vw,78px);
+    line-height:.88;
+  }
+}
+
+@media (max-width:979px){
+  .order__mascot{
+    width:88px;
+    right:18px;
+    top:18px;
+    opacity:.24;
+  }
+  .order__card-body{
+    margin-top:12px;
+    padding-right:72px;
+  }
+  .order__card-body h3{
+    font-size:clamp(46px,8vw,68px);
+    max-width:360px;
+  }
+}
+
+@media (max-width:640px){
+  .order__card-body{
+    padding-right:0;
+  }
+  .order__mascot{
+    position:relative;
+    width:84px;
+    right:auto;
+    top:auto;
+    opacity:.36;
+    margin:0 0 -12px auto;
+  }
+  .footer{
+    padding-bottom:36px;
+  }
+  .footer__brand{
+    align-items:flex-start;
+  }
+  .footer__brand img{
+    width:138px;
+  }
+  .footer__actions{
+    width:100%;
+  }
+  .footer__link{
+    flex:1 1 100%;
+  }
+}
+
+
+/* === V25: финальная полировка клиентского вида (хиты/карточки/общий баланс) === */
+.hit-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:16px;
+}
+.hit-card{
+  min-height:356px;
+  padding:24px;
+  border-radius:30px;
+  gap:10px;
+}
+.hit-card h3{
+  font-size:clamp(24px,2.6vw,34px);
+  line-height:.9;
+  padding-right:124px;
+  text-wrap:balance;
+}
+.hit-card p{
+  font-size:15px;
+  line-height:1.5;
+  padding-right:126px;
+  max-width:none;
+}
+.hit-card__label{
+  font-size:11px;
+  letter-spacing:.09em;
+}
+.hit-card img{
+  position:absolute;
+  right:22px;
+  bottom:24px;
+  width:106px;
+  height:106px;
+  object-fit:cover;
+  object-position:center;
+  border-radius:20px;
+  opacity:1;
+  background:rgba(255,247,224,.92);
+  border:1px solid rgba(91,36,23,.10);
+  box-shadow:0 14px 28px rgba(79,35,24,.18);
+}
+.hit-card:nth-child(odd) img{
+  background:rgba(255,241,201,.18);
+  border-color:rgba(255,241,201,.24);
+  box-shadow:0 14px 28px rgba(25,10,6,.22);
+}
+.hit-card__meta{
+  align-items:flex-end;
+}
+.hit-card__meta strong{
+  font-size:40px;
+  line-height:.9;
+}
+.hit-card__meta span{
+  font-size:16px;
+  font-weight:700;
+}
+.section-head h2,
+.order__content h2,
+.contacts__info strong,
+.map-card__content strong{
+  text-wrap:balance;
+}
+@media (min-width:980px) and (max-width:1280px){
+  .hit-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:16px !important;
+  }
+  .hit-card{
+    min-height:330px !important;
+  }
+}
+@media (min-width:761px) and (max-width:979px){
+  .hit-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px;
+  }
+  .hit-card{
+    min-height:320px;
+  }
+  .hit-card h3,
+  .hit-card p{
+    padding-right:116px;
+  }
+  .hit-card img{
+    width:96px;
+    height:96px;
+    right:18px;
+    bottom:20px;
+  }
+}
+@media (max-width:760px){
+  .hit-grid{
+    grid-template-columns:1fr !important;
+    gap:14px !important;
+  }
+  .hit-card{
+    min-height:auto !important;
+    padding:18px !important;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+  .hit-card h3,
+  .hit-card p{
+    padding-right:0 !important;
+  }
+  .hit-card h3{
+    font-size:clamp(26px,8vw,34px);
+  }
+  .hit-card img{
+    position:relative !important;
+    right:auto !important;
+    bottom:auto !important;
+    width:100% !important;
+    height:170px !important;
+    margin-top:4px;
+    border-radius:18px !important;
+    order:4;
+  }
+  .hit-card__meta{
+    order:5;
+    margin-top:0;
+  }
+  .hit-card__meta strong{
+    font-size:34px;
+  }
+}
+
 </style>
 <script>document.documentElement.classList.replace('no-js','js');</script>
 </head>
@@ -2817,7 +3039,7 @@ body[data-menu-source="api"] .menu-status::before{
 <div class="menu-card__top">
 <span>Шаверма</span>
 </div>
-<h3 itemprop="name">Снекасти с цыплёнком, картофелем фри и соусом</h3>
+<h3 itemprop="name">Скепасти с цыплёнком, картофелем фри и соусом</h3>
 <p itemprop="description">Пита 2 шт., помидоры, огурцы, сыр, соус, картофель фри.</p>
 <div class="menu-card__meta" itemprop="offers" itemscope="" itemtype="https://schema.org/Offer">
 <meta content="RUB" itemprop="priceCurrency"/>
@@ -3314,9 +3536,17 @@ body[data-menu-source="api"] .menu-status::before{
 </section>
 </main>
 <footer class="footer">
+<div class="footer__brand">
 <img alt="Топка" decoding="async" height="327" src="assets/logo-horizontal.png" width="720"/>
-<p>© 2026 Топка. Советская ул., 1, Ставрополь.</p>
-<a href="#top">Наверх</a>
+<div class="footer__text">
+<p>© 2026 Топка</p>
+<p>Советская ул., 1, Ставрополь</p>
+</div>
+</div>
+<div class="footer__actions">
+<a class="footer__link" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&amp;utm_medium=referral&amp;utm_source=rst_shared_link" rel="noopener noreferrer" target="_blank">Яндекс Еда</a>
+<a class="footer__link footer__link--ghost" href="#top">Наверх</a>
+</div>
 </footer>
 <a class="floating-order" href="https://eda.yandex.ru/restaurant/topka_prjdh?utm_campaign=android&amp;utm_medium=referral&amp;utm_source=rst_shared_link" rel="noopener noreferrer" target="_blank">Заказать в Яндекс Еде</a>
 <button aria-label="Наверх" class="scroll-top" data-scroll-top="" type="button">↑</button>
@@ -3672,7 +3902,7 @@ window.TOPKA_MENU = [
   {
     "id": "snekasti-s-cyplenkom-kartofelem-fri-i-sousom",
     "slug": "snekasti-s-cyplenkom-kartofelem-fri-i-sousom",
-    "title": "Снекасти с цыплёнком, картофелем фри и соусом",
+    "title": "Скепасти с цыплёнком, картофелем фри и соусом",
     "category": "shawarma",
     "categoryLabel": "Шаверма",
     "price": 620,
@@ -3680,7 +3910,7 @@ window.TOPKA_MENU = [
     "weight": "500 г",
     "description": "Пита 2 шт., помидоры, огурцы, сыр, соус, картофель фри.",
     "image": null,
-    "imageAlt": "Снекасти с цыплёнком, картофелем фри и соусом",
+    "imageAlt": "Скепасти с цыплёнком, картофелем фри и соусом",
     "isActive": true,
     "isHot": false,
     "sort": 160,

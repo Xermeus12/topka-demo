@@ -349,7 +349,7 @@ window.TOPKA_MENU = [
   {
     "id": "snekasti-s-cyplenkom-kartofelem-fri-i-sousom",
     "slug": "snekasti-s-cyplenkom-kartofelem-fri-i-sousom",
-    "title": "Снекасти с цыплёнком, картофелем фри и соусом",
+    "title": "Скепасти с цыплёнком, картофелем фри и соусом",
     "category": "shawarma",
     "categoryLabel": "Шаверма",
     "price": 620,
@@ -357,7 +357,7 @@ window.TOPKA_MENU = [
     "weight": "500 г",
     "description": "Пита 2 шт., помидоры, огурцы, сыр, соус, картофель фри.",
     "image": null,
-    "imageAlt": "Снекасти с цыплёнком, картофелем фри и соусом",
+    "imageAlt": "Скепасти с цыплёнком, картофелем фри и соусом",
     "isActive": true,
     "isHot": false,
     "sort": 160,
